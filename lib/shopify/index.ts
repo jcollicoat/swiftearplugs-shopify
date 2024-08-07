@@ -99,6 +99,7 @@ export async function shopifyFetch<T>({
     };
   } catch (e) {
     if (isShopifyError(e)) {
+      // eslint-disable-next-line no-throw-literal
       throw {
         cause: e.cause?.toString() || 'unknown',
         status: e.status || 500,
@@ -107,6 +108,7 @@ export async function shopifyFetch<T>({
       };
     }
 
+    // eslint-disable-next-line no-throw-literal
     throw {
       error: e,
       query
@@ -119,6 +121,7 @@ const removeEdgesAndNodes = <T>(array: Connection<T>): T[] => {
 };
 
 const reshapeCart = (cart: ShopifyCart): Cart => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!cart.cost.totalTaxAmount) {
     cart.cost.totalTaxAmount = {
       amount: '0.0',
@@ -133,6 +136,7 @@ const reshapeCart = (cart: ShopifyCart): Cart => {
 };
 
 const reshapeCollection = (collection: ShopifyCollection): Collection | undefined => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!collection) {
     return undefined;
   }
@@ -147,6 +151,7 @@ const reshapeCollections = (collections: ShopifyCollection[]) => {
   const reshapedCollections = [];
 
   for (const collection of collections) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (collection) {
       const reshapedCollection = reshapeCollection(collection);
 
@@ -172,6 +177,7 @@ const reshapeImages = (images: Connection<Image>, productTitle: string) => {
 };
 
 const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean = true) => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!product || (filterHiddenProducts && product.tags.includes(HIDDEN_PRODUCT_TAG))) {
     return undefined;
   }
@@ -189,6 +195,7 @@ const reshapeProducts = (products: ShopifyProduct[]) => {
   const reshapedProducts = [];
 
   for (const product of products) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (product) {
       const reshapedProduct = reshapeProduct(product);
 
@@ -266,6 +273,7 @@ export async function getCart(cartId: string | undefined): Promise<Cart | undefi
   });
 
   // Old carts becomes `null` when you checkout.
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!res.body.data.cart) {
     return undefined;
   }
@@ -304,6 +312,7 @@ export async function getCollectionProducts({
     }
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!res.body.data.collection) {
     console.log(`No collection found for \`${collection}\``);
     return [];
@@ -423,6 +432,7 @@ export async function getProducts({
 }
 
 // This is called from `app/api/revalidate.ts` so providers can control revalidation logic.
+// eslint-disable-next-line require-await
 export async function revalidate(req: NextRequest): Promise<NextResponse> {
   // We always need to respond with a 200 status code to Shopify,
   // otherwise it will continue to retry the request.

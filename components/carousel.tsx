@@ -18,6 +18,7 @@ export async function Carousel() {
             <ul className="flex animate-carousel gap-4">
                 {carouselProducts.map((product, i) => (
                     <li
+                        // eslint-disable-next-line react/no-array-index-key
                         key={`${product.handle}${i}`}
                         className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3"
                     >

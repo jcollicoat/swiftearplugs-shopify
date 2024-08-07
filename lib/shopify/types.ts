@@ -1,15 +1,23 @@
 export type Maybe<T> = T | null;
 
-export type Connection<T> = {
-  edges: Array<Edge<T>>;
-};
-
 export type Edge<T> = {
   node: T;
 };
 
-export type Cart = Omit<ShopifyCart, 'lines'> & {
-  lines: CartItem[];
+export type Connection<T> = {
+  edges: Array<Edge<T>>;
+};
+
+export type Money = {
+  amount: string;
+  currencyCode: string;
+};
+
+export type Image = {
+  url: string;
+  altText: string;
+  width: number;
+  height: number;
 };
 
 export type CartProduct = {
@@ -36,25 +44,42 @@ export type CartItem = {
   };
 };
 
-export type Collection = ShopifyCollection & {
-  path: string;
+export type ShopifyCart = {
+  id: string | undefined;
+  checkoutUrl: string;
+  cost: {
+    subtotalAmount: Money;
+    totalAmount: Money;
+    totalTaxAmount: Money;
+  };
+  lines: Connection<CartItem>;
+  totalQuantity: number;
 };
 
-export type Image = {
-  url: string;
-  altText: string;
-  width: number;
-  height: number;
+export type Cart = Omit<ShopifyCart, 'lines'> & {
+  lines: CartItem[];
+};
+
+export type SEO = {
+  title: string;
+  description: string;
+};
+
+export type ShopifyCollection = {
+  handle: string;
+  title: string;
+  description: string;
+  seo: SEO;
+  updatedAt: string;
+};
+
+export type Collection = ShopifyCollection & {
+  path: string;
 };
 
 export type Menu = {
   title: string;
   path: string;
-};
-
-export type Money = {
-  amount: string;
-  currencyCode: string;
 };
 
 export type Page = {
@@ -66,11 +91,6 @@ export type Page = {
   seo?: SEO;
   createdAt: string;
   updatedAt: string;
-};
-
-export type Product = Omit<ShopifyProduct, 'variants' | 'images'> & {
-  variants: ProductVariant[];
-  images: Image[];
 };
 
 export type ProductOption = {
@@ -88,31 +108,6 @@ export type ProductVariant = {
     value: string;
   }[];
   price: Money;
-};
-
-export type SEO = {
-  title: string;
-  description: string;
-};
-
-export type ShopifyCart = {
-  id: string | undefined;
-  checkoutUrl: string;
-  cost: {
-    subtotalAmount: Money;
-    totalAmount: Money;
-    totalTaxAmount: Money;
-  };
-  lines: Connection<CartItem>;
-  totalQuantity: number;
-};
-
-export type ShopifyCollection = {
-  handle: string;
-  title: string;
-  description: string;
-  seo: SEO;
-  updatedAt: string;
 };
 
 export type ShopifyProduct = {
@@ -133,6 +128,11 @@ export type ShopifyProduct = {
   seo: SEO;
   tags: string[];
   updatedAt: string;
+};
+
+export type Product = Omit<ShopifyProduct, 'variants' | 'images'> & {
+  variants: ProductVariant[];
+  images: Image[];
 };
 
 export type ShopifyCartOperation = {

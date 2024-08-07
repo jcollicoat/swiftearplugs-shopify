@@ -38,6 +38,7 @@ export function EditItemQuantityButton({
 }: {
     item: CartItem;
     type: 'plus' | 'minus';
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     optimisticUpdate: any;
 }) {
     const [message, formAction] = useFormState(updateItemQuantity, null);

@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 import { TAGS } from 'lib/constants';
 import { addToCart, createCart, getCart, removeFromCart, updateCart } from 'lib/shopify';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function addItem(prevState: any, selectedVariantId: string | undefined) {
   const cartId = cookies().get('cartId')?.value;
 
@@ -21,6 +22,7 @@ export async function addItem(prevState: any, selectedVariantId: string | undefi
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function removeItem(prevState: any, merchandiseId: string) {
   const cartId = cookies().get('cartId')?.value;
 
@@ -49,6 +51,7 @@ export async function removeItem(prevState: any, merchandiseId: string) {
 }
 
 export async function updateItemQuantity(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prevState: any,
   payload: {
     merchandiseId: string;

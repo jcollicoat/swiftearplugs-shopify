@@ -29,6 +29,7 @@ export function GridTileImage({
             )}
         >
             {props.src ? (
+                // eslint-disable-next-line jsx-a11y/alt-text
                 <Image
                     className={clsx('relative h-full w-full object-contain', {
                         'transition duration-300 ease-in-out group-hover:scale-105':

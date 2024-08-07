@@ -8,6 +8,7 @@ export default function Loading() {
                 .map((_, index) => {
                     return (
                         <Grid.Item
+                            // eslint-disable-next-line react/no-array-index-key
                             key={index}
                             className="animate-pulse bg-neutral-100 dark:bg-neutral-800"
                         />

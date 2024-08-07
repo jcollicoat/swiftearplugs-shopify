@@ -11,6 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const page = await getPage(params.page);
 
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!page) return notFound();
 
     return {
@@ -27,6 +28,7 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: { page: string } }) {
     const page = await getPage(params.page);
 
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!page) return notFound();
 
     return (

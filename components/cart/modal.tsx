@@ -21,6 +21,24 @@ type MerchandiseSearchParams = {
     [key: string]: string;
 };
 
+function CheckoutButton() {
+    const { pending } = useFormStatus();
+
+    return (
+        <button
+            className="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+            type="submit"
+            disabled={pending}
+        >
+            {pending ? (
+                <LoadingDots className="bg-white" />
+            ) : (
+                'Proceed to Checkout'
+            )}
+        </button>
+    );
+}
+
 export default function CartModal() {
     const { cart, updateCartItem } = useCart();
     const [isOpen, setIsOpen] = useState(false);
@@ -131,6 +149,7 @@ export default function CartModal() {
 
                                                 return (
                                                     <li
+                                                        // eslint-disable-next-line react/no-array-index-key
                                                         key={i}
                                                         className="flex w-full flex-col border-b border-neutral-300 dark:border-neutral-700"
                                                     >
@@ -300,23 +319,5 @@ export default function CartModal() {
                 </Dialog>
             </Transition>
         </>
-    );
-}
-
-function CheckoutButton() {
-    const { pending } = useFormStatus();
-
-    return (
-        <button
-            className="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
-            type="submit"
-            disabled={pending}
-        >
-            {pending ? (
-                <LoadingDots className="bg-white" />
-            ) : (
-                'Proceed to Checkout'
-            )}
-        </button>
     );
 }

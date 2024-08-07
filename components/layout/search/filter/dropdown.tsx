@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 'use client';
 
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
@@ -56,6 +58,7 @@ export default function FilterItemDropdown({ list }: { list: ListItem[] }) {
                     className="absolute z-40 w-full rounded-b-md bg-white p-4 shadow-md dark:bg-black"
                 >
                     {list.map((item: ListItem, i) => (
+                        // eslint-disable-next-line react/no-array-index-key
                         <FilterItem key={i} item={item} />
                     ))}
                 </div>

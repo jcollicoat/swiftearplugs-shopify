@@ -3,8 +3,8 @@
 import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { useFormState } from 'react-dom';
-import { addItem } from 'components/cart/actions';
-import { useProduct } from 'components/product/product-context';
+import { addItem } from 'components/template/cart/actions';
+import { useProduct } from 'components/template/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
 import { useCart } from './cart-context';
 

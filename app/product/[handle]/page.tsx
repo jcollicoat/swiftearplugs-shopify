@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { Suspense } from 'react';
-import { GridTileImage } from 'components/grid/tile';
-import Footer from 'components/layout/footer';
-import { Gallery } from 'components/product/gallery';
-import { ProductProvider } from 'components/product/product-context';
-import { ProductDescription } from 'components/product/product-description';
+import { GridTileImage } from 'components/template/grid/tile';
+import Footer from 'components/template/layout/footer';
+import { Gallery } from 'components/template/product/gallery';
+import { ProductProvider } from 'components/template/product/product-context';
+import { ProductDescription } from 'components/template/product/product-description';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
 import { Image } from 'lib/shopify/types';

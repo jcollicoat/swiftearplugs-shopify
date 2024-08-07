@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Logo } from '@components/generics/Logo/Logo';
+import { Logo } from 'components/generics/Logo/Logo';
 import styles from './Hero.module.scss';
 
 export const Hero: FC = () => {

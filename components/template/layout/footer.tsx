@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import { Suspense } from 'react';
-import FooterMenu from 'components/layout/footer-menu';
-import LogoSquare from 'components/logo-square';
+import FooterMenu from 'components/template/layout/footer-menu';
+import LogoSquare from 'components/template/logo-square';
 import { getMenu } from 'lib/shopify';
 
 const { COMPANY_NAME, SITE_NAME } = process.env;

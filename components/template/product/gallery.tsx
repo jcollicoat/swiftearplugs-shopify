@@ -2,8 +2,11 @@
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import { GridTileImage } from 'components/grid/tile';
-import { useProduct, useUpdateURL } from 'components/product/product-context';
+import { GridTileImage } from 'components/template/grid/tile';
+import {
+    useProduct,
+    useUpdateURL,
+} from 'components/template/product/product-context';
 
 export function Gallery({
     images,

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
-import CartModal from 'components/cart/modal';
-import LogoSquare from 'components/logo-square';
+import CartModal from 'components/template/cart/modal';
+import LogoSquare from 'components/template/logo-square';
 import { getMenu } from 'lib/shopify';
 import { Menu } from 'lib/shopify/types';
 import MobileMenu from './mobile-menu';

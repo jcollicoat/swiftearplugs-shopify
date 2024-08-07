@@ -1,7 +1,7 @@
-import { Hero } from '@components/layouts/Hero/Hero';
-import { Carousel } from 'components/carousel';
-import { ThreeItemGrid } from 'components/grid/three-items';
-import Footer from 'components/layout/footer';
+import { Hero } from 'components/layouts/Hero/Hero';
+import { Carousel } from 'components/template/carousel';
+import { ThreeItemGrid } from 'components/template/grid/three-items';
+import Footer from 'components/template/layout/footer';
 
 export const metadata = {
     description:

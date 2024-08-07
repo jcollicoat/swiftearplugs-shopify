@@ -1,6 +1,6 @@
-import Footer from 'components/layout/footer';
-import Collections from 'components/layout/search/collections';
-import FilterList from 'components/layout/search/filter';
+import Footer from 'components/template/layout/footer';
+import Collections from 'components/template/layout/search/collections';
+import FilterList from 'components/template/layout/search/filter';
 import { sorting } from 'lib/constants';
 
 export default function SearchLayout({

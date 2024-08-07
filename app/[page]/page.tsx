@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { notFound } from 'next/navigation';
-import Prose from 'components/prose';
+import Prose from 'components/template/prose';
 import { getPage } from 'lib/shopify';
 
 export async function generateMetadata({

@@ -22,9 +22,9 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "@components/*": ["library/components/*"],
+            "@components/*": ["components/*"],
             "@images/*": ["public/images/*"],
-            "@styles/*": ["library/styles/*"]
+            "@styles/*": ["styles/*"]
         },
         "typeRoots": ["@types/**/*.ts"]
     },

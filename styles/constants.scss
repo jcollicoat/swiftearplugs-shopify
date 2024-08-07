@@ -1,0 +1,37 @@
+// Constants
+
+$color-pink: rgb(225, 0, 125);
+$color-red: rgb(225, 0, 75);
+$color-text: rgba(0, 0, 0, 0.75);
+
+$breakpoint-s: 400px;
+$breakpoint-m: 800px;
+$breakpoint-l: 1200px;
+$breakpoint-xl: 1600px;
+
+$header-height: 4rem;
+
+$transition-speed: 0.25s;
+$transition-speed-slow: 0.5s;
+$transition: $transition-speed ease-in-out;
+$transition-slow: $transition-speed-slow ease-in-out;
+
+// Mixins
+
+@mixin focus-outline {
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    transition: $transition;
+    transition-property: outline-color;
+
+    &:focus-visible {
+        outline-color: currentColor;
+    }
+}
+
+@mixin gradient-text {
+    background-clip: text;
+    background-image: linear-gradient(135deg, $color-red, $color-pink);
+    color: transparent;
+    padding: 0.1em 0;
+}

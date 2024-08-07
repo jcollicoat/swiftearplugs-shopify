@@ -8,6 +8,7 @@ import { WelcomeToast } from 'components/welcome-toast';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
 import './globals.css';
+import '@styles/layout.scss';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL

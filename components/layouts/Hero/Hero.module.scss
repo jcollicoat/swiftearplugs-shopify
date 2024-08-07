@@ -1,0 +1,60 @@
+@import '@styles/constants.scss';
+
+.wrapper {
+    background-image: linear-gradient(
+            315deg,
+            rgba($color-red, 0.25),
+            rgba($color-red, 0)
+        ),
+        linear-gradient(15deg, rgba($color-pink, 0.05), rgba($color-pink, 0));
+    border-radius: 0 0 var(--padding-s) var(--padding-s);
+    color: $color-red;
+    display: flex;
+    margin-left: calc(var(--padding-s) * -1);
+    margin-bottom: calc(-1 * var(--padding-m));
+    padding: 25vh var(--padding-s) 15vh var(--padding-s);
+    position: relative;
+    width: calc(100% + var(--padding-m));
+
+    svg {
+        position: absolute;
+        top: var(--padding-s);
+        width: clamp(80px, 8rem, 7.5%);
+    }
+
+    .content {
+        margin: auto;
+        max-width: 380px;
+        text-align: center;
+
+        h1 {
+            @include gradient-text;
+
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.1em;
+        }
+
+        h2 {
+            @include gradient-text;
+
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1em;
+        }
+
+        p {
+            color: $color-text;
+        }
+    }
+
+    @media (min-width: $breakpoint-s) {
+        border-radius: var(--padding-s);
+        margin-left: 0;
+        width: 100%;
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: 15vh var(--padding-s);
+    }
+}

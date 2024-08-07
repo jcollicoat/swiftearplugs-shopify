@@ -1,0 +1,119 @@
+// Imports
+
+// @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import './normalize.scss';
+
+@import './constants.scss';
+@import './variables.scss';
+
+* {
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family:
+        'Figtree',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: var(--padding-s);
+    padding-top: 0;
+
+    @media (min-width: $breakpoint-s) {
+        padding-top: var(--padding-s);
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: var(--padding-m);
+    }
+}
+
+header,
+main,
+footer {
+    margin: 0 auto;
+    width: 100%;
+}
+
+main {
+    margin-bottom: var(--padding-l);
+}
+
+a,
+button {
+    color: inherit;
+}
+
+a {
+    @include focus-outline;
+
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p {
+    line-height: 1.25;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        line-height: 1.5;
+    }
+}

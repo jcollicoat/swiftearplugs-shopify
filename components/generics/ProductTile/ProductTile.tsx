@@ -1,11 +1,9 @@
 import { FC } from 'react';
-// import { Product } from './Product/Product';
 import styles from './ProductTile.module.scss';
 
 export const ProductTile: FC = () => {
     return (
         <div className={styles.tile}>
-            {/* <Product /> */}
             <div className={styles.placeholder}></div>
             <div className={styles.content}>
                 <h2>Feel the music, not noise</h2>

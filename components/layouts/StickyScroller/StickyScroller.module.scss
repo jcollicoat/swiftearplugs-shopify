@@ -1,0 +1,49 @@
+@import 'styles/constants.scss';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-l);
+    margin-bottom: var(--padding-l);
+    position: relative;
+
+    .sticky {
+        align-self: flex-start;
+        flex-shrink: 0;
+        padding: 0 var(--padding-s);
+        position: relative;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-l);
+        width: 100%;
+    }
+
+    @media (min-width: $breakpoint-m) {
+        flex-direction: row-reverse;
+        gap: var(--padding-m);
+
+        .sticky {
+            max-width: 40%;
+            padding: 0;
+            padding-right: var(--padding-s);
+            position: sticky;
+            top: var(--padding-s);
+            width: 400px;
+        }
+
+        .content {
+            padding: var(--padding-l) 0;
+        }
+    }
+
+    @media (min-width: $breakpoint-l) {
+        .sticky {
+            width: 500px;
+        }
+    }
+}

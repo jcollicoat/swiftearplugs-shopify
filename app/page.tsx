@@ -1,14 +1,13 @@
-import imageOne from '@images/austin-distel-p9aNTv6wl5I-unsplash.jpg';
-import imageTwo from '@images/pexels-maumascaro-1154189.jpg';
 import { IconContent } from 'components/generics/IconContent/IconContent';
 import { ImageContent } from 'components/generics/ImageContent/ImageContent';
 import { ProductTile } from 'components/generics/ProductTile/ProductTile';
 import { Hero } from 'components/layouts/Hero/Hero';
 import { StickyScroller } from 'components/layouts/StickyScroller/StickyScroller';
 import { WhyChoose } from 'components/layouts/WhyChoose/WhyChoose';
-// import { Carousel } from 'components/template/carousel';
-// import { ThreeItemGrid } from 'components/template/grid/three-items';
-// import Footer from 'components/template/layout/footer';
+import imageOneBlur from 'public/swift-content-1-blur.jpg';
+import imageOne from 'public/swift-content-1.jpg';
+import imageTwoBlur from 'public/swift-content-2-blur.jpg';
+import imageTwo from 'public/swift-content-2.jpg';
 
 export const metadata = {
     description: 'Swift Earplugs bring you closer to the music you love.',
@@ -25,7 +24,7 @@ export default function HomePage() {
                 <ImageContent
                     heading="Designed for comfort and style"
                     image={imageOne.src}
-                    position="25% 80%"
+                    imageBlur={imageOneBlur.src}
                 >
                     <IconContent
                         icon="Earplug"
@@ -53,7 +52,7 @@ export default function HomePage() {
                 <ImageContent
                     heading="Perfect on any night out"
                     image={imageTwo.src}
-                    position="25% 100%"
+                    imageBlur={imageTwoBlur.src}
                 >
                     <IconContent
                         icon="Guitar"

@@ -6,7 +6,7 @@
     gap: var(--padding-s);
 
     .image {
-        aspect-ratio: 16 / 8;
+        aspect-ratio: 16 / 10;
         border-radius: var(--padding-s);
         overflow: hidden;
         position: relative;
@@ -30,6 +30,10 @@
     }
 
     @media (min-width: $breakpoint-m) {
+        .image {
+            aspect-ratio: 16 / 8;
+        }
+
         .content {
             ul {
                 display: grid;

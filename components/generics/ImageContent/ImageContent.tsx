@@ -5,12 +5,14 @@ import styles from './ImageContent.module.scss';
 interface Props {
     heading: string;
     image: string;
+    imageBlur?: string;
     position?: CSSProperties['objectPosition'];
 }
 
 export const ImageContent: FC<PropsWithChildren<Props>> = ({
     heading,
     image,
+    imageBlur,
     position,
     children,
 }) => {
@@ -19,11 +21,13 @@ export const ImageContent: FC<PropsWithChildren<Props>> = ({
             <div className={styles.image}>
                 <Image
                     src={image}
+                    placeholder="blur"
+                    blurDataURL={imageBlur}
                     alt=""
                     fill
                     style={{
                         objectFit: 'cover',
-                        objectPosition: position ?? '25% 80%',
+                        objectPosition: position ?? 'center',
                     }}
                 />
             </div>

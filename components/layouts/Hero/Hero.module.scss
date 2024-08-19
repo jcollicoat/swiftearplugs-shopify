@@ -1,12 +1,7 @@
 @import 'styles/constants.scss';
 
 .wrapper {
-    background-image: linear-gradient(
-            315deg,
-            rgba($color-red, 0.25),
-            rgba($color-red, 0)
-        ),
-        linear-gradient(15deg, rgba($color-pink, 0.05), rgba($color-pink, 0));
+    background-color: $color-red-light;
     border-radius: 0 0 var(--padding-s) var(--padding-s);
     color: $color-red;
     display: flex;

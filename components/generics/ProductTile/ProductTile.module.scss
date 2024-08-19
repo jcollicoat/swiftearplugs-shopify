@@ -2,7 +2,7 @@
 
 .tile {
     background-color: #ffffff;
-    border: 1px solid rgba($color-red, 0.1);
+    border: 1px solid $color-red-light;
     border-radius: var(--padding-s);
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
     width: 100%;
 
     .placeholder {
-        background-color: rgba($color-red, 0.1);
+        background-color: $color-red-light;
         height: 400px;
         width: 100%;
     }

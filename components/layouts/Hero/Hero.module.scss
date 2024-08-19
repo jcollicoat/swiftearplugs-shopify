@@ -3,24 +3,49 @@
 .wrapper {
     background-color: $color-red-light;
     border-radius: 0 0 var(--padding-s) var(--padding-s);
-    color: $color-red;
-    display: flex;
     margin-left: calc(var(--padding-s) * -1);
     margin-bottom: calc(-1 * var(--padding-m));
-    padding: 25vh var(--padding-s) 15vh var(--padding-s);
+    overflow: hidden;
+    padding-bottom: var(--padding-l);
+    padding: 0 0 var(--padding-l) 0;
     position: relative;
     width: calc(100% + var(--padding-m));
 
     svg {
+        color: $color-red;
+        height: 3rem;
         position: absolute;
+        right: var(--padding-s);
         top: var(--padding-s);
-        width: clamp(80px, 8rem, 7.5%);
+        z-index: 2;
+    }
+
+    .image {
+        aspect-ratio: 1 / 1;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+
+        &::after {
+            background: linear-gradient(
+                to bottom,
+                rgba($color-red-light, 0),
+                $color-red-light
+            );
+            bottom: 0;
+            content: '';
+            height: 5rem;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
     }
 
     .content {
         margin: auto;
         max-width: 380px;
         text-align: center;
+        z-index: 3;
 
         h1 {
             @include gradient-text;
@@ -35,7 +60,7 @@
 
             font-size: 1.5rem;
             font-weight: 400;
-            margin-bottom: 1em;
+            margin-bottom: 0.5em;
         }
 
         p {
@@ -50,6 +75,37 @@
     }
 
     @media (min-width: $breakpoint-m) {
-        padding: 15vh var(--padding-s);
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 0;
+        padding-left: var(--padding-s);
+        padding-top: var(--padding-s);
+
+        svg {
+            left: var(--padding-s);
+        }
+
+        .image {
+            max-height: 400px;
+            max-width: 400px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-l) {
+        .image {
+            max-height: 500px;
+            max-width: 500px;
+        }
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        .image {
+            max-height: 600px;
+            max-width: 600px;
+        }
     }
 }

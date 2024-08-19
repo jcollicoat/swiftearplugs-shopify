@@ -53,6 +53,9 @@
 
     @media (min-width: $breakpoint-m) {
         gap: var(--padding-m);
+    }
+
+    @media (min-width: $breakpoint-l) {
         padding: var(--padding-m);
     }
 }

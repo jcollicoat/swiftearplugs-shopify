@@ -18,6 +18,7 @@
         grid-template-columns: 1fr;
 
         .item {
+            background-color: #ffffff;
             border: 1px solid $color-red-light;
             border-radius: var(--padding-s);
             color: $color-red;

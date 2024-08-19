@@ -4,7 +4,7 @@ import styles from './WhyChoose.module.scss';
 
 export const WhyChoose: FC = () => {
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <h2>
                 Why choose
                 <br />
@@ -49,6 +49,6 @@ export const WhyChoose: FC = () => {
                     </p>
                 </li>
             </ul>
-        </div>
+        </section>
     );
 };

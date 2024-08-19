@@ -10,11 +10,11 @@ export const StickyScroller: FC<PropsWithChildren<Props>> = ({
     stickyComponent: StickyComponent,
 }) => {
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <div className={styles.sticky}>
                 <StickyComponent />
             </div>
             <div className={styles.content}>{children}</div>
-        </div>
+        </section>
     );
 };

@@ -2,6 +2,7 @@
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
 // import { Toaster } from 'sonner';
+import { Footer } from 'components/layouts/Footer/Footer';
 import { CartProvider } from 'components/template/cart/cart-context';
 // import { Navbar } from 'components/template/layout/navbar';
 // import { WelcomeToast } from 'components/template/welcome-toast';
@@ -73,6 +74,7 @@ export default async function RootLayout({
                         {/* <Toaster closeButton /> */}
                         {/* <WelcomeToast /> */}
                     </main>
+                    <Footer />
                 </CartProvider>
             </body>
         </html>

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { ProductProvider } from 'components/template/product/product-context';
 import { getProduct } from 'lib/shopify';
-import { ClientLogger } from '../ClientLogger';
+import { ProductImages } from './components/ProductImages';
 import styles from './Product.module.scss';
 
 export const Product: FC = async () => {
@@ -37,9 +37,8 @@ export const Product: FC = async () => {
                     __html: JSON.stringify(productJsonLd),
                 }}
             />
-            <ClientLogger data={product} />
             <div className={styles.product}>
-                <div>{product.variants.map((variant) => variant.title)}</div>
+                <ProductImages product={product} />
             </div>
         </ProductProvider>
     );

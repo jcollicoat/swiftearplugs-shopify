@@ -1,13 +1,12 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
-// import { Toaster } from 'sonner';
 import { Footer } from 'components/layouts/Footer/Footer';
+import { Hero } from 'components/layouts/Hero/Hero';
 import { CartProvider } from 'components/template/cart/cart-context';
-// import { Navbar } from 'components/template/layout/navbar';
-// import { WelcomeToast } from 'components/template/welcome-toast';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
+
 import 'styles/layout.scss';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
@@ -68,12 +67,8 @@ export default async function RootLayout({
             </head>
             <body>
                 <CartProvider cartPromise={cart}>
-                    {/* <Navbar /> */}
-                    <main>
-                        {children}
-                        {/* <Toaster closeButton /> */}
-                        {/* <WelcomeToast /> */}
-                    </main>
+                    <Hero />
+                    <main>{children}</main>
                     <Footer />
                 </CartProvider>
             </body>

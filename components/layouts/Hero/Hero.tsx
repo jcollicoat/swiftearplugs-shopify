@@ -7,7 +7,7 @@ import styles from './Hero.module.scss';
 
 export const Hero: FC = () => {
     return (
-        <div className={styles.wrapper}>
+        <header className={styles.wrapper}>
             <Logo />
             <div className={styles.image}>
                 <Image
@@ -27,6 +27,6 @@ export const Hero: FC = () => {
                     hearing for many years to come.
                 </p>
             </div>
-        </div>
+        </header>
     );
 };

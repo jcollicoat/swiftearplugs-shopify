@@ -1,10 +1,46 @@
 import { FC } from 'react';
+import { ProductProvider } from 'components/template/product/product-context';
+import { getProduct } from 'lib/shopify';
+import { ClientLogger } from '../ClientLogger';
 import styles from './Product.module.scss';
 
-export const Product: FC = () => {
+export const Product: FC = async () => {
+    const product = await getProduct('swift-earplugs');
+
+    if (!product) {
+        return null;
+    }
+
+    const productJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: product.title,
+        description: product.description,
+        image: product.featuredImage.url,
+        offers: {
+            '@type': 'AggregateOffer',
+            availability: product.availableForSale
+                ? 'https://schema.org/InStock'
+                : 'https://schema.org/OutOfStock',
+            priceCurrency: product.priceRange.minVariantPrice.currencyCode,
+            highPrice: product.priceRange.maxVariantPrice.amount,
+            lowPrice: product.priceRange.minVariantPrice.amount,
+        },
+    };
+
     return (
-        <div className={styles.product}>
-            <div></div>
-        </div>
+        <ProductProvider>
+            <script
+                type="application/ld+json"
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(productJsonLd),
+                }}
+            />
+            <ClientLogger data={product} />
+            <div className={styles.product}>
+                <div>{product.variants.map((variant) => variant.title)}</div>
+            </div>
+        </ProductProvider>
     );
 };

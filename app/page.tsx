@@ -1,8 +1,9 @@
 import { IconContent } from 'components/generics/IconContent/IconContent';
 import { ImageContent } from 'components/generics/ImageContent/ImageContent';
 import { ProductTile } from 'components/generics/ProductTile/ProductTile';
-import { StickyScroller } from 'components/layouts/StickyScroller/StickyScroller';
-import { WhyChoose } from 'components/layouts/WhyChoose/WhyChoose';
+import { Hero } from 'components/sections/Hero/Hero';
+import { StickyScroller } from 'components/sections/StickyScroller/StickyScroller';
+import { WhyChoose } from 'components/sections/WhyChoose/WhyChoose';
 import imageOneBlur from 'public/swift-content-1-blur.jpg';
 import imageOne from 'public/swift-content-1.jpg';
 import imageTwoBlur from 'public/swift-content-2-blur.jpg';
@@ -18,6 +19,7 @@ export const metadata = {
 export default function HomePage() {
     return (
         <>
+            <Hero />
             <StickyScroller stickyComponent={ProductTile}>
                 <ImageContent
                     heading="Designed for comfort and style"

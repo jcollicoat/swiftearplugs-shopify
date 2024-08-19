@@ -3,8 +3,8 @@
 .wrapper {
     background-color: $color-red-light;
     border-radius: 0 0 var(--padding-s) var(--padding-s);
-    margin-left: calc(var(--padding-s) * -1);
     margin-bottom: calc(-1 * var(--padding-m));
+    margin-left: calc(var(--padding-s) * -1);
     overflow: hidden;
     padding-bottom: var(--padding-l);
     padding: 0 0 var(--padding-l) 0;

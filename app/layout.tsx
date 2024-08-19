@@ -1,13 +1,11 @@
 /* eslint-disable @next/next/no-page-custom-font */
+import 'styles/layout.scss';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
-import { Footer } from 'components/layouts/Footer/Footer';
-import { Hero } from 'components/layouts/Hero/Hero';
+import { Footer } from 'components/sections/Footer/Footer';
 import { CartProvider } from 'components/template/cart/cart-context';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
-
-import 'styles/layout.scss';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -67,7 +65,6 @@ export default async function RootLayout({
             </head>
             <body>
                 <CartProvider cartPromise={cart}>
-                    <Hero />
                     <main>{children}</main>
                     <Footer />
                 </CartProvider>

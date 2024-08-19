@@ -28,20 +28,10 @@ body {
         'Segoe UI Emoji',
         'Segoe UI Symbol';
     margin: 0 auto;
-    max-width: 1400px;
-    padding: var(--padding-s);
-    padding-top: 0;
-
-    @media (min-width: $breakpoint-s) {
-        padding-top: var(--padding-s);
-    }
-
-    @media (min-width: $breakpoint-m) {
-        padding: var(--padding-m);
-    }
+    max-width: 100%;
+    width: 100%;
 }
 
-header,
 main,
 footer {
     margin: 0 auto;
@@ -50,6 +40,18 @@ footer {
 
 main {
     margin-bottom: var(--padding-l);
+    max-width: 1400px;
+    padding: 0 var(--padding-s);
+
+    @media (min-width: $breakpoint-s) {
+        padding: var(--padding-s);
+        padding-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: var(--padding-m);
+        padding-bottom: 0;
+    }
 }
 
 a,

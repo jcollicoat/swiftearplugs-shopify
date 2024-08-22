@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { Logo } from 'components/generics/Logo/Logo';
-import caseImage from 'public/case-matte-black.png';
-import earplugLeft from 'public/earplug-lilac-purple-1.png';
-import earplugRight from 'public/earplug-rose-gold-2.png';
-import imageBlur from 'public/swift-hero-1-blur.jpg';
-import image from 'public/swift-hero-1.jpg';
+import casePurple from 'public/case-lilac-purple.png';
+import earplugPurple from 'public/earplug-lilac-purple-1.png';
+import earplugBlack from 'public/earplug-matte-black-1.png';
+import earplugRose from 'public/earplug-rose-gold-2.png';
+import imageSmallBlur from 'public/swift-hero-1-blur.jpg';
+import imageSmall from 'public/swift-hero-1.jpg';
+import imageLargeBlur from 'public/swift-hero-2-blur.jpg';
+import imageLarge from 'public/swift-hero-2.jpg';
 import styles from './Hero.module.scss';
 
 export const Hero: FC = () => {
@@ -14,37 +17,54 @@ export const Hero: FC = () => {
             <Logo />
             <div className={styles.image}>
                 <Image
-                    src={image.src}
-                    blurDataURL={imageBlur.src}
+                    src={imageSmall.src}
+                    blurDataURL={imageSmallBlur.src}
                     placeholder="blur"
                     alt=""
                     fill
+                    className={styles.imageSmall}
+                />
+                <Image
+                    src={imageLarge.src}
+                    blurDataURL={imageLargeBlur.src}
+                    placeholder="blur"
+                    alt=""
+                    fill
+                    className={styles.imageLarge}
                 />
             </div>
             <div className={styles.content}>
                 <Image
-                    src={caseImage.src}
+                    src={casePurple.src}
                     width={150}
                     height={150}
                     placeholder="empty"
                     alt=""
-                    className={styles.case}
+                    className={styles.casePurple}
                 />
                 <Image
-                    src={earplugLeft.src}
+                    src={earplugPurple.src}
                     width={50}
                     height={50}
                     placeholder="empty"
                     alt=""
-                    className={styles.earplugLeft}
+                    className={styles.earplugPurple}
                 />
                 <Image
-                    src={earplugRight.src}
+                    src={earplugBlack.src}
                     width={50}
                     height={50}
                     placeholder="empty"
                     alt=""
-                    className={styles.earplugRight}
+                    className={styles.earplugBlack}
+                />
+                <Image
+                    src={earplugRose.src}
+                    width={50}
+                    height={50}
+                    placeholder="empty"
+                    alt=""
+                    className={styles.earplugRose}
                 />
                 <h1>Dance, laugh, and live loudly.</h1>
                 <h2>Swift&nbsp;Earplugs have you covered.</h2>

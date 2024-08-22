@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { Logo } from 'components/generics/Logo/Logo';
+import caseImage from 'public/case-matte-black.png';
+import earplug1 from 'public/earplug-matte-black-1.png';
+import earplug2 from 'public/earplug-matte-black-2.png';
 import imageBlur from 'public/swift-hero-1-blur.jpg';
 import image from 'public/swift-hero-1.jpg';
 import styles from './Hero.module.scss';
@@ -19,6 +22,30 @@ export const Hero: FC = () => {
                 />
             </div>
             <div className={styles.content}>
+                <Image
+                    src={caseImage.src}
+                    width={150}
+                    height={150}
+                    placeholder="empty"
+                    alt=""
+                    className={styles.case}
+                />
+                <Image
+                    src={earplug1.src}
+                    width={50}
+                    height={50}
+                    placeholder="empty"
+                    alt=""
+                    className={styles.earplugLeft}
+                />
+                <Image
+                    src={earplug2.src}
+                    width={50}
+                    height={50}
+                    placeholder="empty"
+                    alt=""
+                    className={styles.earplugRight}
+                />
                 <h1>Dance, laugh, and live loudly.</h1>
                 <h2>Swift&nbsp;Earplugs have you covered.</h2>
                 <p>

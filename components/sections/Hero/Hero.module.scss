@@ -10,6 +10,7 @@
     padding: 0 0 var(--padding-l) 0;
     position: relative;
     width: calc(100% + var(--padding-m));
+    z-index: 1;
 
     svg {
         color: $color-red;
@@ -45,8 +46,39 @@
         margin: auto;
         max-width: 380px;
         padding: 0 var(--padding-s);
+        position: relative;
         text-align: center;
         z-index: 3;
+
+        img {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .case {
+            bottom: -110px;
+            right: -80px;
+            transform: rotate(-90deg);
+            filter: drop-shadow(-100px -40px 40px rgba(0, 0, 0, 0.25));
+        }
+
+        .earplugLeft {
+            bottom: 40%;
+            left: -40px;
+            filter: drop-shadow(-50px 50px 20px rgba(0, 0, 0, 0.25));
+        }
+
+        .earplugRight {
+            right: -20px;
+            top: -20px;
+            filter: drop-shadow(-30px 60px 20px rgba(0, 0, 0, 0.25));
+        }
+
+        :not(img) {
+            position: relative;
+            z-index: 2;
+        }
 
         h1 {
             @include gradient-text;
@@ -76,6 +108,10 @@
 
         .content {
             padding: 0;
+
+            img {
+                display: block;
+            }
 
             h2 {
                 font-size: 1.5rem;

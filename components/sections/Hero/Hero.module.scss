@@ -156,7 +156,9 @@
                 display: none;
             }
         }
+    }
 
+    @media (min-width: 1000px) {
         .content {
             .casePurple {
                 display: block;

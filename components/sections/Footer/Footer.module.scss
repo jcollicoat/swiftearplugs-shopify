@@ -10,6 +10,8 @@
     display: flex;
     margin-top: -10rem;
     padding: 20rem 0 var(--padding-l) 0;
+    position: relative;
+    z-index: 0;
 
     svg {
         height: 3rem;

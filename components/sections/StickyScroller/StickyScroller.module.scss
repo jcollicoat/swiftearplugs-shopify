@@ -6,6 +6,7 @@
     gap: var(--padding-l);
     margin-bottom: var(--padding-l);
     position: relative;
+    z-index: 1;
 
     .sticky {
         align-self: flex-start;

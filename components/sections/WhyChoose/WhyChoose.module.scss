@@ -5,6 +5,8 @@
     display: grid;
     gap: var(--padding-m);
     grid-template-columns: 1fr;
+    position: relative;
+    z-index: 1;
 
     h2 {
         @include gradient-text;

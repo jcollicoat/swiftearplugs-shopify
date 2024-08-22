@@ -57,6 +57,14 @@ export const Footer: FC = () => {
                 className={styles.earplugPurple2}
             />
             <Image
+                src={earplugPurple1.src}
+                width={50}
+                height={50}
+                placeholder="empty"
+                alt=""
+                className={styles.earplugPurple3}
+            />
+            <Image
                 src={earplugBlack1.src}
                 width={50}
                 height={50}
@@ -79,6 +87,14 @@ export const Footer: FC = () => {
                 placeholder="empty"
                 alt=""
                 className={styles.earplugBlack3}
+            />
+            <Image
+                src={earplugBlack1.src}
+                width={50}
+                height={50}
+                placeholder="empty"
+                alt=""
+                className={styles.earplugBlack4}
             />
             <Image
                 src={earplugRose1.src}

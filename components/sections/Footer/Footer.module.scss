@@ -52,6 +52,10 @@
         right: 20px;
     }
 
+    .earplugPurple3 {
+        display: none;
+    }
+
     .earplugBlack1 {
         bottom: 230px;
         right: 40%;
@@ -63,6 +67,10 @@
     }
 
     .earplugBlack3 {
+        display: none;
+    }
+
+    .earplugBlack4 {
         display: none;
     }
 
@@ -168,6 +176,66 @@
             bottom: 130px;
             left: unset;
             right: 30%;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        margin-top: -15rem;
+        padding-top: 25rem;
+
+        .casePurple {
+            left: 5%;
+        }
+
+        .caseBlack {
+            bottom: 300px;
+            left: 20%;
+        }
+
+        .caseRose {
+            bottom: 20px;
+            right: 10%;
+        }
+
+        .earplugPurple1 {
+            bottom: 240px;
+            left: 7.5%;
+        }
+
+        .earplugPurple2 {
+            right: 32.5%;
+            bottom: 300px;
+        }
+
+        .earplugPurple3 {
+            display: block;
+            bottom: -20px;
+            right: 35%;
+        }
+
+        .earplugBlack1 {
+            bottom: 140px;
+            left: 17.5%;
+        }
+
+        .earplugBlack3 {
+            bottom: 200px;
+        }
+
+        .earplugBlack4 {
+            display: block;
+            transform: scaleX(-100%);
+            bottom: -15px;
+            left: 30%;
+        }
+
+        .earplugRose1 {
+            bottom: 200px;
+            left: 40%;
+        }
+
+        .earplugRose3 {
+            bottom: 400px;
         }
     }
 }

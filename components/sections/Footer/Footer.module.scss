@@ -9,6 +9,7 @@
     color: $color-red;
     display: flex;
     margin-top: -10rem;
+    overflow: hidden;
     padding: 20rem 0 var(--padding-l) 0;
     position: relative;
     z-index: 0;
@@ -16,5 +17,84 @@
     svg {
         height: 3rem;
         margin: auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    img {
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .casePurple {
+        display: none;
+    }
+
+    .caseBlack {
+        bottom: -20px;
+        left: -10px;
+        transform: rotate(-15deg);
+    }
+
+    .caseRose {
+        bottom: 140px;
+        right: -30px;
+        transform: rotate(-90deg);
+    }
+
+    .earplugPurple1 {
+        top: 90px;
+    }
+
+    .earplugPurple2 {
+        bottom: 30px;
+        right: 5%;
+    }
+
+    .earplugBlack1 {
+        top: 140px;
+        right: 40%;
+    }
+
+    .earplugBlack2 {
+        top: 20px;
+        right: -20px;
+    }
+
+    .earplugRose1 {
+        top: 220px;
+        left: 15%;
+    }
+
+    .earplugRose2 {
+        bottom: -10px;
+        right: 35%;
+    }
+
+    @media (min-width: $breakpoint-s) {
+        .earplugRose1 {
+            left: 25%;
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        .casePurple {
+            display: block;
+            left: 35%;
+            top: 90px;
+        }
+
+        .caseRose {
+            right: -10px;
+        }
+
+        .earplugBlack1 {
+            right: 25%;
+        }
+
+        .earplugRose1 {
+            left: 15%;
+        }
     }
 }

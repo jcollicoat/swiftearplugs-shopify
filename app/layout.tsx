@@ -51,7 +51,7 @@ export default async function RootLayout({
     return (
         <html lang="en">
             <head>
-                <link rel="icon" href="../public/favicon.ico" key="" />
+                <link rel="icon" href="./favicon.ico" key="" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     rel="preconnect"

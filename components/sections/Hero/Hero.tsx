@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { Logo } from 'components/generics/Logo/Logo';
 import caseImage from 'public/case-matte-black.png';
-import earplug1 from 'public/earplug-matte-black-1.png';
-import earplug2 from 'public/earplug-matte-black-2.png';
+import earplugLeft from 'public/earplug-lilac-purple-1.png';
+import earplugRight from 'public/earplug-rose-gold-2.png';
 import imageBlur from 'public/swift-hero-1-blur.jpg';
 import image from 'public/swift-hero-1.jpg';
 import styles from './Hero.module.scss';
@@ -31,7 +31,7 @@ export const Hero: FC = () => {
                     className={styles.case}
                 />
                 <Image
-                    src={earplug1.src}
+                    src={earplugLeft.src}
                     width={50}
                     height={50}
                     placeholder="empty"
@@ -39,7 +39,7 @@ export const Hero: FC = () => {
                     className={styles.earplugLeft}
                 />
                 <Image
-                    src={earplug2.src}
+                    src={earplugRight.src}
                     width={50}
                     height={50}
                     placeholder="empty"

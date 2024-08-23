@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { ProductProvider } from 'components/template/product/product-context';
+import { ProductDescription } from 'components/template/product/product-description';
 import { getProduct } from 'lib/shopify';
 import { ProductImages } from './components/ProductImages';
 import styles from './Product.module.scss';
@@ -39,6 +40,7 @@ export const Product: FC = async () => {
             />
             <div className={styles.product}>
                 <ProductImages product={product} />
+                <ProductDescription product={product} />
             </div>
         </ProductProvider>
     );

@@ -49,41 +49,36 @@
     .content {
         margin: auto;
         max-width: 380px;
-        padding: 0 var(--padding-s);
+        padding: var(--padding-m) var(--padding-s);
         position: relative;
         text-align: center;
         z-index: 3;
 
         img {
-            display: none;
             position: absolute;
             z-index: 1;
         }
 
         .casePurple {
-            bottom: -110px;
-            right: -80px;
-            transform: rotate(-90deg);
-            filter: drop-shadow(-100px -30px 40px rgba(0, 0, 0, 0.25));
             display: none;
         }
 
         .earplugPurple {
-            bottom: 40%;
-            left: -50px;
-            filter: drop-shadow(-50px 50px 20px rgba(0, 0, 0, 0.25));
+            bottom: 5px;
+            left: -10px;
+            filter: drop-shadow(-20px 50px 20px rgba(0, 0, 0, 0.2));
         }
 
         .earplugBlack {
-            bottom: -10px;
-            right: -50px;
-            filter: drop-shadow(-10px 60px 20px rgba(0, 0, 0, 0.25));
+            bottom: -20px;
+            right: -5px;
+            filter: drop-shadow(10px 50px 20px rgba(0, 0, 0, 0.2));
         }
 
         .earplugRose {
-            right: -20px;
-            top: -20px;
-            filter: drop-shadow(-20px 60px 20px rgba(0, 0, 0, 0.25));
+            right: 15px;
+            top: -10px;
+            filter: drop-shadow(20px 50px 20px rgba(0, 0, 0, 0.2));
         }
 
         :not(img) {
@@ -118,10 +113,25 @@
         width: 100%;
 
         .content {
-            padding: 0;
+            padding: var(--padding-m) 0;
 
             img {
                 display: block;
+            }
+
+            .earplugPurple {
+                bottom: -15px;
+                left: -30px;
+            }
+
+            .earplugBlack {
+                bottom: -30px;
+                right: -10px;
+            }
+
+            .earplugRose {
+                right: 15px;
+                top: -5px;
             }
 
             h2 {
@@ -156,12 +166,33 @@
                 display: none;
             }
         }
+
+        .content {
+            .earplugPurple {
+                bottom: 40%;
+                left: -30px;
+            }
+
+            .earplugBlack {
+                bottom: -20px;
+                right: 0px;
+            }
+
+            .earplugRose {
+                right: -10px;
+                top: 0px;
+            }
+        }
     }
 
     @media (min-width: 1000px) {
         .content {
             .casePurple {
                 display: block;
+                bottom: -80px;
+                right: -80px;
+                transform: rotate(-90deg);
+                filter: drop-shadow(-100px 20px 40px rgba(0, 0, 0, 0.25));
             }
 
             .earplugPurple {
@@ -171,7 +202,7 @@
             .earplugBlack {
                 bottom: 40%;
                 left: -50px;
-                filter: drop-shadow(-50px 50px 20px rgba(0, 0, 0, 0.25));
+                filter: drop-shadow(-20px 50px 20px rgba(0, 0, 0, 0.2));
             }
         }
     }

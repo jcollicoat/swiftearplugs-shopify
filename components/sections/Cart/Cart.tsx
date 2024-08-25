@@ -50,7 +50,6 @@ const CartOpen: FC = () => {
 
 export const Cart: FC = () => {
     const { cart } = useCart();
-    console.log('Cart', cart);
     const [isOpen, setIsOpen] = useState(false);
     const openCart = () => setIsOpen(true);
     const closeCart = () => setIsOpen(false);

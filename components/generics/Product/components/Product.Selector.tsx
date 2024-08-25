@@ -2,8 +2,7 @@
 
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import {
     useProduct,
     useUpdateURL,
@@ -17,19 +16,17 @@ interface Props {
 }
 
 export const ProductSelector: FC<Props> = ({ variants, images }) => {
-    const { updateOption } = useProduct();
+    const { state, updateOption } = useProduct();
     const updateURL = useUpdateURL();
 
-    const searchParams = useSearchParams();
-    const selectedColor = searchParams.get('color');
-
-    if (!selectedColor) {
-        const firstAvailable = variants.find(
-            (variant) => variant.availableForSale,
-        );
-        const defaultState = updateOption('color', firstAvailable?.title ?? '');
-        updateURL(defaultState);
-    }
+    useEffect(() => {
+        if (!state.color) {
+            const firstAvailable = variants.find(
+                (variant) => variant.availableForSale,
+            );
+            updateURL({ color: firstAvailable?.title ?? '' });
+        }
+    }, [state, updateURL, variants]);
 
     return (
         <form className={styles.selector}>
@@ -38,7 +35,7 @@ export const ProductSelector: FC<Props> = ({ variants, images }) => {
                     image.altText.includes(variant.title),
                 );
                 const isAvailable = variant.availableForSale;
-                const isSelected = searchParams.get('color') === image?.altText;
+                const isSelected = state.color === image?.altText;
 
                 return (
                     <div className={styles.option} key={variant.id}>

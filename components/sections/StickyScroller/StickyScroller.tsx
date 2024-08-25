@@ -8,6 +8,7 @@ export const StickyScroller: FC<PropsWithChildren> = ({ children }) => {
             <div className={styles.sticky}>
                 <div className={styles.tile}>
                     <Product />
+                    <hr />
                     <div className={styles.content}>
                         <h2>Feel the music, not noise</h2>
                         <ul>

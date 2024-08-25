@@ -57,6 +57,11 @@ main {
 a,
 button {
     color: inherit;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 a {

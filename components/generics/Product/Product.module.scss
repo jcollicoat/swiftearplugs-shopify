@@ -20,8 +20,6 @@
     .option {
         color: $color-text;
         display: grid;
-        gap: 8px;
-        font-size: 0.9em;
         text-align: center;
 
         button {
@@ -45,6 +43,16 @@
             img {
                 border-radius: 2px;
             }
+        }
+
+        .title {
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+
+        .outOfStock {
+            font-size: 0.75em;
+            margin-top: 2px;
         }
     }
 }

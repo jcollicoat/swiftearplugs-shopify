@@ -63,7 +63,12 @@ export const ProductSelector: FC<Props> = ({ variants, images }) => {
                                 fill
                             />
                         </button>
-                        <span>{variant.title}</span>
+                        <span className={styles.title}>{variant.title}</span>
+                        {!isAvailable && (
+                            <span className={styles.outOfStock}>
+                                Out of stock
+                            </span>
+                        )}
                     </div>
                 );
             })}

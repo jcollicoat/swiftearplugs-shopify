@@ -2,6 +2,7 @@
 
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
+import { Cost } from 'components/generics/Cost/Cost';
 import { addItem } from 'components/template/cart/actions';
 import { useCart } from 'components/template/cart/cart-context';
 import { useProduct } from 'components/template/product/product-context';
@@ -39,10 +40,10 @@ export const ProductAddToCart: FC<{ product: Product }> = ({ product }) => {
                 await actionWithVariant();
             }}
         >
-            <div className={styles.price}>
-                ${finalVariant.price.amount}
-                <span> {finalVariant.price.currencyCode}</span>
-            </div>
+            <Cost
+                value={finalVariant.price.amount}
+                currency={finalVariant.price.currencyCode}
+            />
             <button>Add to cart</button>
             <p aria-live="polite" className="sr-only" role="status">
                 {message}

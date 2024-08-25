@@ -1,6 +1,8 @@
 @import 'styles/constants.scss';
 
 .product {
+    display: grid;
+    gap: var(--padding-s);
     width: 100%;
 }
 
@@ -8,4 +10,41 @@
     aspect-ratio: 1 / 1;
     position: relative;
     width: 100%;
+}
+
+.selector {
+    display: grid;
+    gap: var(--padding-s);
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .option {
+        color: $color-text;
+        display: grid;
+        gap: 8px;
+        font-size: 0.9em;
+        text-align: center;
+
+        button {
+            aspect-ratio: 1 / 1;
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+            outline: 2px solid rgba(0, 0, 0, 0.25);
+            position: relative;
+            transition: outline-color $transition;
+            width: 100%;
+
+            &.selected {
+                outline-color: $color-pink;
+            }
+
+            &:disabled {
+                filter: grayscale(1);
+                opacity: 0.5;
+            }
+
+            img {
+                border-radius: 2px;
+            }
+        }
+    }
 }

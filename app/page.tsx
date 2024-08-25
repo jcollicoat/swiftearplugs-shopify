@@ -1,6 +1,5 @@
 import { IconContent } from 'components/generics/IconContent/IconContent';
 import { ImageContent } from 'components/generics/ImageContent/ImageContent';
-import { ProductTile } from 'components/generics/ProductTile/ProductTile';
 import { Hero } from 'components/sections/Hero/Hero';
 import { StickyScroller } from 'components/sections/StickyScroller/StickyScroller';
 import { WhyChoose } from 'components/sections/WhyChoose/WhyChoose';
@@ -20,7 +19,7 @@ export default function HomePage() {
     return (
         <>
             <Hero />
-            <StickyScroller stickyComponent={ProductTile}>
+            <StickyScroller>
                 <ImageContent
                     heading="Designed for comfort and style"
                     image={imageOne.src}

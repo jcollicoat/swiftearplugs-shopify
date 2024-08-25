@@ -14,9 +14,61 @@
         position: relative;
         width: 100%;
         z-index: 2;
+
+        .tile {
+            background-color: #ffffff;
+            border: 1px solid $color-red-light;
+            border-radius: var(--padding-s);
+            display: flex;
+            flex-direction: column;
+            gap: var(--padding-s);
+            padding: var(--padding-s);
+            width: 100%;
+
+            .placeholder {
+                background-color: $color-red-light;
+                height: 400px;
+                width: 100%;
+            }
+
+            .content {
+                h2 {
+                    @include gradient-text;
+
+                    display: inline-block;
+                    font-size: 2rem;
+                    margin-bottom: var(--padding-s);
+                }
+
+                ul {
+                    li {
+                        margin-bottom: var(--padding-s);
+
+                        h3 {
+                            align-items: center;
+                            color: $color-red;
+                            display: flex;
+                            gap: 0.25em;
+                            margin-bottom: 0.25em;
+
+                            svg {
+                                display: inline;
+                                height: 1.15em;
+                                width: 1.15em;
+                            }
+                        }
+
+                        p {
+                            color: $color-text;
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    .content {
+    .main {
         display: flex;
         flex-direction: column;
         gap: var(--padding-l);
@@ -26,6 +78,10 @@
     @media (min-width: $breakpoint-s) {
         .sticky {
             padding: 0 var(--padding-s);
+
+            .tile {
+                gap: var(--padding-m);
+            }
         }
     }
 
@@ -50,6 +106,10 @@
     @media (min-width: $breakpoint-l) {
         .sticky {
             width: 500px;
+
+            .tile {
+                padding: var(--padding-m);
+            }
         }
     }
 }

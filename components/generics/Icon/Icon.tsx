@@ -10,9 +10,9 @@ const Check: FC = () => (
 
 const Colors: FC = () => (
     <div className={styles.colors}>
-        <span className={styles.gold}></span>
-        <span className={styles.purple}></span>
-        <span className={styles.black}></span>
+        <span className={styles.roseGold}></span>
+        <span className={styles.lilacPurple}></span>
+        <span className={styles.matteBlack}></span>
     </div>
 );
 

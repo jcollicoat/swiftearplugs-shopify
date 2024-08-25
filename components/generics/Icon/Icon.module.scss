@@ -13,16 +13,16 @@
         width: 1.5rem;
     }
 
-    .gold {
-        background-color: lighten($color: #f3584a, $amount: 10);
+    .roseGold {
+        background-color: lighten($color: #f56169, $amount: 10);
     }
 
-    .purple {
+    .lilacPurple {
         background-color: lighten($color: #bf28ed, $amount: 15);
         transform: translateX(-25%);
     }
 
-    .black {
+    .matteBlack {
         background-color: lighten($color: #000000, $amount: 25);
         transform: translateX(-50%);
     }

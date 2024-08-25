@@ -2,9 +2,9 @@
 import 'styles/layout.scss';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
+import { Cart } from 'components/sections/Cart/Cart';
 import { Footer } from 'components/sections/Footer/Footer';
 import { CartProvider } from 'components/template/cart/cart-context';
-import CartModal from 'components/template/cart/modal';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
 
@@ -46,6 +46,7 @@ export default async function RootLayout({
     children: ReactNode;
 }) {
     const cartId = cookies().get('cartId')?.value;
+    // Instantiate cart (from modal)
     // Don't await the fetch, pass the Promise to the context provider
     const cart = getCart(cartId);
 
@@ -68,7 +69,7 @@ export default async function RootLayout({
                 <CartProvider cartPromise={cart}>
                     <main>{children}</main>
                     <Footer />
-                    <CartModal />
+                    <Cart />
                 </CartProvider>
             </body>
         </html>

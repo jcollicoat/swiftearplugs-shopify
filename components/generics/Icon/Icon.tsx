@@ -126,8 +126,7 @@ export const Icon: FC<Props> = ({ icon, strokeWidth = '2' }) => {
     let Glyph = undefined;
     switch (icon) {
         case 'Colors':
-            Glyph = Colors;
-            return <Glyph />;
+            return <Colors />;
         case 'Check':
             Glyph = Check;
             break;

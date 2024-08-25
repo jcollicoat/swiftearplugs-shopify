@@ -6,10 +6,9 @@ import styles from '../Cart.module.scss';
 interface Props {
     isOpen: boolean;
     openCart: () => void;
-    closeCart: () => void;
 }
 
-export const CartSummary: FC<Props> = ({ isOpen, openCart, closeCart }) => {
+export const CartSummary: FC<Props> = ({ isOpen, openCart }) => {
     const { cart } = useCart();
 
     if (!cart) {
@@ -36,7 +35,12 @@ export const CartSummary: FC<Props> = ({ isOpen, openCart, closeCart }) => {
             {!isOpen ? (
                 <button onClick={openCart}>View cart</button>
             ) : (
-                <button onClick={closeCart}>Close cart</button>
+                <button
+                    onClick={() => alert('Checkout to come!')}
+                    className={styles.checkout}
+                >
+                    Checkout
+                </button>
             )}
         </div>
     );

@@ -37,11 +37,7 @@ export const Cart: FC = () => {
                     <hr />
                 </>
             )}
-            <CartSummary
-                isOpen={isOpen}
-                openCart={openCart}
-                closeCart={closeCart}
-            />
+            <CartSummary isOpen={isOpen} openCart={openCart} />
         </div>
     );
 };

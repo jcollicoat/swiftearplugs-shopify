@@ -113,6 +113,8 @@
         border: 2px solid $color-text;
         border-radius: 4px;
         color: $color-text;
+        display: flex;
+        gap: 4px;
         padding: calc(var(--padding-s) / 1.5) var(--padding-s);
         text-align: center;
 
@@ -124,6 +126,15 @@
             );
             border-color: transparent;
             color: #ffffff;
+        }
+
+        svg {
+            height: 1em;
+            width: 1em;
+        }
+
+        span {
+            white-space: nowrap;
         }
     }
 }

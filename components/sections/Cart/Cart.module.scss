@@ -4,15 +4,15 @@
     bottom: 0;
     max-width: 1400px;
     position: fixed;
-    right: var(--padding-s);
-    width: calc(100% - (var(--padding-s) * 2));
+    right: $padding-s;
+    width: calc(100% - ($padding-s * 2));
     z-index: 10;
 
     .modal {
         background-color: #ffffff;
         border: 1px solid $color-red-light;
-        border-radius: var(--padding-s);
-        bottom: var(--padding-s);
+        border-radius: $padding-s;
+        bottom: $padding-s;
         box-shadow:
             0px 1px 2px rgba(black, 0.1),
             0px 2px 4px rgba(black, 0.1),
@@ -21,9 +21,9 @@
             0px 16px 32px rgba(black, 0.1),
             0px 32px 64px rgba(black, 0.1);
         display: grid;
-        gap: var(--padding-s);
+        gap: $padding-s;
         max-width: 400px;
-        padding: var(--padding-s);
+        padding: $padding-s;
         position: absolute;
         right: 0px;
         width: 100%;
@@ -35,18 +35,17 @@
     }
 
     @media (min-width: $breakpoint-m) {
-        right: var(--padding-m);
+        right: $padding-m;
     }
 
-    @media (min-width: calc(1400px + 4rem)) {
-        // 4rem is --padding-m * 2
-        right: calc((100vw - 1400px + (var(--padding-m) * 2)) / 2);
+    @media (min-width: 1400px) {
+        right: calc((100vw - 1400px + ($padding-m * 2)) / 2);
     }
 }
 
 .items {
     display: grid;
-    gap: var(--padding-s);
+    gap: $padding-s;
     grid-template-columns: 1fr;
 }
 
@@ -115,7 +114,7 @@
         color: $color-text;
         display: flex;
         gap: 4px;
-        padding: calc(var(--padding-s) / 1.5) var(--padding-s);
+        padding: calc($padding-s / 1.5) $padding-s;
         text-align: center;
 
         &.checkout {

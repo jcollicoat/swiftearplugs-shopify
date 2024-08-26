@@ -2,22 +2,22 @@
 
 .wrapper {
     background-color: $color-red-light;
-    border-radius: 0 0 var(--padding-s) var(--padding-s);
-    margin-bottom: calc(-1 * var(--padding-m));
-    margin-left: calc(var(--padding-s) * -1);
+    border-radius: 0 0 $padding-s $padding-s;
+    margin-bottom: calc(-1 * $padding-m);
+    margin-left: calc($padding-s * -1);
     overflow: hidden;
-    padding-bottom: var(--padding-l);
-    padding: 0 0 var(--padding-l) 0;
+    padding-bottom: $padding-l;
+    padding: 0 0 $padding-l 0;
     position: relative;
-    width: calc(100% + var(--padding-m));
+    width: calc(100% + $padding-m);
     z-index: 1;
 
     svg {
         color: $color-red;
         height: 3rem;
         position: absolute;
-        right: var(--padding-s);
-        top: var(--padding-s);
+        right: $padding-s;
+        top: $padding-s;
         z-index: 2;
     }
 
@@ -49,7 +49,7 @@
     .content {
         margin: auto;
         max-width: 380px;
-        padding: var(--padding-m) var(--padding-s);
+        padding: $padding-m $padding-s;
         position: relative;
         text-align: center;
         z-index: 3;
@@ -108,12 +108,12 @@
     }
 
     @media (min-width: $breakpoint-s) {
-        border-radius: var(--padding-s);
+        border-radius: $padding-s;
         margin-left: 0;
         width: 100%;
 
         .content {
-            padding: var(--padding-m) 0;
+            padding: $padding-m 0;
 
             img {
                 display: block;
@@ -144,10 +144,10 @@
         display: flex;
         flex-direction: row-reverse;
         padding-bottom: 0;
-        padding-left: var(--padding-s);
+        padding-left: $padding-s;
 
         svg {
-            left: var(--padding-s);
+            left: $padding-s;
         }
 
         .image {

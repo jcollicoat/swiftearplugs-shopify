@@ -3,7 +3,7 @@
 .wrapper {
     align-items: center;
     display: grid;
-    gap: var(--padding-m);
+    gap: $padding-m;
     grid-template-columns: 1fr;
     position: relative;
     z-index: 1;
@@ -16,15 +16,15 @@
 
     .grid {
         display: grid;
-        gap: var(--padding-s);
+        gap: $padding-s;
         grid-template-columns: 1fr;
 
         .item {
             background-color: #ffffff;
             border: 1px solid $color-red-light;
-            border-radius: var(--padding-s);
+            border-radius: $padding-s;
             color: $color-red;
-            padding: var(--padding-s);
+            padding: $padding-s;
             text-align: center;
 
             svg {
@@ -51,7 +51,7 @@
     }
 
     @media (min-width: 1000px) {
-        gap: var(--padding-l);
+        gap: $padding-l;
         grid-template-columns: auto 1fr;
     }
 }

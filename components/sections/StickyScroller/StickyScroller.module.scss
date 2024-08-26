@@ -3,8 +3,8 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--padding-l);
-    margin-bottom: var(--padding-l);
+    gap: $padding-l;
+    margin-bottom: $padding-l;
     position: relative;
     z-index: 1;
 
@@ -18,11 +18,11 @@
         .tile {
             background-color: #ffffff;
             border: 1px solid $color-red-light;
-            border-radius: var(--padding-s);
+            border-radius: $padding-s;
             display: flex;
             flex-direction: column;
-            gap: var(--padding-s);
-            padding: var(--padding-s);
+            gap: $padding-s;
+            padding: $padding-s;
             width: 100%;
 
             hr {
@@ -36,12 +36,12 @@
 
                     display: inline-block;
                     font-size: 2rem;
-                    margin-bottom: var(--padding-s);
+                    margin-bottom: $padding-s;
                 }
 
                 ul {
                     li {
-                        margin-bottom: var(--padding-s);
+                        margin-bottom: $padding-s;
 
                         h3 {
                             align-items: center;
@@ -70,35 +70,35 @@
     .main {
         display: flex;
         flex-direction: column;
-        gap: var(--padding-l);
+        gap: $padding-l;
         width: 100%;
     }
 
     @media (min-width: $breakpoint-s) {
         .sticky {
-            padding: 0 var(--padding-s);
+            padding: 0 $padding-s;
 
             .tile {
-                gap: var(--padding-m);
+                gap: $padding-m;
             }
         }
     }
 
     @media (min-width: $breakpoint-m) {
         flex-direction: row-reverse;
-        gap: var(--padding-m);
+        gap: $padding-m;
 
         .sticky {
             max-width: 40%;
             padding: 0;
-            padding-right: var(--padding-s);
+            padding-right: $padding-s;
             position: sticky;
-            top: var(--padding-s);
+            top: $padding-s;
             width: 400px;
         }
 
         .main {
-            padding: var(--padding-l) 0;
+            padding: $padding-l 0;
         }
     }
 
@@ -107,7 +107,7 @@
             width: 500px;
 
             .tile {
-                padding: var(--padding-m);
+                padding: $padding-m;
             }
         }
     }

@@ -1,11 +1,9 @@
 // Imports
 
-// @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
-
 @import './normalize.scss';
-
 @import './constants.scss';
-@import './variables.scss';
+
+// Global rules
 
 * {
     box-sizing: border-box;
@@ -39,17 +37,17 @@ footer {
 }
 
 main {
-    margin-bottom: var(--padding-l);
+    margin-bottom: $padding-l;
     max-width: 1400px;
-    padding: 0 var(--padding-s);
+    padding: 0 $padding-s;
 
     @media (min-width: $breakpoint-s) {
-        padding: var(--padding-s);
+        padding: $padding-s;
         padding-bottom: 0;
     }
 
     @media (min-width: $breakpoint-m) {
-        padding: var(--padding-m);
+        padding: $padding-m;
         padding-bottom: 0;
     }
 }

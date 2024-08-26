@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import { Cost } from 'components/generics/Cost/Cost';
 import { Icon } from 'components/generics/Icon/Icon';
+import { redirectToCheckout } from 'components/template/cart/actions';
 import { useCart } from 'components/template/cart/cart-context';
 import styles from '../Cart.module.scss';
+import { CartCheckout } from './Cart.Checkout';
 
 interface Props {
     toggleCart: () => void;
@@ -50,15 +52,9 @@ export const CartSummary: FC<Props> = ({ toggleCart }) => {
                         <Icon icon="Cart" />
                     </button>
                 )}
-                <button
-                    className={styles.checkout}
-                    onClick={() => alert('Checkout to come!')}
-                    disabled={checkoutDisabled}
-                    aria-disabled={checkoutDisabled}
-                >
-                    <span>Checkout</span>
-                    <Icon icon="Arrow" />
-                </button>
+                <form action={redirectToCheckout}>
+                    <CartCheckout checkoutDisabled={checkoutDisabled} />
+                </form>
             </div>
         </div>
     );

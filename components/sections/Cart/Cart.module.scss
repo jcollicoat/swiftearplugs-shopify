@@ -73,6 +73,11 @@
         display: flex;
         flex-wrap: nowrap;
         gap: 8px;
+
+        button {
+            height: 1em;
+            width: 1em;
+        }
     }
 }
 

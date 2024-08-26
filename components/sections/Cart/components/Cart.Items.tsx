@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { Cost } from 'components/generics/Cost/Cost';
+import { Icon } from 'components/generics/Icon/Icon';
 import { removeItem } from 'components/template/cart/actions';
 import { useCart } from 'components/template/cart/cart-context';
 import { CartItem } from 'lib/shopify/types';
@@ -24,8 +25,8 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
                 />
                 <div>
                     <span className={styles.color}>
-                        {item.merchandise.selectedOptions[0].value} x
-                        {item.quantity}
+                        {item.merchandise.selectedOptions[0].value}
+                        {item.quantity > 1 && ` x${item.quantity}`}
                     </span>
                     <span className={styles.product}>
                         {item.merchandise.product.title}
@@ -43,7 +44,7 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
                         actionWithVariant();
                     }}
                 >
-                    Bin
+                    <Icon icon="Bin" />
                 </button>
             </div>
             <p aria-live="polite" className="sr-only" role="status">

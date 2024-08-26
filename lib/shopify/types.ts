@@ -25,6 +25,11 @@ export type CartProduct = {
   handle: string;
   title: string;
   featuredImage: Image;
+  images?: {
+    edges: {
+      node: Image;
+    }[];
+  };
 };
 
 export type CartItem = {

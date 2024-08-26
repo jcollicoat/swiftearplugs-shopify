@@ -14,11 +14,16 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
 
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
+    const imageUrl = item.merchandise.product.images?.edges.find(
+        (edge) =>
+            edge.node.altText === item.merchandise.selectedOptions[0].value,
+    )?.node.url;
+
     return (
         <div className={styles.lineItem}>
             <div className={styles.details}>
                 <Image
-                    src={item.merchandise.product.featuredImage.url}
+                    src={imageUrl ?? item.merchandise.product.featuredImage.url}
                     alt=""
                     width={48}
                     height={48}

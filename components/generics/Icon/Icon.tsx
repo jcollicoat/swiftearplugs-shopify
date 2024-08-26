@@ -1,6 +1,13 @@
 import { CSSProperties, FC } from 'react';
 import styles from './Icon.module.scss';
 
+const Arrow: FC = () => (
+    <>
+        <path d="M0.75 12h22.5"></path>
+        <path d="M12.75 22.5 23.25 12 12.75 1.5"></path>
+    </>
+);
+
 const Bin: FC = () => (
     <>
         <path d="M1 5h22"></path>
@@ -132,6 +139,7 @@ const Shipping: FC = () => (
 
 interface Props {
     icon:
+        | 'Arrow'
         | 'Bin'
         | 'Cart'
         | 'Colors'
@@ -152,6 +160,9 @@ export const Icon: FC<Props> = ({ icon, strokeWidth = '2' }) => {
     switch (icon) {
         case 'Colors':
             return <Colors />;
+        case 'Arrow':
+            Glyph = Arrow;
+            break;
         case 'Bin':
             Glyph = Bin;
             break;

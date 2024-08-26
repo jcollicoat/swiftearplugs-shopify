@@ -2,8 +2,6 @@
 import 'styles/layout.scss';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
-import { Cart } from 'components/sections/Cart/Cart';
-import { Footer } from 'components/sections/Footer/Footer';
 import { CartProvider } from 'components/template/cart/cart-context';
 import { getCart } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
@@ -66,11 +64,7 @@ export default async function RootLayout({
                 />
             </head>
             <body>
-                <CartProvider cartPromise={cart}>
-                    <main>{children}</main>
-                    <Footer />
-                    <Cart />
-                </CartProvider>
+                <CartProvider cartPromise={cart}>{children}</CartProvider>
             </body>
         </html>
     );

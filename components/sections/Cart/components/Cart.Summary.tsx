@@ -1,46 +1,61 @@
-import classNames from 'classnames';
 import { FC } from 'react';
 import { Cost } from 'components/generics/Cost/Cost';
 import { Icon } from 'components/generics/Icon/Icon';
+import { redirectToCheckout } from 'components/template/cart/actions';
 import { useCart } from 'components/template/cart/cart-context';
 import styles from '../Cart.module.scss';
+import { CartCheckout } from './Cart.Checkout';
 
 interface Props {
-    isOpen: boolean;
-    openCart: () => void;
+    toggleCart: () => void;
 }
 
-export const CartSummary: FC<Props> = ({ isOpen, openCart }) => {
+export const CartSummary: FC<Props> = ({ toggleCart }) => {
     const { cart } = useCart();
-
     if (!cart) {
         return null;
     }
+
+    const checkoutDisabled =
+        cart.totalQuantity === 0 || Number(cart.cost.totalAmount.amount) === 0;
 
     return (
         <div className={styles.summary}>
             <div>
                 <div className={styles.quantity}>
                     <div>
-                        <span className={styles.count}>
-                            {cart.totalQuantity}{' '}
-                            {cart.totalQuantity === 1 ? 'item' : 'items'}
-                        </span>{' '}
-                        in cart
+                        <span>
+                            {cart.totalQuantity === 0 ? (
+                                'Your cart is empty'
+                            ) : (
+                                <>
+                                    {cart.totalQuantity}{' '}
+                                    {cart.totalQuantity === 1
+                                        ? 'item'
+                                        : 'items'}{' '}
+                                    in cart
+                                </>
+                            )}
+                        </span>
                     </div>
                 </div>
-                <Cost
-                    value={cart.cost.totalAmount.amount}
-                    currency={cart.cost.totalAmount.currencyCode}
-                />
+                {!checkoutDisabled && (
+                    <Cost
+                        value={cart.cost.totalAmount.amount}
+                        currency={cart.cost.totalAmount.currencyCode}
+                    />
+                )}
             </div>
-            <button
-                className={classNames(isOpen && styles.checkout)}
-                onClick={!isOpen ? openCart : () => alert('Checkout to come!')}
-            >
-                <Icon icon="Cart" />
-                <span>{!isOpen ? 'View cart' : 'Checkout'}</span>
-            </button>
+            <div className={styles.actions}>
+                {!checkoutDisabled && (
+                    <button className={styles.cart} onClick={toggleCart}>
+                        <Icon icon="Cart" />
+                    </button>
+                )}
+                <form action={redirectToCheckout}>
+                    <CartCheckout checkoutDisabled={checkoutDisabled} />
+                </form>
+            </div>
         </div>
     );
 };

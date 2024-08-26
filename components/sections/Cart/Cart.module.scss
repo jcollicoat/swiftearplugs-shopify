@@ -101,39 +101,49 @@
 
     .quantity {
         color: $color-text;
-        margin-bottom: 0.25em;
 
         .count {
             font-weight: 600;
         }
     }
 
-    button {
-        border: 2px solid $color-text;
-        border-radius: 4px;
-        color: $color-text;
+    .actions {
         display: flex;
-        gap: 4px;
-        padding: calc($padding-s / 1.5) $padding-s;
-        text-align: center;
+        flex-wrap: nowrap;
+        gap: 8px;
 
-        &.checkout {
-            background-image: linear-gradient(
-                to right,
-                $color-red,
-                $color-pink
-            );
-            border-color: transparent;
-            color: #ffffff;
-        }
+        button {
+            border: 1.5px solid transparent;
+            border-radius: 4px;
+            display: flex;
+            gap: 8px;
+            padding: calc($padding-s / 1.5) $padding-s;
+            text-align: center;
 
-        svg {
-            height: 1em;
-            width: 1em;
-        }
+            &.cart {
+                border-color: $color-text;
+                color: $color-text;
+            }
 
-        span {
-            white-space: nowrap;
+            &.checkout {
+                background: linear-gradient(to right, $color-red, $color-pink);
+                color: #ffffff;
+
+                &:disabled {
+                    background: $color-text;
+                    cursor: not-allowed;
+                    opacity: 0.5;
+                }
+            }
+
+            svg {
+                height: 1em;
+                width: 1em;
+            }
+
+            span {
+                white-space: nowrap;
+            }
         }
     }
 }

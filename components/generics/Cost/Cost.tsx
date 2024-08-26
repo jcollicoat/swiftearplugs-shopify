@@ -9,6 +9,6 @@ interface Props {
 export const Cost: FC<Props> = ({ value, currency }) => (
     <div className={styles.cost}>
         ${value}
-        <span> {currency}</span>
+        <span> {currency === 'XXX' ? 'NZD' : currency}</span>
     </div>
 );

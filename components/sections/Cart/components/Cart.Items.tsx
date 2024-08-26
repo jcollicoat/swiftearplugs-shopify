@@ -14,11 +14,16 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
 
     const actionWithVariant = formAction.bind(null, item.merchandise.id);
 
+    const imageUrl = item.merchandise.product.images?.edges.find(
+        (edge) =>
+            edge.node.altText === item.merchandise.selectedOptions[0].value,
+    )?.node.url;
+
     return (
         <div className={styles.lineItem}>
             <div className={styles.details}>
                 <Image
-                    src={item.merchandise.product.featuredImage.url}
+                    src={imageUrl ?? item.merchandise.product.featuredImage.url}
                     alt=""
                     width={48}
                     height={48}
@@ -57,9 +62,34 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
 export const CartItems: FC = () => {
     const { cart } = useCart();
 
+    if (!cart) {
+        return null;
+    }
+
+    const sortedLines = cart.lines.sort((a, b) => {
+        if (
+            a.merchandise.selectedOptions[0].value >
+            b.merchandise.selectedOptions[0].value
+        ) {
+            return 1;
+        }
+        if (
+            b.merchandise.selectedOptions[0].value >
+            a.merchandise.selectedOptions[0].value
+        ) {
+            return -1;
+        }
+        return 0;
+    });
+
     return (
         <div className={styles.items}>
-            {cart?.lines.map((line) => <LineItem key={line.id} item={line} />)}
+            {sortedLines.map((line) => (
+                <LineItem
+                    key={`${line.id}${line.merchandise.selectedOptions[0].value}`}
+                    item={line}
+                />
+            ))}
         </div>
     );
 };

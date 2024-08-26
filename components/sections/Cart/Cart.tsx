@@ -10,20 +10,17 @@ import { CartSummary } from './components/Cart.Summary';
 export const Cart: FC = () => {
     const { cart } = useCart();
     const [isOpen, setIsOpen] = useState(false);
-    const openCart = useCallback(() => setIsOpen(true), []);
-    const closeCart = useCallback(() => setIsOpen(false), []);
+    const toggleCart = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
     useEffect(() => {
         if (!cart) {
             createCartAndSetCookie();
         }
-    }, [cart]);
 
-    useEffect(() => {
         if (cart?.totalQuantity === 0) {
-            closeCart();
+            setIsOpen(false);
         }
-    }, [cart?.totalQuantity, closeCart]);
+    }, [cart]);
 
     if (!cart || cart.totalQuantity === 0) {
         return null;
@@ -38,7 +35,7 @@ export const Cart: FC = () => {
                         <hr />
                     </>
                 )}
-                <CartSummary isOpen={isOpen} openCart={openCart} />
+                <CartSummary toggleCart={toggleCart} />
             </div>
         </div>
     );

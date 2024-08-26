@@ -2,7 +2,7 @@
 
 .product {
     display: grid;
-    gap: var(--padding-s);
+    gap: $padding-s;
     width: 100%;
 }
 
@@ -16,7 +16,7 @@
 
 .selector {
     display: grid;
-    gap: var(--padding-s);
+    gap: $padding-s;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
     .option {
@@ -65,7 +65,7 @@
     align-items: center;
     display: flex;
     flex-wrap: nowrap;
-    gap: var(--padding-s);
+    gap: $padding-s;
 
     .price {
         font-weight: 600;
@@ -80,7 +80,7 @@
         border-radius: 4px;
         color: #ffffff;
         flex-grow: 1;
-        padding: calc(var(--padding-s) / 1.5) var(--padding-s);
+        padding: calc($padding-s / 1.5) $padding-s;
         text-align: center;
     }
 }

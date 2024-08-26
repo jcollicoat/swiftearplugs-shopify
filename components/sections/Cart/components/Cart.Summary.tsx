@@ -1,5 +1,7 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 import { Cost } from 'components/generics/Cost/Cost';
+import { Icon } from 'components/generics/Icon/Icon';
 import { useCart } from 'components/template/cart/cart-context';
 import styles from '../Cart.module.scss';
 
@@ -32,16 +34,13 @@ export const CartSummary: FC<Props> = ({ isOpen, openCart }) => {
                     currency={cart.cost.totalAmount.currencyCode}
                 />
             </div>
-            {!isOpen ? (
-                <button onClick={openCart}>View cart</button>
-            ) : (
-                <button
-                    onClick={() => alert('Checkout to come!')}
-                    className={styles.checkout}
-                >
-                    Checkout
-                </button>
-            )}
+            <button
+                className={classNames(isOpen && styles.checkout)}
+                onClick={!isOpen ? openCart : () => alert('Checkout to come!')}
+            >
+                <Icon icon="Cart" />
+                <span>{!isOpen ? 'View cart' : 'Checkout'}</span>
+            </button>
         </div>
     );
 };

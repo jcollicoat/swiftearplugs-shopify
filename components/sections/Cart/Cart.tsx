@@ -30,14 +30,16 @@ export const Cart: FC = () => {
     }
 
     return (
-        <div className={styles.modal}>
-            {isOpen && (
-                <>
-                    <CartItems />
-                    <hr />
-                </>
-            )}
-            <CartSummary isOpen={isOpen} openCart={openCart} />
+        <div className={styles.wrapper}>
+            <div className={styles.modal}>
+                {isOpen && (
+                    <>
+                        <CartItems />
+                        <hr />
+                    </>
+                )}
+                <CartSummary isOpen={isOpen} openCart={openCart} />
+            </div>
         </div>
     );
 };

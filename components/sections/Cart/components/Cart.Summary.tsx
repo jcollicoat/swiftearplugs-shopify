@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { FC } from 'react';
 import { Cost } from 'components/generics/Cost/Cost';
 import { Icon } from 'components/generics/Icon/Icon';
@@ -6,11 +5,10 @@ import { useCart } from 'components/template/cart/cart-context';
 import styles from '../Cart.module.scss';
 
 interface Props {
-    isOpen: boolean;
-    openCart: () => void;
+    toggleCart: () => void;
 }
 
-export const CartSummary: FC<Props> = ({ isOpen, openCart }) => {
+export const CartSummary: FC<Props> = ({ toggleCart }) => {
     const { cart } = useCart();
 
     if (!cart) {
@@ -34,13 +32,18 @@ export const CartSummary: FC<Props> = ({ isOpen, openCart }) => {
                     currency={cart.cost.totalAmount.currencyCode}
                 />
             </div>
-            <button
-                className={classNames(isOpen && styles.checkout)}
-                onClick={!isOpen ? openCart : () => alert('Checkout to come!')}
-            >
-                <Icon icon="Cart" />
-                <span>{!isOpen ? 'View cart' : 'Checkout'}</span>
-            </button>
+            <div className={styles.actions}>
+                <button className={styles.cart} onClick={toggleCart}>
+                    <Icon icon="Cart" />
+                </button>
+                <button
+                    className={styles.checkout}
+                    onClick={() => alert('Checkout to come!')}
+                >
+                    <span>Checkout</span>
+                    <Icon icon="Arrow" />
+                </button>
+            </div>
         </div>
     );
 };

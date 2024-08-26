@@ -57,9 +57,34 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
 export const CartItems: FC = () => {
     const { cart } = useCart();
 
+    if (!cart) {
+        return null;
+    }
+
+    const sortedLines = cart.lines.sort((a, b) => {
+        if (
+            a.merchandise.selectedOptions[0].value >
+            b.merchandise.selectedOptions[0].value
+        ) {
+            return 1;
+        }
+        if (
+            b.merchandise.selectedOptions[0].value >
+            a.merchandise.selectedOptions[0].value
+        ) {
+            return -1;
+        }
+        return 0;
+    });
+
     return (
         <div className={styles.items}>
-            {cart?.lines.map((line) => <LineItem key={line.id} item={line} />)}
+            {sortedLines.map((line) => (
+                <LineItem
+                    key={`${line.id}${line.merchandise.selectedOptions[0].value}`}
+                    item={line}
+                />
+            ))}
         </div>
     );
 };

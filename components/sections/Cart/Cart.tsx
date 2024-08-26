@@ -16,6 +16,10 @@ export const Cart: FC = () => {
         if (!cart) {
             createCartAndSetCookie();
         }
+
+        if (cart?.totalQuantity === 0) {
+            setIsOpen(false);
+        }
     }, [cart]);
 
     if (!cart) {

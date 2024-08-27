@@ -38,20 +38,21 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
                     </span>
                 </div>
             </div>
-            <div className={styles.actions}>
+            <form
+                className={styles.actions}
+                action={async () => {
+                    updateCartItem(item.merchandise.id, 'delete');
+                    await actionWithVariant();
+                }}
+            >
                 <Cost
                     value={item.cost.totalAmount.amount}
                     currency={item.cost.totalAmount.currencyCode}
                 />
-                <button
-                    onClick={() => {
-                        updateCartItem(item.merchandise.id, 'delete');
-                        actionWithVariant();
-                    }}
-                >
+                <button>
                     <Icon icon="Bin" />
                 </button>
-            </div>
+            </form>
             <p aria-live="polite" className="sr-only" role="status">
                 {message}
             </p>

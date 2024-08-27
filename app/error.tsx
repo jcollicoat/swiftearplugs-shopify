@@ -1,11 +1,11 @@
 'use client';
 
+import 'styles/error.scss';
 import { Logo } from 'components/generics/Logo/Logo';
-import styles from 'styles/error.module.scss';
 
 export default function Error({ reset }: { reset: () => void }) {
     return (
-        <div className={styles.error}>
+        <div className="error-page">
             <div>
                 <Logo />
                 <h2>Oh no!</h2>

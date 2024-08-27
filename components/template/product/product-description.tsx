@@ -1,7 +1,7 @@
 import { AddToCart } from 'components/template/cart/add-to-cart';
 import Price from 'components/template/price';
 import Prose from 'components/template/prose';
-import { Product } from 'lib/shopify/types';
+import { Product } from 'library/shopify/types';
 import { VariantSelector } from './variant-selector';
 
 export function ProductDescription({ product }: { product: Product }) {

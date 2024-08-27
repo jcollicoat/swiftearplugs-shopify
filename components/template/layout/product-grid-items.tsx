@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Grid from 'components/template/grid';
 import { GridTileImage } from 'components/template/grid/tile';
-import { Product } from 'lib/shopify/types';
+import { Product } from 'library/shopify/types';
 
 export default function ProductGridItems({
     products,

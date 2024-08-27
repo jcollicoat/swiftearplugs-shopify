@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getCollectionProducts } from 'lib/shopify';
+import { getCollectionProducts } from 'library/shopify';
 import { GridTileImage } from './grid/tile';
 
 export async function Carousel() {

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { SortFilterItem } from 'lib/constants';
+import { SortFilterItem } from 'library/shopify/constants';
 import FilterItemDropdown from './dropdown';
 import { FilterItem } from './item';
 

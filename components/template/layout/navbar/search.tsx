@@ -2,7 +2,7 @@
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { createUrl } from 'lib/utils';
+import { createUrl } from 'library/shopify/utils';
 
 export default function Search() {
     const router = useRouter();

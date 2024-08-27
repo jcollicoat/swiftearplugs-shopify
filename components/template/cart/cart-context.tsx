@@ -12,7 +12,7 @@ import type {
     CartItem,
     Product,
     ProductVariant,
-} from 'lib/shopify/types';
+} from 'library/shopify/types';
 
 type UpdateType = 'plus' | 'minus' | 'delete';
 

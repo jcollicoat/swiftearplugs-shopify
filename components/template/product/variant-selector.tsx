@@ -5,7 +5,7 @@ import {
     useProduct,
     useUpdateURL,
 } from 'components/template/product/product-context';
-import { ProductOption, ProductVariant } from 'lib/shopify/types';
+import { ProductOption, ProductVariant } from 'library/shopify/types';
 
 type Combination = {
     id: string;

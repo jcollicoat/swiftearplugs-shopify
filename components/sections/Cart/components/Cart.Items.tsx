@@ -5,7 +5,7 @@ import { Cost } from 'components/generics/Cost/Cost';
 import { Icon } from 'components/generics/Icon/Icon';
 import { removeItem } from 'components/template/cart/actions';
 import { useCart } from 'components/template/cart/cart-context';
-import { CartItem } from 'lib/shopify/types';
+import { CartItem } from 'library/shopify/types';
 import styles from '../Cart.module.scss';
 
 const LineItem: FC<{ item: CartItem }> = ({ item }) => {

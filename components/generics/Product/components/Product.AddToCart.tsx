@@ -6,7 +6,7 @@ import { Cost } from 'components/generics/Cost/Cost';
 import { addItem } from 'components/template/cart/actions';
 import { useCart } from 'components/template/cart/cart-context';
 import { useProduct } from 'components/template/product/product-context';
-import { Product, ProductVariant } from 'lib/shopify/types';
+import { Product, ProductVariant } from 'library/shopify/types';
 import styles from '../Product.module.scss';
 
 export const ProductAddToCart: FC<{ product: Product }> = ({ product }) => {

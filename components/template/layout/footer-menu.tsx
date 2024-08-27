@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Menu } from 'lib/shopify/types';
+import { Menu } from 'library/shopify/types';
 
 export function FooterMenuItem({ item }: { item: Menu }) {
     const pathname = usePathname();

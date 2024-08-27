@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import 'library/styles/layout.scss';
+import '@styles/layout.scss';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
 import { CartProvider } from 'library/components/template/cart/cart-context';

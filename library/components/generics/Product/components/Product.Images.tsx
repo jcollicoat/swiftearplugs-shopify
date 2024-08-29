@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { useProduct } from 'library/components/template/product/product-context';
-import { Product } from 'library/shopify/types';
+import { Product } from '@shopify/types';
 import styles from '../Product.module.scss';
 
 export const ProductImages: FC<{ product: Product }> = ({ product }) => {

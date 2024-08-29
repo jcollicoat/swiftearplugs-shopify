@@ -2,9 +2,9 @@
 import '@styles/layout.scss';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
+import { getCart } from '@shopify/index';
+import { ensureStartsWith } from '@shopify/utils';
 import { CartProvider } from 'library/components/template/cart/cart-context';
-import { getCart } from 'library/shopify';
-import { ensureStartsWith } from 'library/shopify/utils';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL

@@ -3,14 +3,14 @@
 import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { TAGS } from '@shopify/constants';
 import {
     addToCart,
     createCart,
     getCart,
     removeFromCart,
     updateCart,
-} from 'library/shopify';
-import { TAGS } from 'library/shopify/constants';
+} from '@shopify/index';
 
 export async function addItem(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

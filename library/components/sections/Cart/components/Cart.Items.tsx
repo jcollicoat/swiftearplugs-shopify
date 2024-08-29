@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
+import { CartItem } from '@shopify/types';
 import { Cost } from 'library/components/generics/Cost/Cost';
 import { Icon } from 'library/components/generics/Icon/Icon';
 import { removeItem } from 'library/components/template/cart/actions';
 import { useCart } from 'library/components/template/cart/cart-context';
-import { CartItem } from 'library/shopify/types';
 import styles from '../Cart.module.scss';
 
 const LineItem: FC<{ item: CartItem }> = ({ item }) => {

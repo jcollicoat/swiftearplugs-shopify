@@ -3,8 +3,8 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import type { SortFilterItem } from 'library/shopify/constants';
-import { createUrl } from 'library/shopify/utils';
+import type { SortFilterItem } from '@shopify/constants';
+import { createUrl } from '@shopify/utils';
 import type { ListItem, PathFilterItem } from '.';
 
 function PathFilterItem({ item }: { item: PathFilterItem }) {

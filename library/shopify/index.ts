@@ -5,9 +5,7 @@ import {
     HIDDEN_PRODUCT_TAG,
     SHOPIFY_GRAPHQL_API_ENDPOINT,
     TAGS,
-} from 'library/shopify/constants';
-import { isShopifyError } from 'library/shopify/type-guards';
-import { ensureStartsWith } from 'library/shopify/utils';
+} from './constants';
 import {
     addToCartMutation,
     createCartMutation,
@@ -27,6 +25,7 @@ import {
     getProductRecommendationsQuery,
     getProductsQuery,
 } from './queries/product';
+import { isShopifyError } from './type-guards';
 import {
     Cart,
     Collection,
@@ -53,6 +52,7 @@ import {
     ShopifyRemoveFromCartOperation,
     ShopifyUpdateCartOperation,
 } from './types';
+import { ensureStartsWith } from './utils';
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN
     ? ensureStartsWith(process.env.SHOPIFY_STORE_DOMAIN, 'https://')

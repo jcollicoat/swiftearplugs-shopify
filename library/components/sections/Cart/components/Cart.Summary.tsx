@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { Cost } from '@components/generics/Cost/Cost';
 import { Icon } from '@components/generics/Icon/Icon';
-import { redirectToCheckout } from '@components/template/cart/actions';
-import { useCart } from '@components/template/cart/cart-context';
+import { redirectToCheckout } from '@shopify/cart/actions';
+import { useCart } from '@shopify/cart/cart-context';
 import styles from '../Cart.module.scss';
 import { CartCheckout } from './Cart.Checkout';
 

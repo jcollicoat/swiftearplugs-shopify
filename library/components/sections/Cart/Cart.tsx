@@ -1,8 +1,8 @@
 'use client';
 
 import { FC, useCallback, useEffect, useState } from 'react';
-import { createCartAndSetCookie } from '@components/template/cart/actions';
-import { useCart } from '@components/template/cart/cart-context';
+import { createCartAndSetCookie } from '@shopify/cart/actions';
+import { useCart } from '@shopify/cart/cart-context';
 import styles from './Cart.module.scss';
 import { CartItems } from './components/Cart.Items';
 import { CartSummary } from './components/Cart.Summary';

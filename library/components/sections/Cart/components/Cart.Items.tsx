@@ -3,8 +3,8 @@ import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { Cost } from '@components/generics/Cost/Cost';
 import { Icon } from '@components/generics/Icon/Icon';
-import { removeItem } from '@components/template/cart/actions';
-import { useCart } from '@components/template/cart/cart-context';
+import { removeItem } from '@shopify/cart/actions';
+import { useCart } from '@shopify/cart/cart-context';
 import { CartItem } from '@shopify/types';
 import styles from '../Cart.module.scss';
 

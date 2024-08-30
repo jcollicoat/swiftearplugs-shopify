@@ -2,7 +2,7 @@
 import '@styles/layout.scss';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
-import { CartProvider } from '@components/template/cart/cart-context';
+import { CartProvider } from '@shopify/cart/cart-context';
 import { getCart } from '@shopify/index';
 import { ensureStartsWith } from '@shopify/utils';
 

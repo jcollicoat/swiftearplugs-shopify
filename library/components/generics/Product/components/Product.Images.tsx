@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { FC } from 'react';
-import { useProduct } from '@components/template/product/product-context';
+import { useProduct } from '@shopify/product/product-context';
 import { Product } from '@shopify/types';
 import styles from '../Product.module.scss';
 

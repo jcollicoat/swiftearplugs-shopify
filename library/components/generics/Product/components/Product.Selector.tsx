@@ -3,10 +3,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import { FC, useEffect } from 'react';
-import {
-    useProduct,
-    useUpdateURL,
-} from '@components/template/product/product-context';
+import { useProduct, useUpdateURL } from '@shopify/product/product-context';
 import { Image as ProductImage, ProductVariant } from '@shopify/types';
 import styles from '../Product.module.scss';
 

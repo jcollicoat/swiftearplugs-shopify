@@ -8,10 +8,13 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import LoadingDots from '@components/template/loading-dots';
 import Price from '@components/template/price';
+import {
+    createCartAndSetCookie,
+    redirectToCheckout,
+} from '@shopify/cart/actions';
+import { useCart } from '@shopify/cart/cart-context';
 import { DEFAULT_OPTION } from '@shopify/constants';
 import { createUrl } from '@shopify/utils';
-import { createCartAndSetCookie, redirectToCheckout } from './actions';
-import { useCart } from './cart-context';
 import CloseCart from './close-cart';
 import { DeleteItemButton } from './delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';

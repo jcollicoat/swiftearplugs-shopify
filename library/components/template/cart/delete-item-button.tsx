@@ -2,7 +2,7 @@
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useFormState } from 'react-dom';
-import { removeItem } from '@components/template/cart/actions';
+import { removeItem } from '@shopify/cart/actions';
 import type { CartItem } from '@shopify/types';
 
 export function DeleteItemButton({

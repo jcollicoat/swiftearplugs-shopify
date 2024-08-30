@@ -3,10 +3,10 @@
 import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { useFormState } from 'react-dom';
-import { addItem } from '@components/template/cart/actions';
-import { useProduct } from '@components/template/product/product-context';
+import { addItem } from '@shopify/cart/actions';
+import { useCart } from '@shopify/cart/cart-context';
+import { useProduct } from '@shopify/product/product-context';
 import { Product, ProductVariant } from '@shopify/types';
-import { useCart } from './cart-context';
 
 function SubmitButton({
     availableForSale,

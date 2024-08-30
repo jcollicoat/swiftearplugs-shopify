@@ -24,8 +24,7 @@
         "paths": {
             "@components/*": ["library/components/*"],
             "@shopify/*": ["library/shopify/*"],
-            "@styles/*": ["library/styles/*"],
-            "@images/*": ["public/images/*"]
+            "@styles/*": ["library/styles/*"]
         },
         "typeRoots": ["@types/**/*.ts"]
     },

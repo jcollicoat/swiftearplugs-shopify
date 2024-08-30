@@ -21,8 +21,9 @@ export const ImageContent: FC<PropsWithChildren<Props>> = ({
             <div className={styles.image}>
                 <Image
                     src={image}
-                    placeholder="blur"
                     blurDataURL={imageBlur}
+                    sizes="(max-width: 799px) 100vw, 66vw"
+                    placeholder="blur"
                     alt=""
                     fill
                     style={{

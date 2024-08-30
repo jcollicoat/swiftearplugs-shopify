@@ -15,6 +15,7 @@ export const ProductImages: FC<{ product: Product }> = ({ product }) => {
                 <Image
                     key={image.url}
                     src={image.url}
+                    sizes="(max-width: 799px) 100vw, 33vw"
                     alt={image.altText}
                     fill
                     style={{

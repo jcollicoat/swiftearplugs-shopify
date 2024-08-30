@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { Logo } from 'library/components/generics/Logo/Logo';
+import { Logo } from '@components/generics/Logo/Logo';
 import casePurple from 'public/case-lilac-purple.png';
 import earplugPurple from 'public/earplug-lilac-purple-1.png';
 import earplugBlack from 'public/earplug-matte-black-1.png';

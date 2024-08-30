@@ -2,10 +2,10 @@
 
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
-import { Cost } from 'library/components/generics/Cost/Cost';
-import { addItem } from 'library/components/template/cart/actions';
-import { useCart } from 'library/components/template/cart/cart-context';
-import { useProduct } from 'library/components/template/product/product-context';
+import { Cost } from '@components/generics/Cost/Cost';
+import { addItem } from '@components/template/cart/actions';
+import { useCart } from '@components/template/cart/cart-context';
+import { useProduct } from '@components/template/product/product-context';
 import { Product, ProductVariant } from '@shopify/types';
 import styles from '../Product.module.scss';
 

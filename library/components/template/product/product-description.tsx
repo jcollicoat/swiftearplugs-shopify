@@ -1,6 +1,6 @@
-import { AddToCart } from 'library/components/template/cart/add-to-cart';
-import Price from 'library/components/template/price';
-import Prose from 'library/components/template/prose';
+import { AddToCart } from '@components/template/cart/add-to-cart';
+import Price from '@components/template/price';
+import Prose from '@components/template/prose';
 import { Product } from '@shopify/types';
 import { VariantSelector } from './variant-selector';
 

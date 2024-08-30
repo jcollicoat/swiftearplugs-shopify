@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 import { Suspense } from 'react';
+import FooterMenu from '@components/template/layout/footer-menu';
+import LogoSquare from '@components/template/logo-square';
 import { getMenu } from '@shopify/index';
-import FooterMenu from 'library/components/template/layout/footer-menu';
-import LogoSquare from 'library/components/template/logo-square';
 
 const { COMPANY_NAME, SITE_NAME } = process.env;
 

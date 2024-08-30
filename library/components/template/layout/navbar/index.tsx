@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
+import CartModal from '@components/template/cart/modal';
+import LogoSquare from '@components/template/logo-square';
 import { getMenu } from '@shopify/index';
 import { Menu } from '@shopify/types';
-import CartModal from 'library/components/template/cart/modal';
-import LogoSquare from 'library/components/template/logo-square';
 import MobileMenu from './mobile-menu';
 import Search, { SearchSkeleton } from './search';
 

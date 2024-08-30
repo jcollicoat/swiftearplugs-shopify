@@ -6,7 +6,7 @@ import { FC, useEffect } from 'react';
 import {
     useProduct,
     useUpdateURL,
-} from 'library/components/template/product/product-context';
+} from '@components/template/product/product-context';
 import { Image as ProductImage, ProductVariant } from '@shopify/types';
 import styles from '../Product.module.scss';
 

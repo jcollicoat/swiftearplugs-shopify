@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { Logo } from 'library/components/generics/Logo/Logo';
+import { Logo } from '@components/generics/Logo/Logo';
 import casePurple from 'public/case-lilac-purple.png';
 import caseBlack from 'public/case-matte-black.png';
 import caseRose from 'public/case-rose-gold.png';

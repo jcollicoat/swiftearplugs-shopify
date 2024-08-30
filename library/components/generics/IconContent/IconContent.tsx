@@ -1,5 +1,5 @@
 import { ComponentProps, FC } from 'react';
-import { Icon } from 'library/components/generics/Icon/Icon';
+import { Icon } from '@components/generics/Icon/Icon';
 import styles from './IconContent.module.scss';
 
 interface Props {

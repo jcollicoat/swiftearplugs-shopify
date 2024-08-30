@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Icon } from 'library/components/generics/Icon/Icon';
+import { Icon } from '@components/generics/Icon/Icon';
 import styles from './WhyChoose.module.scss';
 
 export const WhyChoose: FC = () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import '@styles/error.scss';
-import { Logo } from 'library/components/generics/Logo/Logo';
+import { Logo } from '@components/generics/Logo/Logo';
 
 export default function Error({ reset }: { reset: () => void }) {
     return (

@@ -1,6 +1,7 @@
 import { IconContent } from '@components/generics/IconContent/IconContent';
 import { ImageContent } from '@components/generics/ImageContent/ImageContent';
 import { Cart } from '@components/sections/Cart/Cart';
+import { Features } from '@components/sections/Features/Features';
 import { Footer } from '@components/sections/Footer/Footer';
 import { Hero } from '@components/sections/Hero/Hero';
 import { StickyScroller } from '@components/sections/StickyScroller/StickyScroller';
@@ -73,6 +74,7 @@ export default function HomePage() {
                         />
                     </ImageContent>
                 </StickyScroller>
+                <Features />
                 <WhyChoose />
             </main>
             <Footer />

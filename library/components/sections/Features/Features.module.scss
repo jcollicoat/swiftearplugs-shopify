@@ -1,0 +1,91 @@
+@import '@styles/constants.scss';
+
+.wrapper {
+    margin-bottom: $padding-l;
+
+    .card {
+        border: 1px solid $color-red-light;
+        border-radius: $padding-s;
+        margin: 0 auto;
+        max-width: 800px;
+        padding: calc($padding-s / 2) $padding-s;
+
+        h2 {
+            @include gradient-text;
+
+            font-size: 1em;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+
+            td {
+                padding: calc($padding-s / 2) calc($padding-s / 4);
+            }
+
+            thead,
+            tbody {
+                display: grid;
+                grid-auto-rows: 1fr;
+                width: 100%;
+
+                tr {
+                    align-items: center;
+                    display: grid;
+                    grid-template-columns: 3fr 1fr 1fr;
+                    width: 100%;
+
+                    td:not(:first-child) {
+                        text-align: center;
+                    }
+                }
+            }
+
+            thead {
+                svg {
+                    color: $color-red;
+                    height: 2rem;
+                }
+            }
+
+            tbody {
+                color: $color-text;
+                font-size: 0.75em;
+
+                tr {
+                    border-top: 1px solid $color-red-light;
+
+                    svg {
+                        color: $color-red;
+                        height: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-s) {
+        .card {
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        .card {
+            table {
+                tbody {
+                    font-size: 0.9rem;
+
+                    tr {
+                        svg {
+                            height: 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

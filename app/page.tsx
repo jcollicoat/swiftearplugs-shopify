@@ -1,10 +1,10 @@
-import { IconContent } from 'components/generics/IconContent/IconContent';
-import { ImageContent } from 'components/generics/ImageContent/ImageContent';
-import { Cart } from 'components/sections/Cart/Cart';
-import { Footer } from 'components/sections/Footer/Footer';
-import { Hero } from 'components/sections/Hero/Hero';
-import { StickyScroller } from 'components/sections/StickyScroller/StickyScroller';
-import { WhyChoose } from 'components/sections/WhyChoose/WhyChoose';
+import { IconContent } from '@components/generics/IconContent/IconContent';
+import { ImageContent } from '@components/generics/ImageContent/ImageContent';
+import { Cart } from '@components/sections/Cart/Cart';
+import { Footer } from '@components/sections/Footer/Footer';
+import { Hero } from '@components/sections/Hero/Hero';
+import { StickyScroller } from '@components/sections/StickyScroller/StickyScroller';
+import { WhyChoose } from '@components/sections/WhyChoose/WhyChoose';
 import imageOneBlur from 'public/swift-content-1-blur.jpg';
 import imageOne from 'public/swift-content-1.jpg';
 import imageTwoBlur from 'public/swift-content-2-blur.jpg';

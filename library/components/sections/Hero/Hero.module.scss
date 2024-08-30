@@ -1,0 +1,223 @@
+@import '@styles/constants.scss';
+
+.wrapper {
+    background-color: $color-red-light;
+    border-radius: 0 0 $padding-s $padding-s;
+    margin-bottom: calc(-1 * $padding-m);
+    margin-left: calc($padding-s * -1);
+    overflow: hidden;
+    padding-bottom: $padding-l;
+    padding: 0 0 $padding-l 0;
+    position: relative;
+    width: calc(100% + $padding-m);
+    z-index: 1;
+
+    svg {
+        color: $color-red;
+        height: 3rem;
+        position: absolute;
+        right: $padding-s;
+        top: $padding-s;
+        z-index: 2;
+    }
+
+    .image {
+        aspect-ratio: 1 / 1;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+
+        .imageLarge {
+            display: none;
+        }
+
+        &::after {
+            background: linear-gradient(
+                to bottom,
+                rgba($color-red-light, 0),
+                $color-red-light
+            );
+            bottom: 0;
+            content: '';
+            height: 5rem;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+
+    .content {
+        margin: auto;
+        max-width: 380px;
+        padding: $padding-m $padding-s;
+        position: relative;
+        text-align: center;
+        z-index: 3;
+
+        img {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .casePurple {
+            display: none;
+        }
+
+        .earplugPurple {
+            bottom: 5px;
+            left: -10px;
+            filter: drop-shadow(-20px 50px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        .earplugBlack {
+            bottom: -20px;
+            right: -5px;
+            filter: drop-shadow(10px 50px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        .earplugRose {
+            right: 15px;
+            top: -10px;
+            filter: drop-shadow(20px 50px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        :not(img) {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            @include gradient-text;
+
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.1em;
+        }
+
+        h2 {
+            @include gradient-text;
+
+            font-size: 1.35rem;
+            font-weight: 400;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            color: $color-text;
+        }
+    }
+
+    @media (min-width: $breakpoint-s) {
+        border-radius: $padding-s;
+        margin-left: 0;
+        width: 100%;
+
+        .content {
+            padding: $padding-m 0;
+
+            img {
+                display: block;
+            }
+
+            .earplugPurple {
+                bottom: -15px;
+                left: -30px;
+            }
+
+            .earplugBlack {
+                bottom: -30px;
+                right: -10px;
+            }
+
+            .earplugRose {
+                right: 15px;
+                top: -5px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 0;
+        padding-left: $padding-s;
+
+        svg {
+            left: $padding-s;
+        }
+
+        .image {
+            max-height: 400px;
+            max-width: 400px;
+
+            .imageSmall {
+                display: none;
+            }
+
+            .imageLarge {
+                display: block;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .content {
+            .earplugPurple {
+                bottom: 40%;
+                left: -30px;
+            }
+
+            .earplugBlack {
+                bottom: -20px;
+                right: 0px;
+            }
+
+            .earplugRose {
+                right: -10px;
+                top: 0px;
+            }
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .content {
+            .casePurple {
+                display: block;
+                bottom: -80px;
+                right: -80px;
+                transform: rotate(-90deg);
+                filter: drop-shadow(-100px 20px 40px rgba(0, 0, 0, 0.25));
+            }
+
+            .earplugPurple {
+                display: none;
+            }
+
+            .earplugBlack {
+                bottom: 40%;
+                left: -50px;
+                filter: drop-shadow(-20px 50px 20px rgba(0, 0, 0, 0.2));
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-l) {
+        .image {
+            max-height: 500px;
+            max-width: 500px;
+        }
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        .image {
+            max-height: 600px;
+            max-width: 600px;
+        }
+    }
+}

@@ -22,7 +22,9 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "@images/*": ["public/images/*"]
+            "@components/*": ["library/components/*"],
+            "@shopify/*": ["library/shopify/*"],
+            "@styles/*": ["library/styles/*"]
         },
         "typeRoots": ["@types/**/*.ts"]
     },

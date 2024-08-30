@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import 'styles/layout.scss';
+import '@styles/layout.scss';
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
-import { CartProvider } from 'components/template/cart/cart-context';
-import { getCart } from 'lib/shopify';
-import { ensureStartsWith } from 'lib/utils';
+import { CartProvider } from '@shopify/cart/cart-context';
+import { getCart } from '@shopify/index';
+import { ensureStartsWith } from '@shopify/utils';
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL

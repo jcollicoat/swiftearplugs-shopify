@@ -1,3 +1,3 @@
 # Swift Earplugs
 
-Repo for [https://www.swiftearplugs.com](Swift Earplugs), using NextJS and Shopify headless.
+Repo for [Swift Earplugs](https://www.swiftearplugs.com), using NextJS and Shopify headless.

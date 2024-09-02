@@ -37,10 +37,12 @@ export const Features: FC = () => {
                         {content.items.map((item) => (
                             <tr key={item}>
                                 <td>{item}</td>
-                                <td>
-                                    <Icon icon="Check" />
+                                <td className={styles.swift}>
+                                    <Icon icon="CircleCheck" />
                                 </td>
-                                <td>X</td>
+                                <td>
+                                    <Icon icon="CircleCross" />
+                                </td>
                             </tr>
                         ))}
                     </tbody>

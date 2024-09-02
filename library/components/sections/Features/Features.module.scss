@@ -56,8 +56,11 @@
                 tr {
                     border-top: 1px solid $color-red-light;
 
-                    svg {
+                    .swift {
                         color: $color-red;
+                    }
+
+                    svg {
                         height: 1rem;
                     }
                 }

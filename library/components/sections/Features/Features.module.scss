@@ -45,7 +45,7 @@
             thead {
                 svg {
                     color: $color-red;
-                    height: 2rem;
+                    height: 1.5rem;
                 }
             }
 
@@ -79,6 +79,12 @@
     @media (min-width: $breakpoint-m) {
         .card {
             table {
+                thead {
+                    svg {
+                        height: 2rem;
+                    }
+                }
+
                 tbody {
                     font-size: 0.9rem;
 

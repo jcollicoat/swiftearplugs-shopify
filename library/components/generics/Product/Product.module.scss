@@ -62,25 +62,48 @@
 }
 
 .addToCart {
-    align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: $padding-s;
+    display: grid;
+    gap: 8px;
 
-    .price {
-        font-weight: 600;
+    .action {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: $padding-s;
 
-        span {
-            font-size: 0.75em;
+        .price {
+            font-weight: 600;
+
+            span {
+                font-size: 0.75em;
+            }
+        }
+
+        button {
+            background-image: linear-gradient(
+                to right,
+                $color-red,
+                $color-pink
+            );
+            border-radius: 4px;
+            color: #ffffff;
+            flex-grow: 1;
+            padding: calc($padding-s / 1.5) $padding-s;
+            text-align: center;
         }
     }
 
-    button {
-        background-image: linear-gradient(to right, $color-red, $color-pink);
-        border-radius: 4px;
-        color: #ffffff;
-        flex-grow: 1;
-        padding: calc($padding-s / 1.5) $padding-s;
-        text-align: center;
+    .shipping {
+        align-items: center;
+        color: $color-text;
+        display: flex;
+        font-size: 0.9em;
+        gap: 4px;
+        justify-content: center;
+
+        svg {
+            color: $color-red;
+            height: 1.25em;
+        }
     }
 }

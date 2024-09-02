@@ -50,7 +50,7 @@ export const ProductAddToCart: FC<{ product: Product }> = ({ product }) => {
             </div>
             <div className={styles.shipping}>
                 <Icon icon="Shipping" />
-                <span>Free shipping</span>
+                <span>Free shipping on all orders</span>
             </div>
             <p aria-live="polite" className="sr-only" role="status">
                 {message}

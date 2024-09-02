@@ -3,6 +3,7 @@
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { Cost } from '@components/generics/Cost/Cost';
+import { Icon } from '@components/generics/Icon/Icon';
 import { addItem } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import { useProduct } from '@shopify/product/product-context';
@@ -40,11 +41,17 @@ export const ProductAddToCart: FC<{ product: Product }> = ({ product }) => {
                 await actionWithVariant();
             }}
         >
-            <Cost
-                value={finalVariant.price.amount}
-                currency={finalVariant.price.currencyCode}
-            />
-            <button>Add to cart</button>
+            <div className={styles.action}>
+                <Cost
+                    value={finalVariant.price.amount}
+                    currency={finalVariant.price.currencyCode}
+                />
+                <button>Add to cart</button>
+            </div>
+            <div className={styles.shipping}>
+                <Icon icon="Shipping" />
+                <span>Free shipping on all orders</span>
+            </div>
             <p aria-live="polite" className="sr-only" role="status">
                 {message}
             </p>

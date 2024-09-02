@@ -6,9 +6,16 @@ interface Props {
     currency: string;
 }
 
-export const Cost: FC<Props> = ({ value, currency }) => (
-    <div className={styles.cost}>
-        ${value}
-        <span> {currency === 'XXX' ? 'NZD' : currency}</span>
-    </div>
-);
+export const Cost: FC<Props> = ({ value, currency }) => {
+    let formattedValue = value;
+    if (formattedValue.split('.')[1].length === 1) {
+        formattedValue = value + '0';
+    }
+
+    return (
+        <div className={styles.cost}>
+            ${formattedValue}
+            <span> {currency === 'XXX' ? 'NZD' : currency}</span>
+        </div>
+    );
+};

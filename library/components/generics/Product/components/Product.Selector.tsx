@@ -53,6 +53,7 @@ export const ProductSelector: FC<Props> = ({ variants, images }) => {
                         >
                             <Image
                                 src={image?.url ?? ''}
+                                sizes="(max-width: 799px) 33vw, 15vw"
                                 alt={image?.altText ?? ''}
                                 fill
                             />

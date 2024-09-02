@@ -19,6 +19,7 @@ export const Hero: FC = () => {
                 <Image
                     src={imageSmall.src}
                     blurDataURL={imageSmallBlur.src}
+                    sizes="(max-width: 799px) 100vw, 50vw"
                     placeholder="blur"
                     alt=""
                     fill
@@ -27,6 +28,7 @@ export const Hero: FC = () => {
                 <Image
                     src={imageLarge.src}
                     blurDataURL={imageLargeBlur.src}
+                    sizes="(max-width: 799px) 100vw, 50vw"
                     placeholder="blur"
                     alt=""
                     fill

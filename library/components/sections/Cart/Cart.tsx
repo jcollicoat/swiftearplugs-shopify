@@ -27,7 +27,7 @@ export const Cart: FC = () => {
     }
 
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <div className={styles.modal}>
                 {isOpen && (
                     <>
@@ -37,6 +37,6 @@ export const Cart: FC = () => {
                 )}
                 <CartSummary toggleCart={toggleCart} />
             </div>
-        </div>
+        </section>
     );
 };

@@ -63,7 +63,7 @@
 
 .addToCart {
     display: grid;
-    gap: 8px;
+    gap: $padding-s;
 
     .action {
         align-items: center;

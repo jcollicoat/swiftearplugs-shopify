@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Payments } from '@components/generics/Payments/Payments';
 import { getProduct } from '@shopify/index';
 import { ProductProvider } from '@shopify/product/product-context';
 import { ProductAddToCart } from './components/Product.AddToCart';
@@ -46,6 +47,7 @@ export const Product: FC = async () => {
                     images={product.images}
                 />
                 <ProductAddToCart product={product} />
+                <Payments />
             </div>
         </ProductProvider>
     );

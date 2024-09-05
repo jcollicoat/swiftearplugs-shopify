@@ -16,13 +16,13 @@ export const IconContent: FC<Props> = ({
     style = 'above',
 }) => {
     return (
-        <div className={styles.item}>
+        <li className={styles.item}>
             {style === 'above' && <Icon icon={icon} />}
             <h3>
                 {style === 'inline' && <Icon icon={icon} />}
                 {heading}
             </h3>
             <p>{content}</p>
-        </div>
+        </li>
     );
 };

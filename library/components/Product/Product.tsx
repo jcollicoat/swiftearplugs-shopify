@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Payments } from '@components/generics/Payments/Payments';
+import { Payments } from '@components/Payments/Payments';
 import { getProduct } from '@shopify/index';
 import { ProductProvider } from '@shopify/product/product-context';
 import { ProductAddToCart } from './components/Product.AddToCart';

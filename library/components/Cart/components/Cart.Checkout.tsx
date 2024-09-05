@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useFormStatus } from 'react-dom';
-import { Icon } from '@components/generics/Icon/Icon';
+import { Icon } from '@components/Icon/Icon';
 import styles from '../Cart.module.scss';
 
 interface Props {

@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import { Product } from '@components/generics/Product/Product';
+import { Product } from '@components/Product/Product';
 import styles from './StickyScroller.module.scss';
 
 export const StickyScroller: FC<PropsWithChildren> = ({ children }) => {

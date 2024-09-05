@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Cost } from '@components/generics/Cost/Cost';
-import { Icon } from '@components/generics/Icon/Icon';
+import { Cost } from '@components/Cost/Cost';
+import { Icon } from '@components/Icon/Icon';
 import { redirectToCheckout } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import styles from '../Cart.module.scss';

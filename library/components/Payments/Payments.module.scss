@@ -16,5 +16,11 @@
         img {
             object-fit: cover;
         }
+
+        &.PayPal {
+            img {
+                object-fit: contain;
+            }
+        }
     }
 }

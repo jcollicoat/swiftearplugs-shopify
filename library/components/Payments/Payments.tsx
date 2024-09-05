@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import { FC } from 'react';
 import AmEx from './Logos/AmEx.svg';
@@ -25,7 +26,10 @@ export const Payments: FC = () => {
     return (
         <div className={styles.payments}>
             {methods.map((method) => (
-                <div key={method.name} className={styles.payment}>
+                <div
+                    key={method.name}
+                    className={classNames(styles.payment, styles[method.name])}
+                >
                     <Image src={method.logo} alt="" fill />
                 </div>
             ))}

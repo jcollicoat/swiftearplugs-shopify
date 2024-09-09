@@ -7,8 +7,13 @@ import { CartProvider } from '@shopify/cart/cart-context';
 import { getCart } from '@shopify/index';
 import { ensureStartsWith } from '@shopify/utils';
 
-const { FACEBOOK_PIXEL_ID, TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } =
-    process.env;
+const {
+    FACEBOOK_PIXEL_ID,
+    GOOGLE_TAG_ID,
+    TWITTER_CREATOR,
+    TWITTER_SITE,
+    SITE_NAME,
+} = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     : 'http://localhost:3000';
@@ -67,6 +72,19 @@ export default async function RootLayout({
             </head>
             <body>
                 <CartProvider cartPromise={cart}>{children}</CartProvider>
+                <Script
+                    id="gtag-init"
+                    strategy="afterInteractive"
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+                />
+                <Script id="gtag-track" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', '${GOOGLE_TAG_ID}');
+                    `}
+                </Script>
                 <Script id="facebook-pixel" strategy="afterInteractive">
                     {`
                         !function(f,b,e,v,n,t,s)

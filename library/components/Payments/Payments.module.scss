@@ -1,0 +1,26 @@
+@import '@styles/constants.scss';
+
+.payments {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(8, minmax(0, 50px));
+    margin: 0 auto;
+
+    .payment {
+        aspect-ratio: 16 / 10;
+        border: 1px solid $color-red-light;
+        border-radius: 4px;
+        position: relative;
+        width: 100%;
+
+        img {
+            object-fit: cover;
+        }
+
+        &.PayPal {
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+}

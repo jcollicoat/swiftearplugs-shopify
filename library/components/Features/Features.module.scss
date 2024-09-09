@@ -1,20 +1,20 @@
 @import '@styles/constants.scss';
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
     margin-bottom: $padding-l;
 
     .card {
+        background-color: #ffffff;
         border: 1px solid $color-red-light;
         border-radius: $padding-s;
-        margin: 0 auto;
-        max-width: 800px;
+        flex-grow: 1;
+        margin-bottom: calc($padding-m * -1);
         padding: calc($padding-s / 2) $padding-s;
-
-        h2 {
-            @include gradient-text;
-
-            font-size: 1em;
-        }
+        position: relative;
+        width: 100%;
+        z-index: 2;
 
         table {
             border-collapse: collapse;
@@ -43,6 +43,12 @@
             }
 
             thead {
+                h2 {
+                    @include gradient-text;
+
+                    font-size: 1em;
+                }
+
                 svg {
                     color: $color-red;
                     height: 1.5rem;
@@ -68,16 +74,41 @@
         }
     }
 
+    .image {
+        aspect-ratio: 2 / 1;
+        border-radius: $padding-s;
+        flex-grow: 1;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .placeholder {
+            background-color: $color-red-light;
+            inset: 0;
+            position: absolute;
+        }
+    }
+
     @media (min-width: $breakpoint-s) {
         .card {
-            h2 {
-                font-size: 1.5rem;
+            table {
+                thead {
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+                }
             }
         }
     }
 
     @media (min-width: $breakpoint-m) {
+        flex-direction: row;
+
         .card {
+            margin-bottom: unset;
+            margin-right: calc($padding-m * -1);
+            max-width: 60%;
+
             table {
                 thead {
                     svg {
@@ -92,6 +123,18 @@
                         svg {
                             height: 1.25rem;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-l) {
+        .card {
+            table {
+                thead {
+                    h2 {
+                        font-size: 2em;
                     }
                 }
             }

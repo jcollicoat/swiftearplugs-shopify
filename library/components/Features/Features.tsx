@@ -48,6 +48,9 @@ export const Features: FC = () => {
                     </tbody>
                 </table>
             </div>
+            <div className={styles.image}>
+                <div className={styles.placeholder}></div>
+            </div>
         </section>
     );
 };

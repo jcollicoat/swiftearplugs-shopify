@@ -18,11 +18,13 @@ export const IconContent: FC<Props> = ({
     return (
         <li className={styles.item}>
             {style === 'above' && <Icon icon={icon} />}
-            <h3>
-                {style === 'inline' && <Icon icon={icon} />}
-                {heading}
-            </h3>
-            <p>{content}</p>
+            <div className={styles.content}>
+                <h3>
+                    {style === 'inline' && <Icon icon={icon} />}
+                    {heading}
+                </h3>
+                <p>{content}</p>
+            </div>
         </li>
     );
 };

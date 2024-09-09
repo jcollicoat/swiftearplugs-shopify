@@ -1,0 +1,60 @@
+@import '@styles/constants.scss';
+
+.container {
+    container-type: inline-size;
+
+    &.reversed {
+        .image {
+            margin-left: auto;
+        }
+
+        .content {
+            h2 {
+                margin-left: unset;
+            }
+        }
+    }
+
+    .image {
+        aspect-ratio: 4 / 3;
+        margin-bottom: -1.5rem;
+        overflow: hidden;
+        position: relative;
+        width: 90%;
+        z-index: 1;
+
+        .placeholder {
+            background-color: $color-red-light;
+            border-radius: $padding-s;
+            height: 100%;
+            width: 100%;
+        }
+
+        @container (width >= 500px) {
+            aspect-ratio: 2 / 1;
+        }
+    }
+
+    .content {
+        display: grid;
+        gap: $padding-s;
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            @include gradient-text;
+
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-bottom: $padding-s;
+            margin-left: auto;
+            max-width: 90%;
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        .image {
+            aspect-ratio: 2 / 1;
+        }
+    }
+}

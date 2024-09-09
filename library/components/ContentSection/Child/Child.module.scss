@@ -13,14 +13,16 @@
 
     .image {
         aspect-ratio: 1 / 1;
+        border-radius: $padding-s;
+        overflow: hidden;
         flex-shrink: 0;
+        position: relative;
         width: 40%;
 
         .placeholder {
             background: $color-red-light;
-            border-radius: $padding-s;
-            height: 100%;
-            width: 100%;
+            inset: 0;
+            position: absolute;
         }
     }
 

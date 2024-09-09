@@ -98,7 +98,7 @@
         }
 
         .main {
-            padding: $padding-l 0;
+            padding: calc($padding-l + $padding-m) 0 $padding-l 0;
         }
     }
 

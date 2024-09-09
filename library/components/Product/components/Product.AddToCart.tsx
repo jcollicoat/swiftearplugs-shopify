@@ -10,6 +10,12 @@ import { useProduct } from '@shopify/product/product-context';
 import { Product, ProductVariant } from '@shopify/types';
 import styles from '../Product.module.scss';
 
+declare global {
+    interface Window {
+        fbq: (event: string, name: string, data: unknown) => void;
+    }
+}
+
 export const ProductAddToCart: FC<{ product: Product }> = ({ product }) => {
     const { variants } = product;
     const { state } = useProduct();
@@ -39,6 +45,10 @@ export const ProductAddToCart: FC<{ product: Product }> = ({ product }) => {
             action={async () => {
                 addCartItem(finalVariant, product);
                 await actionWithVariant();
+                window.fbq('track', 'AddToCart', {
+                    content_ids: [finalVariant.id],
+                    content_type: 'product',
+                });
             }}
         >
             <div className={styles.action}>

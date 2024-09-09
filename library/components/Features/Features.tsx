@@ -6,10 +6,10 @@ import styles from './Features.module.scss';
 const content = {
     heading: 'Why buy from us?',
     items: [
-        'Built-in 17dB noise protection',
+        'Up to 17dB noise reduction',
         'Secure and comfortable fit',
         'Free shipping',
-        'Money back guarantee',
+        '30-day returns',
         'Re-usable + Eco-friendly',
         'Durable design & materials',
         'Easy to clean',

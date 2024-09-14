@@ -2,59 +2,63 @@
 
 .container {
     container-type: inline-size;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $padding-s;
 
     &.reversed {
         .image {
             margin-left: auto;
         }
 
-        .content {
-            h2 {
-                margin-left: unset;
-            }
+        .heading {
+            border-top-left-radius: unset;
+            border-top-right-radius: $padding-s;
+            margin-left: unset;
+            margin-right: auto;
         }
     }
 
     .image {
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 2 / 1;
         border-radius: $padding-s;
-        margin-bottom: -1.5rem;
+        margin-bottom: calc(($padding-s * 2) * -1);
         overflow: hidden;
         position: relative;
         width: 90%;
         z-index: 1;
+
+        img {
+            object-fit: cover;
+        }
 
         .placeholder {
             background-color: $color-red-light;
             inset: 0;
             position: absolute;
         }
-
-        @container (width >= 500px) {
-            aspect-ratio: 2 / 1;
-        }
     }
 
-    .content {
-        display: grid;
-        gap: $padding-s;
-        position: relative;
+    .heading {
+        background-color: $color-background;
+        border-top: 1px solid $color-red-light;
+        border-top-left-radius: $padding-s;
+        margin-left: auto;
+        max-width: 90%;
+        padding: $padding-s;
+        width: clamp(0px, max-content, 90%);
         z-index: 2;
 
         h2 {
             @include gradient-text;
 
-            display: inline-block;
             font-size: 2.5rem;
-            margin-bottom: $padding-s;
-            margin-left: auto;
-            max-width: 90%;
         }
     }
 
-    @media (min-width: $breakpoint-m) {
-        .image {
-            aspect-ratio: 2 / 1;
-        }
+    .content {
+        display: grid;
+        position: relative;
+        z-index: 2;
     }
 }

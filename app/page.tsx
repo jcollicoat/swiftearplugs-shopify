@@ -7,6 +7,11 @@ import { Hero } from '@components/Hero/Hero';
 import { IconContent } from '@components/IconContent/IconContent';
 import { StickyScroller } from '@components/StickyScroller/StickyScroller';
 import { WhyChoose } from '@components/WhyChoose/WhyChoose';
+import anyNightOut from 'public/any-night-out.jpg';
+import pink from 'public/lockup-1.jpg';
+import cases from 'public/lockup-cases.jpg';
+import earplugsCircle from 'public/lockup-earplugs-circle.jpg';
+import earplugs from 'public/lockup-earplugs.jpg';
 import imageOneBlur from 'public/swift-content-1-blur.jpg';
 import imageOne from 'public/swift-content-1.jpg';
 
@@ -27,13 +32,13 @@ export default function HomePage() {
                         heading="Feel the music, not noise"
                         content={[
                             {
-                                image: imageOne.src,
+                                image: earplugsCircle.src,
                                 heading: 'Up to 17dB noise reduction',
                                 content:
                                     'Jump, dance, and feel free. Our earplugs are crafted to fit securely, ensuring they stay in place as you move with the music.',
                             },
                             {
-                                image: imageOne.src,
+                                image: pink.src,
                                 heading: 'Long-lasting protection',
                                 content:
                                     'Crafted from durable materials, Swift Earplugs protect your hearing during countless nights out – because the best nights should never end in ringing ears.',
@@ -43,15 +48,16 @@ export default function HomePage() {
                     <ContentSection
                         reversed
                         heading="Perfect on any night out"
+                        image={anyNightOut.src}
                         content={[
                             {
-                                image: imageOne.src,
+                                image: earplugs.src,
                                 heading: 'For any occasion',
                                 content:
                                     'Whether you’re at a concert, a festival, or a club, Swift Earplugs are your best companion, ensuring that you are enjoying the music while protecting your hearing.',
                             },
                             {
-                                image: imageOne.src,
+                                image: cases.src,
                                 heading: 'Compact and portable',
                                 content:
                                     'Each pair of Swift Earplugs comes with a sleek, portable carrying case, making it easy to take them wherever the music takes you.',

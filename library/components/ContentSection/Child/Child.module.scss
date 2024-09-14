@@ -4,8 +4,7 @@
     align-items: center;
     display: flex;
     flex-wrap: nowrap;
-    gap: $padding-s;
-    justify-content: space-between;
+    justify-content: space-around;
 
     &:nth-of-type(2n) {
         flex-direction: row-reverse;
@@ -16,8 +15,13 @@
         border-radius: $padding-s;
         overflow: hidden;
         flex-shrink: 0;
+        max-width: 250px;
         position: relative;
         width: 40%;
+
+        img {
+            object-fit: cover;
+        }
 
         .placeholder {
             background: $color-red-light;
@@ -28,6 +32,8 @@
 
     .content {
         flex-grow: 1;
+        margin: $padding-s 0;
+        max-width: clamp(0px, 100%, 380px);
 
         h3 {
             @include gradient-text;
@@ -43,10 +49,6 @@
     }
 
     @container (width >= 600px) {
-        .image {
-            aspect-ratio: 4 / 3;
-        }
-
         .content {
             h3 {
                 font-size: 1.5em;

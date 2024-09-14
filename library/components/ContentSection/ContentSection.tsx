@@ -7,7 +7,7 @@ import styles from './ContentSection.module.scss';
 interface Props {
     heading: string;
     content: ComponentProps<typeof Child>[];
-    image?: ComponentProps<typeof Image>;
+    image?: string;
     reversed?: boolean;
 }
 
@@ -27,7 +27,7 @@ export const ContentSection: FC<Props> = ({
             <div className={styles.image}>
                 {image ? (
                     <Image
-                        src={image.src}
+                        src={image}
                         sizes="(max-width: 799px) 100vw, 66vw"
                         placeholder="empty"
                         alt=""
@@ -36,10 +36,11 @@ export const ContentSection: FC<Props> = ({
                 ) : (
                     <div className={styles.placeholder}></div>
                 )}
-                <div className={styles.placeholder}></div>
+            </div>
+            <div className={styles.heading}>
+                <h2>{heading}</h2>
             </div>
             <div className={styles.content}>
-                <h2>{heading}</h2>
                 {content.map((section) => (
                     <Child key={section.heading} {...section} />
                 ))}

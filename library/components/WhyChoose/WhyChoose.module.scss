@@ -52,11 +52,15 @@
     }
 
     @media (min-width: $breakpoint-m) {
-        gap: $padding-l;
+        gap: $padding-m;
         grid-template-columns: auto 1fr;
 
         h2 {
             text-align: left;
         }
+    }
+
+    @media (min-width: $breakpoint-l) {
+        gap: $padding-l;
     }
 }

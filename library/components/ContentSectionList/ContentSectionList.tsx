@@ -24,13 +24,12 @@ export const ContentSectionList: FC<PropsWithChildren<Props>> = ({
                     placeholder={imageBlur ? 'blur' : 'empty'}
                     alt=""
                     fill
-                    style={{
-                        objectFit: 'cover',
-                    }}
                 />
             </div>
             <div className={styles.content}>
-                <h2>{heading}</h2>
+                <div className={styles.heading}>
+                    <h2>{heading}</h2>
+                </div>
                 <ul>{children}</ul>
             </div>
         </section>

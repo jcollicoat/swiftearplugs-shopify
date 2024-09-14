@@ -7,13 +7,12 @@ import { IconContent } from '@components/IconContent/IconContent';
 import { StickyScroller } from '@components/StickyScroller/StickyScroller';
 import { WhyChoose } from '@components/WhyChoose/WhyChoose';
 import anyNightOut from 'public/any-night-out.jpg';
+import comfortAndStyle from 'public/comfort-and-style.jpg';
 import feelTheMusic from 'public/feel-the-music.jpg';
 import cases from 'public/lockup-cases.png';
 import circle from 'public/lockup-earplugs-circle.png';
 import earplugs from 'public/lockup-earplugs.png';
 import pink from 'public/lockup-pink.png';
-import imageOneBlur from 'public/swift-content-1-blur.jpg';
-import imageOne from 'public/swift-content-1.jpg';
 
 export const metadata = {
     description: 'Swift Earplugs bring you closer to the music you love.',
@@ -68,8 +67,7 @@ export default function HomePage() {
                 </StickyScroller>
                 <ContentSectionList
                     heading="Designed for comfort and style"
-                    image={imageOne.src}
-                    imageBlur={imageOneBlur.src}
+                    image={comfortAndStyle.src}
                 >
                     <IconContent
                         icon="Earplug"

@@ -12,6 +12,8 @@
         }
 
         .heading {
+            border-left: unset;
+            border-right: 2px solid $color-red-light;
             border-top-left-radius: unset;
             border-top-right-radius: $padding-s;
             margin-left: unset;
@@ -41,7 +43,8 @@
 
     .heading {
         background-color: $color-background;
-        border-top: 1px solid $color-red-light;
+        border-left: 2px solid $color-red-light;
+        border-top: 2px solid $color-red-light;
         border-top-left-radius: $padding-s;
         margin-left: auto;
         max-width: 90%;

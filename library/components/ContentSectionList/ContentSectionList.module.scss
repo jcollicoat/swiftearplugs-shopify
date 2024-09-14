@@ -85,6 +85,8 @@
     }
 
     @media (min-width: $breakpoint-l) {
+        gap: $padding-l;
+
         .content {
             ul {
                 gap: $padding-m;

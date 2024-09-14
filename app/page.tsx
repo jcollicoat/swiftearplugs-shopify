@@ -1,14 +1,18 @@
 import { Cart } from '@components/Cart/Cart';
 import { ContentSection } from '@components/ContentSection/ContentSection';
 import { ContentSectionList } from '@components/ContentSectionList/ContentSectionList';
-import { Features } from '@components/Features/Features';
 import { Footer } from '@components/Footer/Footer';
 import { Hero } from '@components/Hero/Hero';
 import { IconContent } from '@components/IconContent/IconContent';
 import { StickyScroller } from '@components/StickyScroller/StickyScroller';
 import { WhyChoose } from '@components/WhyChoose/WhyChoose';
-import imageOneBlur from 'public/swift-content-1-blur.jpg';
-import imageOne from 'public/swift-content-1.jpg';
+import anyNightOut from 'public/any-night-out.jpg';
+import comfortAndStyle from 'public/comfort-and-style.jpg';
+import feelTheMusic from 'public/feel-the-music.jpg';
+import cases from 'public/lockup-cases.png';
+import circle from 'public/lockup-earplugs-circle.png';
+import earplugs from 'public/lockup-earplugs.png';
+import pink from 'public/lockup-pink.png';
 
 export const metadata = {
     description: 'Swift Earplugs bring you closer to the music you love.',
@@ -25,15 +29,16 @@ export default function HomePage() {
                 <StickyScroller>
                     <ContentSection
                         heading="Feel the music, not noise"
+                        image={feelTheMusic.src}
                         content={[
                             {
-                                image: imageOne.src,
+                                image: circle.src,
                                 heading: 'Up to 17dB noise reduction',
                                 content:
                                     'Jump, dance, and feel free. Our earplugs are crafted to fit securely, ensuring they stay in place as you move with the music.',
                             },
                             {
-                                image: imageOne.src,
+                                image: pink.src,
                                 heading: 'Long-lasting protection',
                                 content:
                                     'Crafted from durable materials, Swift Earplugs protect your hearing during countless nights out – because the best nights should never end in ringing ears.',
@@ -43,15 +48,16 @@ export default function HomePage() {
                     <ContentSection
                         reversed
                         heading="Perfect on any night out"
+                        image={anyNightOut.src}
                         content={[
                             {
-                                image: imageOne.src,
+                                image: earplugs.src,
                                 heading: 'For any occasion',
                                 content:
                                     'Whether you’re at a concert, a festival, or a club, Swift Earplugs are your best companion, ensuring that you are enjoying the music while protecting your hearing.',
                             },
                             {
-                                image: imageOne.src,
+                                image: cases.src,
                                 heading: 'Compact and portable',
                                 content:
                                     'Each pair of Swift Earplugs comes with a sleek, portable carrying case, making it easy to take them wherever the music takes you.',
@@ -61,8 +67,7 @@ export default function HomePage() {
                 </StickyScroller>
                 <ContentSectionList
                     heading="Designed for comfort and style"
-                    image={imageOne.src}
-                    imageBlur={imageOneBlur.src}
+                    image={comfortAndStyle.src}
                 >
                     <IconContent
                         icon="Earplug"
@@ -87,7 +92,6 @@ export default function HomePage() {
                                 through countless nights out."
                     />
                 </ContentSectionList>
-                <Features />
                 <WhyChoose />
             </main>
             <Footer />

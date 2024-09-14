@@ -7,16 +7,17 @@
     margin-bottom: $padding-l;
 
     .image {
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 2 / 1;
         border-radius: $padding-s;
-        margin-bottom: -1.5rem;
+        margin-bottom: calc(($padding-s * 2) * -1);
         overflow: hidden;
         position: relative;
         width: 90%;
         z-index: 1;
 
-        @container (width >= 500px) {
-            aspect-ratio: 2 / 1;
+        img {
+            object-fit: cover;
+            object-position: center 15%;
         }
     }
 
@@ -27,12 +28,22 @@
         position: relative;
         z-index: 2;
 
-        h2 {
-            @include gradient-text;
-
-            font-size: 2.5em;
+        .heading {
+            background-color: $color-background;
+            border-left: 2px solid $color-red-light;
+            border-top: 2px solid $color-red-light;
+            border-top-left-radius: $padding-s;
             margin-left: auto;
-            width: 90%;
+            max-width: 90%;
+            padding: $padding-s;
+            width: clamp(0px, max-content, 90%);
+            z-index: 2;
+
+            h2 {
+                @include gradient-text;
+
+                font-size: 2.5rem;
+            }
         }
 
         ul {
@@ -71,6 +82,12 @@
 
         .content {
             padding: $padding-m 0;
+
+            .heading {
+                border: unset;
+                margin-left: unset;
+                padding: unset;
+            }
 
             h2 {
                 width: 100%;

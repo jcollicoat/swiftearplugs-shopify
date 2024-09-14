@@ -5,36 +5,16 @@ import casePurple from 'public/case-lilac-purple.png';
 import earplugPurple from 'public/earplug-lilac-purple-1.png';
 import earplugBlack from 'public/earplug-matte-black-1.png';
 import earplugRose from 'public/earplug-rose-gold-2.png';
-import imageSmallBlur from 'public/swift-hero-1-blur.jpg';
-import imageSmall from 'public/swift-hero-1.jpg';
-import imageLargeBlur from 'public/swift-hero-2-blur.jpg';
-import imageLarge from 'public/swift-hero-2.jpg';
+import imageSmallBlur from 'public/hero-1-blur.jpg';
+import imageSmall from 'public/hero-1.jpg';
+import imageLargeBlur from 'public/hero-2-blur.jpg';
+import imageLarge from 'public/hero-2.jpg';
 import styles from './Hero.module.scss';
 
 export const Hero: FC = () => {
     return (
         <header className={styles.wrapper}>
             <Logo />
-            <div className={styles.image}>
-                <Image
-                    src={imageSmall.src}
-                    blurDataURL={imageSmallBlur.src}
-                    sizes="(max-width: 799px) 100vw, 50vw"
-                    placeholder="blur"
-                    alt=""
-                    fill
-                    className={styles.imageSmall}
-                />
-                <Image
-                    src={imageLarge.src}
-                    blurDataURL={imageLargeBlur.src}
-                    sizes="(max-width: 799px) 100vw, 50vw"
-                    placeholder="blur"
-                    alt=""
-                    fill
-                    className={styles.imageLarge}
-                />
-            </div>
             <div className={styles.content}>
                 <Image
                     src={casePurple.src}
@@ -75,6 +55,26 @@ export const Hero: FC = () => {
                     to deliver crystal clear sound, while protecting your
                     hearing for many years to come.
                 </p>
+            </div>
+            <div className={styles.image}>
+                <Image
+                    src={imageSmall.src}
+                    blurDataURL={imageSmallBlur.src}
+                    sizes="(max-width: 799px) 100vw, 60vw"
+                    placeholder="blur"
+                    alt=""
+                    fill
+                    className={styles.imageSmall}
+                />
+                <Image
+                    src={imageLarge.src}
+                    blurDataURL={imageLargeBlur.src}
+                    sizes="(max-width: 799px) 100vw, 60vw"
+                    placeholder="blur"
+                    alt=""
+                    fill
+                    className={styles.imageLarge}
+                />
             </div>
         </header>
     );

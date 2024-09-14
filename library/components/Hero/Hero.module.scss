@@ -7,7 +7,7 @@
     margin-left: calc($padding-s * -1);
     overflow: hidden;
     padding-bottom: $padding-l;
-    padding: 0 0 $padding-l 0;
+    padding: $padding-l 0 0 0;
     position: relative;
     width: calc(100% + $padding-m);
     z-index: 1;
@@ -15,8 +15,8 @@
     svg {
         color: $color-red;
         height: 3rem;
+        left: $padding-s;
         position: absolute;
-        right: $padding-s;
         top: $padding-s;
         z-index: 2;
     }
@@ -30,24 +30,11 @@
         .imageLarge {
             display: none;
         }
-
-        &::after {
-            background: linear-gradient(
-                to bottom,
-                rgba($color-red-light, 0),
-                $color-red-light
-            );
-            bottom: 0;
-            content: '';
-            height: 5rem;
-            position: absolute;
-            width: 100%;
-            z-index: 1;
-        }
     }
 
     .content {
         margin: auto;
+        margin-bottom: $padding-s;
         max-width: 380px;
         padding: $padding-m $padding-s;
         position: relative;
@@ -142,9 +129,8 @@
 
     @media (min-width: $breakpoint-m) {
         display: flex;
-        flex-direction: row-reverse;
-        padding-bottom: 0;
         padding-left: $padding-s;
+        padding-top: 0;
 
         svg {
             left: $padding-s;
@@ -152,7 +138,12 @@
 
         .image {
             max-height: 400px;
-            max-width: 400px;
+            width: 50%;
+
+            img {
+                object-fit: cover;
+                object-position: left 30%;
+            }
 
             .imageSmall {
                 display: none;
@@ -168,6 +159,8 @@
         }
 
         .content {
+            margin-bottom: auto;
+
             .earplugPurple {
                 bottom: 40%;
                 left: -30px;
@@ -210,14 +203,6 @@
     @media (min-width: $breakpoint-l) {
         .image {
             max-height: 500px;
-            max-width: 500px;
-        }
-    }
-
-    @media (min-width: $breakpoint-xl) {
-        .image {
-            max-height: 600px;
-            max-width: 600px;
         }
     }
 }

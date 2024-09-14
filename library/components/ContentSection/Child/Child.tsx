@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 import { FC } from 'react';
 import styles from './Child.module.scss';
 
@@ -11,7 +12,11 @@ interface Props {
 export const Child: FC<Props> = ({ image, heading, content }) => (
     <div className={classNames(styles.child, styles.reversed)}>
         <div className={styles.image}>
-            <div className={styles.placeholder}></div>
+            {image ? (
+                <Image src={image} alt="" fill />
+            ) : (
+                <div className={styles.placeholder}></div>
+            )}
         </div>
         <div className={styles.content}>
             <h3>{heading}</h3>

@@ -1,7 +1,6 @@
 import { Cart } from '@components/Cart/Cart';
 import { ContentSection } from '@components/ContentSection/ContentSection';
 import { ContentSectionList } from '@components/ContentSectionList/ContentSectionList';
-import { Features } from '@components/Features/Features';
 import { Footer } from '@components/Footer/Footer';
 import { Hero } from '@components/Hero/Hero';
 import { IconContent } from '@components/IconContent/IconContent';
@@ -95,7 +94,6 @@ export default function HomePage() {
                                 through countless nights out."
                     />
                 </ContentSectionList>
-                <Features />
                 <WhyChoose />
             </main>
             <Footer />

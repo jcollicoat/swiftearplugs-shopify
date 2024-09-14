@@ -103,6 +103,8 @@
     }
 
     @media (min-width: $breakpoint-l) {
+        gap: $padding-l;
+
         .sticky {
             width: 500px;
 

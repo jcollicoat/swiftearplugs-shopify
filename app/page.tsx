@@ -8,10 +8,11 @@ import { IconContent } from '@components/IconContent/IconContent';
 import { StickyScroller } from '@components/StickyScroller/StickyScroller';
 import { WhyChoose } from '@components/WhyChoose/WhyChoose';
 import anyNightOut from 'public/any-night-out.jpg';
-import pink from 'public/lockup-1.jpg';
-import cases from 'public/lockup-cases.jpg';
-import earplugsCircle from 'public/lockup-earplugs-circle.jpg';
-import earplugs from 'public/lockup-earplugs.jpg';
+import feelTheMusic from 'public/feel-the-music.jpg';
+import cases from 'public/lockup-cases.png';
+import circle from 'public/lockup-earplugs-circle.png';
+import earplugs from 'public/lockup-earplugs.png';
+import pink from 'public/lockup-pink.png';
 import imageOneBlur from 'public/swift-content-1-blur.jpg';
 import imageOne from 'public/swift-content-1.jpg';
 
@@ -30,9 +31,10 @@ export default function HomePage() {
                 <StickyScroller>
                     <ContentSection
                         heading="Feel the music, not noise"
+                        image={feelTheMusic.src}
                         content={[
                             {
-                                image: earplugsCircle.src,
+                                image: circle.src,
                                 heading: 'Up to 17dB noise reduction',
                                 content:
                                     'Jump, dance, and feel free. Our earplugs are crafted to fit securely, ensuring they stay in place as you move with the music.',

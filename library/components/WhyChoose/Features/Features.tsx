@@ -24,7 +24,7 @@ export const Features: FC = () => {
                 <thead>
                     <tr>
                         <td>
-                            <h3>Why buy from us?</h3>
+                            <h3>What Swift offers:</h3>
                         </td>
                         <td>
                             <Logo />

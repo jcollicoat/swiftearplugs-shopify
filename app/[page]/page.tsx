@@ -10,7 +10,7 @@ export default async function Page({
 
     return (
         <main>
-            <div></div>
+            <div>{pageData.title}</div>
         </main>
     );
 }

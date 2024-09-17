@@ -12,15 +12,6 @@
     width: calc(100% + $padding-m);
     z-index: 1;
 
-    svg {
-        color: $color-red;
-        height: 3rem;
-        left: $padding-s;
-        position: absolute;
-        top: $padding-s;
-        z-index: 2;
-    }
-
     .image {
         aspect-ratio: 1 / 1;
         position: relative;
@@ -131,10 +122,6 @@
         display: flex;
         padding-left: $padding-s;
         padding-top: 0;
-
-        svg {
-            left: $padding-s;
-        }
 
         .image {
             max-height: 400px;

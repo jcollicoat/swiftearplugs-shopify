@@ -3,6 +3,9 @@ import '@styles/layout.scss';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
 import { ReactNode } from 'react';
+import { Cart } from '@components/Cart/Cart';
+import { Footer } from '@components/Footer/Footer';
+import { Header } from '@components/sections/Header/Header';
 import { CartProvider } from '@shopify/cart/cart-context';
 import { getCart } from '@shopify/index';
 import { ensureStartsWith } from '@shopify/utils';
@@ -71,7 +74,12 @@ export default async function RootLayout({
                 />
             </head>
             <body>
-                <CartProvider cartPromise={cart}>{children}</CartProvider>
+                <CartProvider cartPromise={cart}>
+                    <Header />
+                    <main>{children}</main>
+                    <Footer />
+                    <Cart />
+                </CartProvider>
                 <Script
                     id="gtag-init"
                     strategy="afterInteractive"

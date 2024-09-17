@@ -23,6 +23,8 @@ $transition-speed-slow: 0.5s;
 $transition: $transition-speed ease-in-out;
 $transition-slow: $transition-speed-slow ease-in-out;
 
+$z-header: 10;
+
 // Mixins
 
 @mixin focus-outline {
@@ -41,4 +43,12 @@ $transition-slow: $transition-speed-slow ease-in-out;
     background-image: linear-gradient(135deg, $color-red, $color-pink);
     color: transparent;
     padding: 0.1em 0;
+}
+
+@mixin debug {
+    outline: 1px solid red;
+
+    * {
+        outline: 1px solid red;
+    }
 }

@@ -1,9 +1,9 @@
-import { ContentSection } from '@components/ContentSection/ContentSection';
-import { ContentSectionList } from '@components/ContentSectionList/ContentSectionList';
-import { Hero } from '@components/Hero/Hero';
 import { IconContent } from '@components/IconContent/IconContent';
-import { StickyScroller } from '@components/StickyScroller/StickyScroller';
-import { WhyChoose } from '@components/WhyChoose/WhyChoose';
+import { ContentSection } from '@layouts/ContentSection/ContentSection';
+import { ContentSectionList } from '@layouts/ContentSectionList/ContentSectionList';
+import { Hero } from '@layouts/Hero/Hero';
+import { StickyScroller } from '@layouts/StickyScroller/StickyScroller';
+import { WhyChoose } from '@layouts/WhyChoose/WhyChoose';
 import anyNightOut from 'public/any-night-out.jpg';
 import comfortAndStyle from 'public/comfort-and-style.jpg';
 import feelTheMusic from 'public/feel-the-music.jpg';

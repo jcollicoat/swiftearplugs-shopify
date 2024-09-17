@@ -16,7 +16,7 @@ declare global {
     }
 }
 
-export const ProductAddToCart: FC<{ product: Product }> = ({ product }) => {
+export const AddToCart: FC<{ product: Product }> = ({ product }) => {
     const { variants } = product;
     const { state } = useProduct();
     const { addCartItem } = useCart();

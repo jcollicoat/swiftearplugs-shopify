@@ -23,6 +23,7 @@
         "baseUrl": ".",
         "paths": {
             "@components/*": ["library/components/*"],
+            "@layouts/*": ["library/layouts/*"],
             "@shopify/*": ["library/shopify/*"],
             "@styles/*": ["library/styles/*"]
         },

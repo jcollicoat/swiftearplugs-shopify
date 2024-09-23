@@ -3,9 +3,11 @@
 import React, {
     createContext,
     use,
+    useCallback,
     useContext,
     useMemo,
     useOptimistic,
+    useState,
 } from 'react';
 import type { Cart, CartItem, Product, ProductVariant } from '@shopify/types';
 
@@ -25,6 +27,8 @@ type CartContextType = {
     cart: Cart | undefined;
     updateCartItem: (merchandiseId: string, updateType: UpdateType) => void;
     addCartItem: (variant: ProductVariant, product: Product) => void;
+    isCartOpen: boolean;
+    toggleIsCartOpen: () => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -204,28 +208,47 @@ export function CartProvider({
         cartReducer,
     );
 
-    const updateCartItem = (merchandiseId: string, updateType: UpdateType) => {
-        updateOptimisticCart({
-            type: 'UPDATE_ITEM',
-            payload: { merchandiseId, updateType },
-        });
-    };
+    const updateCartItem = useCallback(
+        (merchandiseId: string, updateType: UpdateType) => {
+            updateOptimisticCart({
+                type: 'UPDATE_ITEM',
+                payload: { merchandiseId, updateType },
+            });
+        },
+        [updateOptimisticCart],
+    );
 
-    const addCartItem = (variant: ProductVariant, product: Product) => {
-        updateOptimisticCart({
-            type: 'ADD_ITEM',
-            payload: { variant, product },
-        });
-    };
+    const addCartItem = useCallback(
+        (variant: ProductVariant, product: Product) => {
+            updateOptimisticCart({
+                type: 'ADD_ITEM',
+                payload: { variant, product },
+            });
+        },
+        [updateOptimisticCart],
+    );
+
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const toggleIsCartOpen = useCallback(
+        () => setIsCartOpen(!isCartOpen),
+        [isCartOpen],
+    );
 
     const value = useMemo(
         () => ({
             cart: optimisticCart,
             updateCartItem,
             addCartItem,
+            isCartOpen,
+            toggleIsCartOpen,
         }),
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [optimisticCart],
+        [
+            addCartItem,
+            isCartOpen,
+            optimisticCart,
+            toggleIsCartOpen,
+            updateCartItem,
+        ],
     );
 
     return (

@@ -11,6 +11,7 @@
     z-index: $z-header;
 
     .bar {
+        align-items: center;
         background-color: transparent;
         box-shadow: none;
         border: 1px solid transparent;
@@ -37,15 +38,8 @@
             }
         }
 
-        .cart {
-            align-items: center;
-            border: 1.5px solid $color-text;
-            border-radius: 4px;
-            display: flex;
-            font-size: 0.9em;
-            gap: 4px;
+        .menu {
             opacity: 0;
-            padding: 0.25em 1em;
             transition: opacity $transition-slow;
         }
 
@@ -60,7 +54,7 @@
                 0px 16px 32px rgba($color-shadow, 0.05);
             pointer-events: auto;
 
-            .cart {
+            .menu {
                 opacity: 1;
             }
         }

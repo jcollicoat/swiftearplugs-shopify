@@ -1,5 +1,3 @@
-'use client';
-
 import { FC } from 'react';
 import { Cost } from '@components/Cost/Cost';
 import { Icon } from '@components/Icon/Icon';
@@ -10,9 +8,11 @@ export const CartButton: FC = () => {
     const { cart, isCartOpen, setIsCartOpen } = useCart();
     const toggleCart = () => setIsCartOpen(!isCartOpen);
 
-    const value = cart?.cost.totalAmount.amount ?? '0.00';
-    const currency = cart?.cost.totalAmount.currencyCode ?? 'NZD';
-    const quantity = cart?.totalQuantity ?? 0;
+    if (!cart) return null;
+
+    const value = cart.cost.totalAmount.amount;
+    const currency = cart.cost.totalAmount.currencyCode;
+    const quantity = cart.totalQuantity;
 
     return (
         <button className={styles.button} onClick={toggleCart}>

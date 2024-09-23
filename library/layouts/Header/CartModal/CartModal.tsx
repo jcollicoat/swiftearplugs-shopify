@@ -1,5 +1,3 @@
-'use client';
-
 import classNames from 'classnames';
 import { FC, useEffect } from 'react';
 import { Icon } from '@components/Icon/Icon';
@@ -7,6 +5,7 @@ import { createCartAndSetCookie } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import styles from './CartModal.module.scss';
 import { Item } from './Item/Item';
+import { Summary } from './Summary/Summary';
 
 export const CartModal: FC = () => {
     const { cart, isCartOpen, setIsCartOpen } = useCart();
@@ -58,6 +57,7 @@ export const CartModal: FC = () => {
                             ))}
                         </div>
                         <hr />
+                        <Summary />
                     </>
                 )}
             </div>

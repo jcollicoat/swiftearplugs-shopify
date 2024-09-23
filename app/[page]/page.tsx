@@ -1,4 +1,5 @@
 import { getPage } from '@shopify/index';
+import styles from './page.module.scss';
 
 export default async function Page({
     params: { page },
@@ -6,11 +7,15 @@ export default async function Page({
     params: { page: string };
 }) {
     const pageData = await getPage(page);
-    console.log(pageData);
 
     return (
-        <main>
-            <div></div>
-        </main>
+        <section className={styles.wrapper}>
+            <h1 className={styles.title}>{pageData.title}</h1>
+            <div
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: pageData.body }}
+                className={styles.content}
+            ></div>
+        </section>
     );
 }

@@ -1,0 +1,33 @@
+@import '@styles/constants.scss';
+
+.summary {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .total {
+        display: flex;
+        gap: 0.25em;
+    }
+
+    .quantity {
+        color: $color-text;
+        font-size: 0.75em;
+    }
+
+    .checkout {
+        background: linear-gradient(to right, $color-red, $color-pink);
+        border-radius: 4px;
+        color: #ffffff;
+        display: flex;
+        gap: 8px;
+        padding: calc($padding-s / 1.5) $padding-s;
+        text-align: center;
+
+        &:disabled {
+            background: $color-text;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+}

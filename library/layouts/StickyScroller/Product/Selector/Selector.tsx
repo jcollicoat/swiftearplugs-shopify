@@ -12,7 +12,7 @@ interface Props {
     images: ProductImage[];
 }
 
-export const ProductSelector: FC<Props> = ({ variants, images }) => {
+export const Selector: FC<Props> = ({ variants, images }) => {
     const { state, updateOption } = useProduct();
     const updateURL = useUpdateURL();
 

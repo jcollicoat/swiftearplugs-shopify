@@ -6,7 +6,7 @@ import { useProduct } from '@shopify/product/product-context';
 import { Product } from '@shopify/types';
 import styles from '../Product.module.scss';
 
-export const ProductImages: FC<{ product: Product }> = ({ product }) => {
+export const Images: FC<{ product: Product }> = ({ product }) => {
     const { state } = useProduct();
 
     return (

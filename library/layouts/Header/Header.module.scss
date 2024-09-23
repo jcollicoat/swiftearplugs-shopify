@@ -1,0 +1,91 @@
+@import '@styles/constants.scss';
+
+.header {
+    align-items: center;
+    display: flex;
+    height: min-content;
+    inset: 0;
+    justify-content: space-between;
+    padding: $padding-s;
+    position: fixed;
+    z-index: $z-header;
+
+    &::before {
+        background-image: linear-gradient(
+            to top,
+            rgba($color-background, 0),
+            $color-background $padding-s
+        );
+        content: '';
+        height: 4rem;
+        inset: 0;
+        opacity: 0;
+        position: fixed;
+        transition: opacity $transition-slow;
+        z-index: -1;
+    }
+
+    &.showBar {
+        &::before {
+            opacity: 1;
+        }
+
+        .bar {
+            background-color: $color-background;
+            border-color: $color-red-light;
+            box-shadow:
+                0px 1px 2px rgba($color-shadow, 0.05),
+                0px 2px 4px rgba($color-shadow, 0.05),
+                0px 4px 8px rgba($color-shadow, 0.05),
+                0px 8px 16px rgba($color-shadow, 0.05),
+                0px 16px 32px rgba($color-shadow, 0.05);
+            pointer-events: auto;
+
+            .menu {
+                opacity: 1;
+            }
+        }
+    }
+
+    .bar {
+        align-items: center;
+        background-color: transparent;
+        box-shadow: none;
+        border: 1px solid transparent;
+        border-radius: $padding-s;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: calc($padding-s / 2);
+        pointer-events: none;
+        transition:
+            background-color,
+            border-color,
+            box-shadow $transition-slow;
+        width: 100%;
+        z-index: 2;
+
+        .logo {
+            color: $color-red;
+            pointer-events: auto;
+
+            svg {
+                height: 2rem;
+            }
+        }
+
+        .menu {
+            opacity: 0;
+            transition: opacity $transition-slow;
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: $padding-m;
+
+        .bar {
+            padding: calc($padding-s / 2) $padding-s;
+        }
+    }
+}

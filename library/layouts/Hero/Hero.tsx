@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { FC } from 'react';
-import { Logo } from '@components/Logo/Logo';
 import casePurple from 'public/case-lilac-purple.png';
 import earplugPurple from 'public/earplug-lilac-purple-1.png';
 import earplugBlack from 'public/earplug-matte-black-1.png';
@@ -14,7 +13,6 @@ import styles from './Hero.module.scss';
 export const Hero: FC = () => {
     return (
         <header className={styles.wrapper}>
-            <Logo />
             <div className={styles.content}>
                 <Image
                     src={casePurple.src}

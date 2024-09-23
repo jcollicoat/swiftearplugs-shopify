@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { Payments } from '@components/Payments/Payments';
 import { getProduct } from '@shopify/index';
 import { ProductProvider } from '@shopify/product/product-context';
-import { ProductAddToCart } from './components/Product.AddToCart';
-import { ProductImages } from './components/Product.Images';
-import { ProductSelector } from './components/Product.Selector';
+import { AddToCart } from './AddToCart/AddToCart';
+import { Images } from './Images/Images';
+import { Payments } from './Payments/Payments';
 import styles from './Product.module.scss';
+import { Selector } from './Selector/Selector';
 
 export const Product: FC = async () => {
     const product = await getProduct('swift-earplugs');
@@ -41,12 +41,9 @@ export const Product: FC = async () => {
                 }}
             />
             <div className={styles.product}>
-                <ProductImages product={product} />
-                <ProductSelector
-                    variants={product.variants}
-                    images={product.images}
-                />
-                <ProductAddToCart product={product} />
+                <Images product={product} />
+                <Selector variants={product.variants} images={product.images} />
+                <AddToCart product={product} />
                 <Payments />
             </div>
         </ProductProvider>

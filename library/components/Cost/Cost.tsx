@@ -2,20 +2,28 @@ import { FC } from 'react';
 import styles from './Cost.module.scss';
 
 interface Props {
-    value: string;
-    currency: string;
+    value?: string;
+    currency?: string;
 }
 
 export const Cost: FC<Props> = ({ value, currency }) => {
-    let formattedValue = value;
-    if (formattedValue.split('.')[1].length === 1) {
-        formattedValue = value + '0';
+    if (!value || !currency) return null;
+
+    const dollars = value.split('.')[0] ?? '00';
+    let cents = value.split('.')[1] ?? '00';
+    if (cents.length > 2) {
+        cents = Math.round(Number(cents)).toString();
+    }
+    if (cents.length === 1) {
+        cents = cents + '0';
     }
 
+    const formattedValue = dollars + '.' + cents;
+
     return (
-        <div className={styles.cost}>
+        <span className={styles.cost}>
             ${formattedValue}
             <span> {currency === 'XXX' ? 'NZD' : currency}</span>
-        </div>
+        </span>
     );
 };

@@ -1,0 +1,40 @@
+@import '@styles/constants.scss';
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 70ch;
+    padding-bottom: $padding-l;
+    padding-top: calc($padding-l * 1.5);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include gradient-text;
+
+        margin: 1em 0 0.75em 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p,
+    ul,
+    ol {
+        color: $color-text;
+        font-size: 0.9em;
+        margin: 1em 0;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 1em;
+    }
+}

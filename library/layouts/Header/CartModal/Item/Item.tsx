@@ -6,9 +6,13 @@ import { Icon } from '@components/Icon/Icon';
 import { removeItem } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import { CartItem } from '@shopify/types';
-import styles from '../Cart.module.scss';
+import styles from './Item.module.scss';
 
-const LineItem: FC<{ item: CartItem }> = ({ item }) => {
+interface Props {
+    item: CartItem;
+}
+
+export const Item: FC<Props> = ({ item }) => {
     const { updateCartItem } = useCart();
     const [message, formAction] = useFormState(removeItem, null);
 
@@ -20,7 +24,7 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
     )?.node.url;
 
     return (
-        <div className={styles.lineItem}>
+        <div className={styles.item}>
             <div className={styles.details}>
                 <Image
                     src={imageUrl ?? item.merchandise.product.featuredImage.url}
@@ -56,41 +60,6 @@ const LineItem: FC<{ item: CartItem }> = ({ item }) => {
             <p aria-live="polite" className="sr-only" role="status">
                 {message}
             </p>
-        </div>
-    );
-};
-
-export const CartItems: FC = () => {
-    const { cart } = useCart();
-
-    if (!cart) {
-        return null;
-    }
-
-    const sortedLines = cart.lines.sort((a, b) => {
-        if (
-            a.merchandise.selectedOptions[0].value >
-            b.merchandise.selectedOptions[0].value
-        ) {
-            return 1;
-        }
-        if (
-            b.merchandise.selectedOptions[0].value >
-            a.merchandise.selectedOptions[0].value
-        ) {
-            return -1;
-        }
-        return 0;
-    });
-
-    return (
-        <div className={styles.items}>
-            {sortedLines.map((line) => (
-                <LineItem
-                    key={`${line.id}${line.merchandise.selectedOptions[0].value}`}
-                    item={line}
-                />
-            ))}
         </div>
     );
 };

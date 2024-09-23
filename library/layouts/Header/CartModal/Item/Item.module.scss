@@ -1,0 +1,45 @@
+@import '@styles/constants.scss';
+
+.item {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .details {
+        align-items: center;
+        color: $color-text;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+
+        img {
+            border-radius: 4px;
+        }
+
+        span {
+            display: block;
+        }
+
+        .color {
+            font-weight: 600;
+        }
+
+        .product {
+            font-size: 0.75em;
+            opacity: 0.75;
+        }
+    }
+
+    .actions {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+
+        button {
+            height: 1em;
+            width: 1em;
+        }
+    }
+}

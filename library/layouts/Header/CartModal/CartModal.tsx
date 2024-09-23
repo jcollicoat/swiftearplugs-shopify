@@ -6,10 +6,12 @@ import { useCart } from '@shopify/cart/cart-context';
 import styles from './CartModal.module.scss';
 import { Item } from './Item/Item';
 import { Summary } from './Summary/Summary';
+import { useClickOutside } from './useClickOutside';
 
 export const CartModal: FC = () => {
     const { cart, isCartOpen, setIsCartOpen } = useCart();
     const closeCart = () => setIsCartOpen(false);
+    const { modalRef } = useClickOutside(isCartOpen, closeCart);
 
     useEffect(() => {
         if (!cart) {
@@ -39,7 +41,7 @@ export const CartModal: FC = () => {
         <div
             className={classNames(styles.background, isCartOpen && styles.open)}
         >
-            <div className={styles.modal}>
+            <div className={styles.modal} ref={modalRef}>
                 <div className={styles.header}>
                     <h2>Your Cart</h2>
                     <button className={styles.close} onClick={closeCart}>

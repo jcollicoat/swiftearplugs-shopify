@@ -4,15 +4,13 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Logo } from '@components/Logo/Logo';
-import { useCart } from '@shopify/cart/cart-context';
 import { CartButton } from './CartButton/CartButton';
+import { CartModal } from './CartModal/CartModal';
 import styles from './Header.module.scss';
 import { useHeaderScroll } from './useHeaderScroll';
 
 export const Header: FC = () => {
     const { showBar } = useHeaderScroll();
-
-    const { isCartOpen } = useCart();
 
     return (
         <header className={styles.header}>
@@ -24,14 +22,7 @@ export const Header: FC = () => {
                     <CartButton />
                 </nav>
             </div>
-            <div
-                className={classNames(
-                    styles.modalBackground,
-                    isCartOpen && styles.open,
-                )}
-            >
-                <div className={styles.modal}></div>
-            </div>
+            <CartModal />
         </header>
     );
 };

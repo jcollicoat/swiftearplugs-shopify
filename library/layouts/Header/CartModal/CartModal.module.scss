@@ -1,0 +1,38 @@
+@import '@styles/constants.scss';
+
+.background {
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    opacity: 0;
+    padding: $padding-s;
+    padding-top: 5rem;
+    pointer-events: none;
+    position: fixed;
+    transition: opacity $transition;
+    z-index: 1;
+
+    .modal {
+        background-color: $color-background;
+        border-radius: $padding-s;
+        margin-left: auto;
+        max-width: 450px;
+        padding: $padding-s;
+        transform: translateY(-0.5rem);
+        transition: transform $transition;
+        width: 100%;
+    }
+
+    &.open {
+        opacity: 1;
+        pointer-events: auto;
+
+        .modal {
+            transform: translateY(0rem);
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: $padding-m;
+        padding-top: 6rem;
+    }
+}

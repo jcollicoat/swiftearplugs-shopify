@@ -41,7 +41,7 @@
             }
 
             .close {
-                color: $color-text;
+                color: rgba($color-text, 0.75);
                 display: flex;
                 font-size: 1.25rem;
                 height: 100%;

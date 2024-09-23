@@ -2,13 +2,15 @@
 
 import classNames from 'classnames';
 import { FC, useEffect } from 'react';
+import { Icon } from '@components/Icon/Icon';
 import { createCartAndSetCookie } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import styles from './CartModal.module.scss';
 import { Item } from './Item/Item';
 
 export const CartModal: FC = () => {
-    const { cart, isCartOpen } = useCart();
+    const { cart, isCartOpen, setIsCartOpen } = useCart();
+    const closeCart = () => setIsCartOpen(false);
 
     useEffect(() => {
         if (!cart) {
@@ -39,11 +41,25 @@ export const CartModal: FC = () => {
             className={classNames(styles.background, isCartOpen && styles.open)}
         >
             <div className={styles.modal}>
-                <div className={styles.items}>
-                    {sortedItems.map((item) => (
-                        <Item key={item.id} item={item} />
-                    ))}
+                <div className={styles.header}>
+                    <h2>Your Cart</h2>
+                    <button className={styles.close} onClick={closeCart}>
+                        <Icon icon="CircleCross" />
+                    </button>
                 </div>
+                <hr />
+                {sortedItems.length === 0 ? (
+                    <span className={styles.empty}>Your cart is empty</span>
+                ) : (
+                    <>
+                        <div className={styles.items}>
+                            {sortedItems.map((item) => (
+                                <Item key={item.id} item={item} />
+                            ))}
+                        </div>
+                        <hr />
+                    </>
+                )}
             </div>
         </div>
     );

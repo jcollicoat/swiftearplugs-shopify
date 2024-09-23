@@ -14,6 +14,9 @@
     .modal {
         background-color: $color-background;
         border-radius: $padding-s;
+        display: flex;
+        flex-direction: column;
+        gap: $padding-s;
         margin-left: auto;
         max-width: 450px;
         padding: $padding-s;
@@ -21,10 +24,40 @@
         transition: transform $transition;
         width: 100%;
 
+        hr {
+            border: 1px solid $color-red-light;
+            margin: 0;
+        }
+
+        .header {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+
+            h2 {
+                @include gradient-text;
+
+                font-size: 1.25rem;
+            }
+
+            .close {
+                color: $color-text;
+                display: flex;
+                font-size: 1.25rem;
+                height: 100%;
+                padding: 4px 0;
+            }
+        }
+
+        .empty {
+            display: block;
+            text-align: center;
+        }
+
         .items {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: $padding-s;
-            grid-template-columns: 1fr;
         }
     }
 

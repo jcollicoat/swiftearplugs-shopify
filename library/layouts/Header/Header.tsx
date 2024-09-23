@@ -13,7 +13,7 @@ export const Header: FC = () => {
     return (
         <header className={styles.header}>
             <div className={classNames(styles.bar, showBar && styles.show)}>
-                <Link href="/">
+                <Link href="/" className={styles.logo}>
                     <Logo />
                 </Link>
             </div>

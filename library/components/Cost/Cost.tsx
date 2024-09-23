@@ -9,8 +9,8 @@ interface Props {
 export const Cost: FC<Props> = ({ value, currency }) => {
     if (!value || !currency) return null;
 
-    const dollars = value.split('.')[0];
-    let cents = value.split('.')[1];
+    const dollars = value.split('.')[0] ?? '00';
+    let cents = value.split('.')[1] ?? '00';
     if (cents.length > 2) {
         cents = Math.round(Number(cents)).toString();
     }

@@ -15,6 +15,8 @@
         box-shadow: none;
         border: 1px solid transparent;
         border-radius: $padding-s;
+        display: flex;
+        justify-content: space-between;
         margin: 0 auto;
         max-width: 1400px;
         padding: calc($padding-s / 2);
@@ -24,7 +26,7 @@
             box-shadow $transition-slow;
         width: 100%;
 
-        &.isScrolled {
+        &.show {
             background-color: $color-background;
             border-color: $color-red-light;
             box-shadow:

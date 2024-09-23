@@ -7,11 +7,15 @@ import { Logo } from '@components/Logo/Logo';
 import styles from './Header.module.scss';
 
 export const Header: FC = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [showBar, setShowBar] = useState(false);
 
     const calculate = useCallback(() => {
-        setIsScrolled(window.scrollY > 10);
-    }, []);
+        if (showBar) {
+            setShowBar(true);
+        } else {
+            setShowBar(window.scrollY > 10);
+        }
+    }, [showBar]);
 
     useEffect(() => {
         calculate();
@@ -29,12 +33,7 @@ export const Header: FC = () => {
 
     return (
         <header className={styles.header}>
-            <div
-                className={classNames(
-                    styles.bar,
-                    isScrolled && styles.isScrolled,
-                )}
-            >
+            <div className={classNames(styles.bar, showBar && styles.show)}>
                 <Link href="/">
                     <Logo />
                 </Link>

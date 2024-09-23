@@ -20,6 +20,12 @@
         transform: translateY(-0.5rem);
         transition: transform $transition;
         width: 100%;
+
+        .items {
+            display: grid;
+            gap: $padding-s;
+            grid-template-columns: 1fr;
+        }
     }
 
     &.open {

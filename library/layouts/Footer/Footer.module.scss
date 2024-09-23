@@ -1,6 +1,7 @@
 @import '@styles/constants.scss';
 
 .footer {
+    align-items: center;
     background: linear-gradient(
         to top,
         $color-red-light,
@@ -8,6 +9,9 @@
     );
     color: $color-red;
     display: flex;
+    flex-direction: column;
+    gap: $padding-m;
+    justify-content: flex-end;
     margin-top: -10rem;
     overflow: hidden;
     padding: 20rem 0 $padding-l 0;
@@ -16,9 +20,17 @@
 
     svg {
         height: 3rem;
-        margin: auto;
         position: relative;
         z-index: 2;
+    }
+
+    .links {
+        color: $color-text;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9em;
+        gap: $padding-s;
+        text-align: center;
     }
 
     img {
@@ -57,8 +69,8 @@
     }
 
     .earplugBlack1 {
-        bottom: 230px;
-        right: 40%;
+        bottom: 380px;
+        right: 80%;
     }
 
     .earplugBlack2 {
@@ -75,8 +87,8 @@
     }
 
     .earplugRose1 {
-        bottom: 170px;
-        left: 15%;
+        bottom: 220px;
+        left: 12.5%;
     }
 
     .earplugRose2 {
@@ -126,8 +138,8 @@
         }
 
         .earplugRose2 {
-            bottom: 160px;
-            left: 35%;
+            bottom: 360px;
+            left: 40%;
         }
 
         .earplugRose3 {
@@ -138,10 +150,24 @@
         }
     }
 
+    @media (min-width: 600px) {
+        .links {
+            flex-direction: row;
+        }
+
+        .earplugRose1 {
+            left: 12.5%;
+        }
+
+        .earplugRose2 {
+            bottom: 200px;
+        }
+    }
+
     @media (min-width: $breakpoint-m) {
         .casePurple {
-            bottom: -40px;
-            right: 20%;
+            bottom: -45px;
+            right: 17.5%;
         }
 
         .caseBlack {

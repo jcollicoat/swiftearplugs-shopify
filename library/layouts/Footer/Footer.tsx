@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
 import { Logo } from '@components/Logo/Logo';
+import { getPages } from '@shopify/index';
 import casePurple from 'public/case-lilac-purple.png';
 import caseBlack from 'public/case-matte-black.png';
 import caseRose from 'public/case-rose-gold.png';
@@ -12,10 +14,19 @@ import earplugRose1 from 'public/earplug-rose-gold-1.png';
 import earplugRose2 from 'public/earplug-rose-gold-2.png';
 import styles from './Footer.module.scss';
 
-export const Footer: FC = () => {
+export const Footer: FC = async () => {
+    const pages = await getPages();
+
     return (
         <footer className={styles.footer}>
             <Logo />
+            <nav className={styles.links}>
+                {pages.map((page) => (
+                    <Link key={page.id} href={page.handle}>
+                        {page.title}
+                    </Link>
+                ))}
+            </nav>
             <Image
                 src={casePurple.src}
                 width={150}

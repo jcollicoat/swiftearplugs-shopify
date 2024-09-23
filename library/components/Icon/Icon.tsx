@@ -230,6 +230,7 @@ export const Icon: FC<Props> = ({ icon, strokeWidth = '2' }) => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={strokeWidth}
+            className={styles.icon}
         >
             <Glyph />
         </svg>

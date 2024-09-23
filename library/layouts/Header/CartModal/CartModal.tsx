@@ -41,27 +41,29 @@ export const CartModal: FC = () => {
         <div
             className={classNames(styles.background, isCartOpen && styles.open)}
         >
-            <div className={styles.modal} ref={modalRef}>
-                <div className={styles.header}>
-                    <h2>Your Cart</h2>
-                    <button className={styles.close} onClick={closeCart}>
-                        <Icon icon="CircleCross" />
-                    </button>
+            <div className={styles.wrapper}>
+                <div className={styles.modal} ref={modalRef}>
+                    <div className={styles.header}>
+                        <h2>Your Cart</h2>
+                        <button className={styles.close} onClick={closeCart}>
+                            <Icon icon="CircleCross" />
+                        </button>
+                    </div>
+                    <hr />
+                    {sortedItems.length === 0 ? (
+                        <span className={styles.empty}>Your cart is empty</span>
+                    ) : (
+                        <>
+                            <div className={styles.items}>
+                                {sortedItems.map((item) => (
+                                    <Item key={item.id} item={item} />
+                                ))}
+                            </div>
+                            <hr />
+                            <Summary />
+                        </>
+                    )}
                 </div>
-                <hr />
-                {sortedItems.length === 0 ? (
-                    <span className={styles.empty}>Your cart is empty</span>
-                ) : (
-                    <>
-                        <div className={styles.items}>
-                            {sortedItems.map((item) => (
-                                <Item key={item.id} item={item} />
-                            ))}
-                        </div>
-                        <hr />
-                        <Summary />
-                    </>
-                )}
             </div>
         </div>
     );

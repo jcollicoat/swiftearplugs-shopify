@@ -13,8 +13,10 @@ export const Header: FC = () => {
     const { showBar } = useHeaderScroll();
 
     return (
-        <header className={styles.header}>
-            <div className={classNames(styles.bar, showBar && styles.show)}>
+        <header
+            className={classNames(styles.header, showBar && styles.showBar)}
+        >
+            <div className={styles.bar}>
                 <Link href="/" className={styles.logo}>
                     <Logo />
                 </Link>

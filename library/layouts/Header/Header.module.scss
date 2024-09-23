@@ -10,6 +10,43 @@
     position: fixed;
     z-index: $z-header;
 
+    &::before {
+        background-image: linear-gradient(
+            to top,
+            rgba($color-background, 0),
+            $color-background $padding-s
+        );
+        content: '';
+        height: 4rem;
+        inset: 0;
+        opacity: 0;
+        position: fixed;
+        transition: opacity $transition-slow;
+        z-index: -1;
+    }
+
+    &.showBar {
+        &::before {
+            opacity: 1;
+        }
+
+        .bar {
+            background-color: $color-background;
+            border-color: $color-red-light;
+            box-shadow:
+                0px 1px 2px rgba($color-shadow, 0.05),
+                0px 2px 4px rgba($color-shadow, 0.05),
+                0px 4px 8px rgba($color-shadow, 0.05),
+                0px 8px 16px rgba($color-shadow, 0.05),
+                0px 16px 32px rgba($color-shadow, 0.05);
+            pointer-events: auto;
+
+            .menu {
+                opacity: 1;
+            }
+        }
+    }
+
     .bar {
         align-items: center;
         background-color: transparent;
@@ -41,22 +78,6 @@
         .menu {
             opacity: 0;
             transition: opacity $transition-slow;
-        }
-
-        &.show {
-            background-color: $color-background;
-            border-color: $color-red-light;
-            box-shadow:
-                0px 1px 2px rgba($color-shadow, 0.05),
-                0px 2px 4px rgba($color-shadow, 0.05),
-                0px 4px 8px rgba($color-shadow, 0.05),
-                0px 8px 16px rgba($color-shadow, 0.05),
-                0px 16px 32px rgba($color-shadow, 0.05);
-            pointer-events: auto;
-
-            .menu {
-                opacity: 1;
-            }
         }
     }
 

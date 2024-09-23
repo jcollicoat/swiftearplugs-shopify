@@ -2,6 +2,8 @@
 
 import React, {
     createContext,
+    Dispatch,
+    SetStateAction,
     use,
     useCallback,
     useContext,
@@ -28,7 +30,7 @@ type CartContextType = {
     updateCartItem: (merchandiseId: string, updateType: UpdateType) => void;
     addCartItem: (variant: ProductVariant, product: Product) => void;
     isCartOpen: boolean;
-    toggleIsCartOpen: () => void;
+    setIsCartOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -229,10 +231,6 @@ export function CartProvider({
     );
 
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const toggleIsCartOpen = useCallback(
-        () => setIsCartOpen(!isCartOpen),
-        [isCartOpen],
-    );
 
     const value = useMemo(
         () => ({
@@ -240,15 +238,9 @@ export function CartProvider({
             updateCartItem,
             addCartItem,
             isCartOpen,
-            toggleIsCartOpen,
+            setIsCartOpen,
         }),
-        [
-            addCartItem,
-            isCartOpen,
-            optimisticCart,
-            toggleIsCartOpen,
-            updateCartItem,
-        ],
+        [addCartItem, isCartOpen, optimisticCart, updateCartItem],
     );
 
     return (

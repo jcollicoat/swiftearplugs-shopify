@@ -14,8 +14,15 @@ export const CartButton: FC = () => {
     const currency = cart.cost.totalAmount.currencyCode;
     const quantity = cart.totalQuantity;
 
+    const disabled = quantity <= 0;
+
     return (
-        <button className={styles.button} onClick={openCart}>
+        <button
+            className={styles.button}
+            disabled={disabled}
+            aria-disabled={disabled}
+            onClick={openCart}
+        >
             <Icon icon="Cart" />
             <div className={styles.summary}>
                 <Cost value={value} currency={currency} />

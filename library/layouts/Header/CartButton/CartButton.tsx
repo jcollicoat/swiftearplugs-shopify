@@ -5,8 +5,8 @@ import { useCart } from '@shopify/cart/cart-context';
 import styles from './CartButton.module.scss';
 
 export const CartButton: FC = () => {
-    const { cart, isCartOpen, setIsCartOpen } = useCart();
-    const toggleCart = () => setIsCartOpen(!isCartOpen);
+    const { cart, setIsCartOpen } = useCart();
+    const openCart = () => setIsCartOpen(true);
 
     if (!cart) return null;
 
@@ -15,7 +15,7 @@ export const CartButton: FC = () => {
     const quantity = cart.totalQuantity;
 
     return (
-        <button className={styles.button} onClick={toggleCart}>
+        <button className={styles.button} onClick={openCart}>
             <Icon icon="Cart" />
             <div className={styles.summary}>
                 <Cost value={value} currency={currency} />

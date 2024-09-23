@@ -21,7 +21,7 @@
         transition:
             background-color,
             border-color,
-            box-shadow $transition;
+            box-shadow $transition-slow;
         width: 100%;
 
         &.isScrolled {

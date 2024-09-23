@@ -3,7 +3,6 @@ import '@styles/layout.scss';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
 import { ReactNode } from 'react';
-import { Cart } from '@layouts/Cart/Cart';
 import { Footer } from '@layouts/Footer/Footer';
 import { Header } from '@layouts/Header/Header';
 import { CartProvider } from '@shopify/cart/cart-context';
@@ -78,7 +77,6 @@ export default async function RootLayout({
                     <Header />
                     <main>{children}</main>
                     <Footer />
-                    <Cart />
                 </CartProvider>
                 <Script
                     id="gtag-init"

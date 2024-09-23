@@ -20,18 +20,33 @@
         margin: 0 auto;
         max-width: 1400px;
         padding: calc($padding-s / 2);
+        pointer-events: none;
         transition:
             background-color,
             border-color,
             box-shadow $transition-slow;
         width: 100%;
+        z-index: 2;
 
         .logo {
             color: $color-red;
+            pointer-events: auto;
 
             svg {
                 height: 2rem;
             }
+        }
+
+        .cart {
+            align-items: center;
+            border: 1.5px solid $color-text;
+            border-radius: 4px;
+            display: flex;
+            font-size: 0.9em;
+            gap: 4px;
+            opacity: 0;
+            padding: 0.25em 1em;
+            transition: opacity $transition-slow;
         }
 
         &.show {
@@ -43,6 +58,43 @@
                 0px 4px 8px rgba($color-shadow, 0.05),
                 0px 8px 16px rgba($color-shadow, 0.05),
                 0px 16px 32px rgba($color-shadow, 0.05);
+            pointer-events: auto;
+
+            .cart {
+                opacity: 1;
+            }
+        }
+    }
+
+    .modalBackground {
+        background-color: rgba(0, 0, 0, 0.5);
+        inset: 0;
+        opacity: 0;
+        padding: $padding-s;
+        padding-top: 5rem;
+        pointer-events: none;
+        position: fixed;
+        transition: opacity $transition;
+        z-index: 1;
+
+        .modal {
+            background-color: $color-background;
+            border-radius: $padding-s;
+            margin-left: auto;
+            max-width: 450px;
+            padding: $padding-s;
+            transform: translateY(-0.5rem);
+            transition: transform $transition;
+            width: 100%;
+        }
+
+        &.open {
+            opacity: 1;
+            pointer-events: auto;
+
+            .modal {
+                transform: translateY(0rem);
+            }
         }
     }
 
@@ -51,6 +103,11 @@
 
         .bar {
             padding: calc($padding-s / 2) $padding-s;
+        }
+
+        .modalBackground {
+            padding: $padding-m;
+            padding-top: 6rem;
         }
     }
 }

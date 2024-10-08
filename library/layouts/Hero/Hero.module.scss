@@ -7,13 +7,14 @@
     margin-left: calc($padding-s * -1);
     overflow: hidden;
     padding-bottom: $padding-l;
-    padding: $padding-l 0 0 0;
+    padding: $padding-l 0;
     position: relative;
     width: calc(100% + $padding-m);
     z-index: 1;
 
     .image {
         aspect-ratio: 1 / 1;
+        display: none;
         position: relative;
         width: 100%;
         z-index: 1;
@@ -120,10 +121,10 @@
 
     @media (min-width: $breakpoint-m) {
         display: flex;
-        padding-left: $padding-s;
-        padding-top: 0;
+        padding: 0 0 0 $padding-s;
 
         .image {
+            display: block;
             max-height: 400px;
             width: 50%;
 

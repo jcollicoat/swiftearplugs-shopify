@@ -12,6 +12,8 @@ import {
     updateCart,
 } from 'shopify/index';
 
+const { AUTOMATIC_PROMO } = process.env;
+
 export async function addItem(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     prevState: any,
@@ -127,7 +129,11 @@ export async function redirectToCheckout() {
         return 'Error fetching cart';
     }
 
-    redirect(cart.checkoutUrl);
+    const cartUrl = AUTOMATIC_PROMO
+        ? `${cart.checkoutUrl}&discount=${AUTOMATIC_PROMO}`
+        : cart.checkoutUrl;
+
+    redirect(cartUrl);
 }
 
 export async function createCartAndSetCookie() {

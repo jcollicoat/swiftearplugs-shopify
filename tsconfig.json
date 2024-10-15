@@ -24,8 +24,7 @@
         "paths": {
             "@Generic/*": ["components/Generic/*"],
             "@Layout/*": ["components/Layout/*"],
-            "@Utility/*": ["components/Utility/*"],
-            "@styles/*": ["library/styles/*"]
+            "@Utility/*": ["components/Utility/*"]
         },
         "typeRoots": ["@types/**/*.ts"]
     },

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import '@styles/layout.scss';
+import 'styles/layout.scss';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
 import { ReactNode } from 'react';

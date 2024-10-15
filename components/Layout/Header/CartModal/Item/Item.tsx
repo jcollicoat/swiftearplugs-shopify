@@ -3,9 +3,9 @@ import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { Cost } from '@Generic/Cost/Cost';
 import { Icon } from '@Generic/Icon/Icon';
-import { removeItem } from '@shopify/cart/actions';
-import { useCart } from '@shopify/cart/cart-context';
-import { CartItem } from '@shopify/types';
+import { removeItem } from 'shopify/cart/actions';
+import { useCart } from 'shopify/cart/cart-context';
+import { CartItem } from 'shopify/types';
 import styles from './Item.module.scss';
 
 interface Props {

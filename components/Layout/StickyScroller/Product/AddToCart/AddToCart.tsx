@@ -4,10 +4,10 @@ import { FC } from 'react';
 import { useFormState } from 'react-dom';
 import { Cost } from '@Generic/Cost/Cost';
 import { Icon } from '@Generic/Icon/Icon';
-import { addItem } from '@shopify/cart/actions';
-import { useCart } from '@shopify/cart/cart-context';
-import { useProduct } from '@shopify/product/product-context';
-import { Product, ProductVariant } from '@shopify/types';
+import { addItem } from 'shopify/cart/actions';
+import { useCart } from 'shopify/cart/cart-context';
+import { useProduct } from 'shopify/product/product-context';
+import { Product, ProductVariant } from 'shopify/types';
 import styles from '../Product.module.scss';
 
 declare global {

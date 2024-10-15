@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Cost } from '@Generic/Cost/Cost';
 import { Icon } from '@Generic/Icon/Icon';
-import { useCart } from '@shopify/cart/cart-context';
+import { useCart } from 'shopify/cart/cart-context';
 import styles from './CartButton.module.scss';
 
 export const CartButton: FC = () => {

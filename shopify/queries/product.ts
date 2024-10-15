@@ -1,4 +1,4 @@
-import productFragment from '@shopify/fragments/product';
+import productFragment from 'shopify/fragments/product';
 
 export const getProductQuery = /* GraphQL */ `
     query getProduct($handle: String!) {

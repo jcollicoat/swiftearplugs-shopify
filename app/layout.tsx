@@ -5,9 +5,9 @@ import Script from 'next/script';
 import { ReactNode } from 'react';
 import { Footer } from '@Layout/Footer/Footer';
 import { Header } from '@Layout/Header/Header';
-import { CartProvider } from '@shopify/cart/cart-context';
-import { getCart } from '@shopify/index';
-import { ensureStartsWith } from '@shopify/utils';
+import { CartProvider } from 'shopify/cart/cart-context';
+import { getCart } from 'shopify/index';
+import { ensureStartsWith } from 'shopify/utils';
 
 const {
     FACEBOOK_PIXEL_ID,

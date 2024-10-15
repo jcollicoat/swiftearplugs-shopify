@@ -11,7 +11,7 @@ import React, {
     useOptimistic,
     useState,
 } from 'react';
-import type { Cart, CartItem, Product, ProductVariant } from '@shopify/types';
+import type { Cart, CartItem, Product, ProductVariant } from 'shopify/types';
 
 type UpdateType = 'plus' | 'minus' | 'delete';
 

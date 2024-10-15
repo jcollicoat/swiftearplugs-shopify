@@ -25,7 +25,6 @@
             "@Generic/*": ["components/Generic/*"],
             "@Layout/*": ["components/Layout/*"],
             "@Utility/*": ["components/Utility/*"],
-            "@shopify/*": ["library/shopify/*"],
             "@styles/*": ["library/styles/*"]
         },
         "typeRoots": ["@types/**/*.ts"]

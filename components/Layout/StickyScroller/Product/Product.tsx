@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { getProduct } from '@shopify/index';
-import { ProductProvider } from '@shopify/product/product-context';
+import { getProduct } from 'shopify/index';
+import { ProductProvider } from 'shopify/product/product-context';
 import { AddToCart } from './AddToCart/AddToCart';
 import { Images } from './Images/Images';
 import { Payments } from './Payments/Payments';

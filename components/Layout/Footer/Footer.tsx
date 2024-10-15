@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Logo } from '@Generic/Logo/Logo';
-import { getPages } from 'shopify/index';
 import casePurple from 'public/case-lilac-purple.png';
 import caseBlack from 'public/case-matte-black.png';
 import caseRose from 'public/case-rose-gold.png';
@@ -12,6 +11,7 @@ import earplugBlack1 from 'public/earplug-matte-black-1.png';
 import earplugBlack2 from 'public/earplug-matte-black-2.png';
 import earplugRose1 from 'public/earplug-rose-gold-1.png';
 import earplugRose2 from 'public/earplug-rose-gold-2.png';
+import { getPages } from 'shopify/index';
 import styles from './Footer.module.scss';
 
 export const Footer: FC = async () => {

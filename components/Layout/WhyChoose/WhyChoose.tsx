@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Icon } from '@components/Icon/Icon';
+import { Icon } from '@Generic/Icon/Icon';
 import { Features } from './Features/Features';
 import styles from './WhyChoose.module.scss';
 

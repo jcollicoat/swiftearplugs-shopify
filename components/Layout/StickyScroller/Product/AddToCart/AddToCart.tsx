@@ -2,8 +2,8 @@
 
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
-import { Cost } from '@components/Cost/Cost';
-import { Icon } from '@components/Icon/Icon';
+import { Cost } from '@Generic/Cost/Cost';
+import { Icon } from '@Generic/Icon/Icon';
 import { addItem } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import { useProduct } from '@shopify/product/product-context';

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Icon } from '@components/Icon/Icon';
-import { Logo } from '@components/Logo/Logo';
+import { Icon } from '@Generic/Icon/Icon';
+import { Logo } from '@Generic/Logo/Logo';
 import styles from './Features.module.scss';
 
 const content = {

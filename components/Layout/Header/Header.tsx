@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import Link from 'next/link';
 import { FC } from 'react';
-import { Logo } from '@components/Logo/Logo';
+import { Logo } from '@Generic/Logo/Logo';
 import { CartButton } from './CartButton/CartButton';
 import { CartModal } from './CartModal/CartModal';
 import styles from './Header.module.scss';

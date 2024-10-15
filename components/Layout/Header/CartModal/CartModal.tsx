@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { FC, useEffect } from 'react';
-import { Icon } from '@components/Icon/Icon';
+import { Icon } from '@Generic/Icon/Icon';
 import { createCartAndSetCookie } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import styles from './CartModal.module.scss';

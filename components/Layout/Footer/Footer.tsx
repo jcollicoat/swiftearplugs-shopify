@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
-import { Logo } from '@components/Logo/Logo';
+import { Logo } from '@Generic/Logo/Logo';
 import { getPages } from '@shopify/index';
 import casePurple from 'public/case-lilac-purple.png';
 import caseBlack from 'public/case-matte-black.png';

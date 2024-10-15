@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { useFormState } from 'react-dom';
-import { Cost } from '@components/Cost/Cost';
-import { Icon } from '@components/Icon/Icon';
+import { Cost } from '@Generic/Cost/Cost';
+import { Icon } from '@Generic/Icon/Icon';
 import { removeItem } from '@shopify/cart/actions';
 import { useCart } from '@shopify/cart/cart-context';
 import { CartItem } from '@shopify/types';

@@ -57,6 +57,10 @@ export type ShopifyCart = {
         totalAmount: Money;
         totalTaxAmount: Money;
     };
+    discountCodes: {
+        applicable: boolean;
+        code: string;
+    }[];
     lines: Connection<CartItem>;
     totalQuantity: number;
 };

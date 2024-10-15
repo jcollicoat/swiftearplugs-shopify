@@ -10,9 +10,28 @@
         gap: 0.25em;
     }
 
-    .quantity {
+    .info {
+        align-items: baseline;
+        display: flex;
+        margin-top: 4px;
+        gap: 0.5em;
+    }
+
+    .quantity,
+    .promo {
         color: $color-text;
         font-size: 0.75em;
+    }
+
+    .promo {
+        .code {
+            @include gradient-text;
+
+            border: 1px solid $color-red;
+            border-radius: 4px;
+            padding: 0 2px;
+            text-transform: uppercase;
+        }
     }
 
     .checkout {

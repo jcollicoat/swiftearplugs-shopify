@@ -18,6 +18,10 @@ const cartFragment = /* GraphQL */ `
                 currencyCode
             }
         }
+        discountCodes {
+            applicable
+            code
+        }
         lines(first: 100) {
             edges {
                 node {

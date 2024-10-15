@@ -4,7 +4,15 @@
     display: block;
     font-weight: 600;
 
-    span {
+    .strikethrough {
+        text-decoration: line-through;
+    }
+
+    .currency {
         font-size: 0.75em;
+    }
+
+    .highlight {
+        @include gradient-text;
     }
 }

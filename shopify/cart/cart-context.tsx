@@ -131,6 +131,7 @@ function createEmptyCart(): Cart {
             totalAmount: { amount: '0', currencyCode: 'USD' },
             totalTaxAmount: { amount: '0', currencyCode: 'USD' },
         },
+        discountCodes: [],
     };
 }
 

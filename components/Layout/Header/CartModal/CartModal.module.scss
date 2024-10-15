@@ -1,0 +1,85 @@
+@import 'styles/constants.scss';
+
+.background {
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    opacity: 0;
+    padding: $padding-s;
+    padding-top: 5rem;
+    pointer-events: none;
+    position: fixed;
+    transition: opacity $transition;
+    z-index: 1;
+
+    .wrapper {
+        margin: 0 auto;
+        max-width: calc(1400px - ($padding-m * 2));
+        width: 100%;
+
+        .modal {
+            background-color: $color-background;
+            border-radius: $padding-s;
+            display: flex;
+            flex-direction: column;
+            gap: $padding-s;
+            margin-left: auto;
+            max-width: 450px;
+            padding: $padding-s;
+            transform: translateY(-0.5rem);
+            transition: transform $transition;
+            width: 100%;
+
+            hr {
+                border: 1px solid $color-red-light;
+                margin: 0;
+            }
+
+            .header {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+
+                h2 {
+                    @include gradient-text;
+
+                    font-size: 1.25rem;
+                }
+
+                .close {
+                    color: rgba($color-text, 0.75);
+                    display: flex;
+                    font-size: 1.25rem;
+                    height: 100%;
+                    padding: 4px 0;
+                }
+            }
+
+            .empty {
+                display: block;
+                text-align: center;
+            }
+
+            .items {
+                display: flex;
+                flex-direction: column;
+                gap: $padding-s;
+            }
+        }
+    }
+
+    &.open {
+        opacity: 1;
+        pointer-events: auto;
+
+        .wrapper {
+            .modal {
+                transform: translateY(0rem);
+            }
+        }
+    }
+
+    @media (min-width: $breakpoint-m) {
+        padding: $padding-m;
+        padding-top: 6rem;
+    }
+}

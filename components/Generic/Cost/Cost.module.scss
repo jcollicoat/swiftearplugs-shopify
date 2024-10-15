@@ -1,0 +1,18 @@
+@import 'styles/constants.scss';
+
+.cost {
+    display: block;
+    font-weight: 600;
+
+    .strikethrough {
+        text-decoration: line-through;
+    }
+
+    .currency {
+        font-size: 0.75em;
+    }
+
+    .highlight {
+        @include gradient-text;
+    }
+}

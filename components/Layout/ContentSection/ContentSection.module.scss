@@ -1,0 +1,67 @@
+@import 'styles/constants.scss';
+
+.container {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $padding-s;
+
+    &.reversed {
+        .image {
+            margin-left: auto;
+        }
+
+        .heading {
+            border-left: unset;
+            border-right: 2px solid $color-red-light;
+            border-top-left-radius: unset;
+            border-top-right-radius: $padding-s;
+            margin-left: unset;
+            margin-right: auto;
+        }
+    }
+
+    .image {
+        aspect-ratio: 2 / 1;
+        border-radius: $padding-s;
+        margin-bottom: calc(($padding-s * 2) * -1);
+        overflow: hidden;
+        position: relative;
+        width: 90%;
+        z-index: 1;
+
+        img {
+            object-fit: cover;
+        }
+
+        .placeholder {
+            background-color: $color-red-light;
+            inset: 0;
+            position: absolute;
+        }
+    }
+
+    .heading {
+        background-color: $color-background;
+        border-left: 2px solid $color-red-light;
+        border-top: 2px solid $color-red-light;
+        border-top-left-radius: $padding-s;
+        margin-left: auto;
+        max-width: 90%;
+        padding: $padding-s;
+        width: clamp(0px, max-content, 90%);
+        z-index: 2;
+
+        h2 {
+            @include gradient-text;
+
+            font-size: 2.5rem;
+        }
+    }
+
+    .content {
+        display: grid;
+        position: relative;
+        z-index: 2;
+    }
+}

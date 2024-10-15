@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import '@styles/layout.scss';
+import 'styles/layout.scss';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
 import { ReactNode } from 'react';
-import { Footer } from '@layouts/Footer/Footer';
-import { Header } from '@layouts/Header/Header';
-import { CartProvider } from '@shopify/cart/cart-context';
-import { getCart } from '@shopify/index';
-import { ensureStartsWith } from '@shopify/utils';
+import { Footer } from '@Layout/Footer/Footer';
+import { Header } from '@Layout/Header/Header';
+import { CartProvider } from 'shopify/cart/cart-context';
+import { getCart } from 'shopify/index';
+import { ensureStartsWith } from 'shopify/utils';
 
 const {
     FACEBOOK_PIXEL_ID,

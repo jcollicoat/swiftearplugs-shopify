@@ -1,4 +1,4 @@
-import { getPage } from '@shopify/index';
+import { getPage } from 'shopify/index';
 import styles from './page.module.scss';
 
 export default async function Page({

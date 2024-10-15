@@ -1,0 +1,33 @@
+@import 'styles/constants.scss';
+
+.icon {
+    height: 1em;
+    width: 1em;
+}
+
+.colors {
+    align-items: center;
+    display: flex;
+
+    span {
+        border: 2px solid #ffffff;
+        border-radius: 0.75rem;
+        display: block;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .roseGold {
+        background-color: lighten($color: #f56169, $amount: 10);
+    }
+
+    .lilacPurple {
+        background-color: lighten($color: #bf28ed, $amount: 15);
+        transform: translateX(-25%);
+    }
+
+    .matteBlack {
+        background-color: lighten($color: #000000, $amount: 25);
+        transform: translateX(-50%);
+    }
+}

@@ -3,6 +3,7 @@ import { ContentSection } from '@Layout/ContentSection/ContentSection';
 import { ContentSectionList } from '@Layout/ContentSectionList/ContentSectionList';
 import { Hero } from '@Layout/Hero/Hero';
 import { StickyScroller } from '@Layout/StickyScroller/StickyScroller';
+import { Testimonials } from '@Layout/Testimonials/Testimonials';
 import { WhyChoose } from '@Layout/WhyChoose/WhyChoose';
 import anyNightOut from 'public/any-night-out.jpg';
 import comfortAndStyle from 'public/comfort-and-style.jpg';
@@ -11,6 +12,8 @@ import cases from 'public/lockup-cases.png';
 import circle from 'public/lockup-earplugs-circle.png';
 import earplugs from 'public/lockup-earplugs.png';
 import pink from 'public/lockup-pink.png';
+import quote1 from 'public/quote-1.png';
+import quote2 from 'public/quote-2.png';
 
 export const metadata = {
     description: 'Swift Earplugs bring you closer to the music you love.',
@@ -58,6 +61,21 @@ export default function HomePage() {
                             heading: 'Compact and portable',
                             content:
                                 'Each pair of Swift Earplugs comes with a sleek, portable carrying case, making it easy to take them wherever the music takes you.',
+                        },
+                    ]}
+                />
+                <Testimonials
+                    heading="What our customers are saying"
+                    content={[
+                        {
+                            image: quote1.src,
+                            quote: '“I use these at really loud concerts, and they not only protect my ears but actually make the music sound better by balancing the sound and reducing the noise from the crowd.”',
+                            name: 'Amber M.',
+                        },
+                        {
+                            image: quote2.src,
+                            quote: '“I love how these earplugs look and the fact that I can clip them to my keychain. They’re always with me, so when I’m off to a gig or a show, I just chuck them in and save my ears from the pain.”',
+                            name: 'Jessica S.',
                         },
                     ]}
                 />

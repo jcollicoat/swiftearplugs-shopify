@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
+import { Emoji } from '@Generic/Emoji/Emoji';
 import casePurple from 'public/case-lilac-purple.png';
 import earplugPurple from 'public/earplug-lilac-purple-1.png';
 import earplugBlack from 'public/earplug-matte-black-1.png';
@@ -46,12 +47,23 @@ export const Hero: FC = () => {
                     alt=""
                     className={styles.earplugRose}
                 />
-                <h1>Dance, laugh, and live loudly.</h1>
-                <h2>Swift&nbsp;Earplugs have you covered.</h2>
+                <h1>Meet the last earplugs you will ever need.</h1>
+                <h2>
+                    <Emoji>💃</Emoji> Steal the show <Emoji>✨</Emoji>
+                </h2>
                 <p>
-                    Dive into the music with our high-fidelity earplugs designed
-                    to deliver crystal clear sound, while protecting your
-                    hearing for many years to come.
+                    <b>
+                        Permanent hearing damage can occur in{' '}
+                        <a
+                            href="https://healthed.govt.nz/products/noise-around-the-home"
+                            target="_blank"
+                        >
+                            as little as 2 minutes.
+                        </a>
+                    </b>
+                    Protect your ears in style — Swift&nbsp;Earplugs deliver
+                    crystal-clear sound, blocking noise while keeping you
+                    comfortable and stylish at every event.
                 </p>
             </div>
             <div className={styles.image}>

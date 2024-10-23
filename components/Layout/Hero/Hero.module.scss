@@ -7,7 +7,7 @@
     margin-left: calc($padding-s * -1);
     overflow: hidden;
     padding-bottom: $padding-l;
-    padding: $padding-l 0;
+    padding: $padding-l 0 0 0;
     position: relative;
     width: calc(100% + $padding-m);
     z-index: 1;
@@ -49,7 +49,7 @@
         }
 
         .earplugBlack {
-            bottom: -20px;
+            bottom: 0px;
             right: -5px;
             filter: drop-shadow(10px 50px 20px rgba(0, 0, 0, 0.2));
         }
@@ -91,7 +91,7 @@
             }
 
             a {
-                color: $color-red;
+                // color: $color-red;
                 text-decoration: underline;
             }
         }
@@ -103,8 +103,6 @@
         width: 100%;
 
         .content {
-            padding: $padding-l $padding-s;
-
             img {
                 display: block;
             }
@@ -115,7 +113,7 @@
             }
 
             .earplugBlack {
-                bottom: -30px;
+                bottom: 0px;
                 right: -10px;
             }
 
